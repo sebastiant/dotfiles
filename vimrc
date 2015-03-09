@@ -1,3 +1,10 @@
+" toggle line numbers, default on
+map <silent><F10> :set invnumber<CR>
+set number
+
+" toggle unrprintable characters visible
+map <silent><F11> :set invlist<CR>
+
 " toggle between terminal and vim mouse
 map <silent><F12> :let &mouse=(&mouse == "a"?"":"a")<CR>:call ShowMouseMode()<CR>
 imap <silent><F12> :let &mouse=(&mouse == "a"?"":"a")<CR>:call ShowMouseMode()<CR>
@@ -13,7 +20,6 @@ endfunction
 set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
 
 set wildmenu
-set number
 set hlsearch
 syntax enable
 
