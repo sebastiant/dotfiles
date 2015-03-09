@@ -28,3 +28,12 @@ colorscheme solarized
 set background=dark
 let g:solarized_visibility = "high"
 let g:solarized_contrast = "high"
+
+" pathogen
+execute pathogen#infect()
+
+" NERDTree
+map <silent><F9> :NERDTreeToggle<CR>
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+
+
