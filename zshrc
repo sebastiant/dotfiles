@@ -49,7 +49,7 @@ plugins=(git)
 
 # User configuration
 
-export PATH="/Users/sebastiantunstig/pebble-dev/PebbleSDK-current/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:/usr/texbin"
+export PATH="~/pebble-dev/PebbleSDK-current/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:/usr/texbin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
