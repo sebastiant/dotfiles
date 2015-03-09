@@ -1,2 +1,26 @@
+*.local
+
+TAGS
+tags
+
+# IntelliJ
+*.iml
+*.ipr
+*.iws
+# Eclipse / Java
+*.class
+target
+.metadata
+.cache
+.worksheet
+*.class
+target/
+
+# vim
 *~
-.DS_Store
+*.swp
+*.swo
+
+# OS X
+__MACOSX/
+*.DS_Store
