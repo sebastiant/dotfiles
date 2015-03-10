@@ -1,8 +1,15 @@
+set nocompatible
+
+set t_Co=256
+
+" pathogen
+execute pathogen#infect()
+
 " toggle line numbers, default on
 map <silent><F10> :set invnumber<CR>
 set number
 
-" toggle unrprintable characters visible
+" toggle unprintable characters visible
 map <silent><F11> :set invlist<CR>
 
 " toggle between terminal and vim mouse
@@ -35,13 +42,10 @@ filetype plugin on
 filetype indent on
 
 " solarized colors with settings 
-colorscheme solarized
 set background=dark
+colorscheme solarized
 let g:solarized_visibility = "high"
 let g:solarized_contrast = "high"
-
-" pathogen
-execute pathogen#infect()
 
 " NERDTree
 map <silent><F9> :NERDTreeToggle<CR>
