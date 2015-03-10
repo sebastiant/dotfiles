@@ -20,8 +20,19 @@ endfunction
 set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
 
 set wildmenu
+
+set incsearch
 set hlsearch
+set ignorecase
+set smartcase
+
+set show laststatus=2
+set show tabline=2
+set autoindent
 syntax enable
+
+filetype plugin on
+filetype indent on
 
 " solarized colors with settings 
 colorscheme solarized
@@ -36,4 +47,7 @@ execute pathogen#infect()
 map <silent><F9> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
-
+map <Left> <Nop>
+map <Right> <Nop>
+map <Up> <Nop>
+map <Down> <Nop>
