@@ -17,7 +17,25 @@
 [difftool]
 	prompt = false
 [alias]
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit
+	cp = cherry-pick
+	st = status -s
+	s = status
+	a = !git add . && git status
+	au = !git add -u . && git status
+	aa = !git add . && git add -u . && git status
+	cl = clone
+	ci = commit
+	cm = commit -m
+	co = checkout
+	br = branch
 	d = difftool
+	dw = diff --word-diff
+	dcw = diff --color-words
+	dh = diff --color-words head
+	dc = diff --cached
+	master = checkout master
+	alias = !git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\\t => \\2/' | sort
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
