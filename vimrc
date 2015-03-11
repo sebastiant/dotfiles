@@ -1,7 +1,5 @@
 set nocompatible
 
-set t_Co=256
-
 " vundle setup
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -20,6 +18,11 @@ Plugin 'esneider/YUNOcommit.vim'
 call vundle#end()
 filetype plugin indent on
 " end vundle setup
+
+set t_Co=256
+
+set encoding=utf-8  " The encoding displayed.¬
+set fileencoding=utf-8  " The encoding written to file.¬
 
 " toggle line numbers, default on
 map <silent><F10> :set invnumber<CR>
@@ -64,6 +67,7 @@ colorscheme solarized
 let g:solarized_visibility = "high"
 let g:solarized_contrast = "high"
 
+" Plugin configuration
 " NERDTree
 map <silent><F9> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
@@ -85,17 +89,23 @@ let g:airline_symbols.paste = 'Þ'
 let g:airline_symbols.paste = '∥'
 let g:airline_symbols.whitespace = 'Ξ'
 
-" syntastic
-let g:airline#extensions#syntastic#enabled = 1
+" indentLine
+let g:indentLine_char = '︙'
+
+" airline
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
+" syntastic
+let g:airline#extensions#syntastic#enabled = 1
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
+
+" disable old habits
 map <Left> <Nop>
 map <Right> <Nop>
 map <Up> <Nop>
