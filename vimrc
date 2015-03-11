@@ -32,16 +32,13 @@ set number
 " toggle unprintable characters visible
 map <silent><F11> :set invlist<CR>
 
-" toggle between terminal and vim mouse
-map <silent><F12> :let &mouse=(&mouse == "a"?"":"a")<CR>:call ShowMouseMode()<CR>
-imap <silent><F12> :let &mouse=(&mouse == "a"?"":"a")<CR>:call ShowMouseMode()<CR>
-function ShowMouseMode()
-    if (&mouse == 'a')
-        echo "mouse-vim"
-    else
-        echo "mouse-xterm"
-    endif
+" toggle between terminal and vim mouse, default vim mouse
+map <silent><F12> :call ToggleMouseMode()<CR>
+imap <silent><F12> :call ToggleMouseMode()<CR>
+function ToggleMouseMode()
+    let &mouse=(&mouse == "a"?"":"a")
 endfunction
+set mouse=a
 
 " 4 spaced tabs
 set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
