@@ -2,8 +2,24 @@ set nocompatible
 
 set t_Co=256
 
-" pathogen
-execute pathogen#infect()
+" vundle setup
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" vundle plugins
+Plugin 'gmarik/Vundle.vim'
+
+Plugin 'tpope/vim-fugitive'
+Plugin 'bling/vim-airline'
+Plugin 'Yggdroot/indentLine'
+Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/syntastic'
+Plugin 'esneider/YUNOcommit.vim'
+
+
+call vundle#end()
+filetype plugin indent on
+" end vundle setup
 
 " toggle line numbers, default on
 map <silent><F10> :set invnumber<CR>
@@ -23,7 +39,7 @@ function ShowMouseMode()
     endif
 endfunction
 
-" 4 spaced tabs 
+" 4 spaced tabs
 set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
 
 set wildmenu
@@ -36,12 +52,13 @@ set smartcase
 set laststatus=2
 set showtabline=2
 set autoindent
+set list
+set listchars=tab:▸\ ,eol:¬
 syntax enable
 
-filetype plugin on
 filetype indent on
 
-" solarized colors with settings 
+" solarized colors with settings
 set background=dark
 colorscheme solarized
 let g:solarized_visibility = "high"
