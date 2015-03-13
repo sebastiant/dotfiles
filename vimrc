@@ -15,6 +15,7 @@ Plugin 'scrooloose/syntastic'
 Plugin 'esneider/YUNOcommit.vim'
 Plugin 'edkolev/erlang-motions.vim'
 Plugin 'jimenezrick/vimerl'
+Plugin 'lambdatoast/elm.vim'
 
 call vundle#end()
 filetype plugin indent on
@@ -96,6 +97,10 @@ set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
 " syntastic
+" Show location view if syntax errors exist
+let g:syntastic_auto_loc_list = 1
+" Jump to first syntax error on save or open
+let g:syntastic_auto_jump = 2
 let g:airline#extensions#syntastic#enabled = 1
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
@@ -109,3 +114,16 @@ map <Left> <Nop>
 map <Right> <Nop>
 map <Up> <Nop>
 map <Down> <Nop>
+
+" hjkl for window navigation
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
+" , for custom commands
+let mapleader = ","
+" clear search
+nnoremap <leader><space> :noh<cr>
+
+
