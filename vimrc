@@ -89,7 +89,7 @@ let g:airline_symbols.paste = '∥'
 let g:airline_symbols.whitespace = 'Ξ'
 
 " indentLine
-let g:indentLine_char = '︙'
+let g:indentLine_char = '│'
 
 " airline
 set statusline+=%#warningmsg#
