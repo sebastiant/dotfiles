@@ -36,11 +36,11 @@ set number
 map <silent><F11> :set invlist<CR>
 
 " toggle between terminal and vim mouse, default vim mouse
-map <silent><F12> :call ToggleMouseMode()<CR>
-imap <silent><F12> :call ToggleMouseMode()<CR>
-function ToggleMouseMode()
+function! ToggleMouseMode()
     let &mouse=(&mouse == "a"?"":"a")
 endfunction
+map <silent><F12> :call ToggleMouseMode()<CR>
+imap <silent><F12> <Esc> :call ToggleMouseMode()<CR>i
 set mouse=a
 
 " 4 spaced tabs
