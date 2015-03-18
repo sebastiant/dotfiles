@@ -16,6 +16,8 @@ Plugin 'esneider/YUNOcommit.vim'
 Plugin 'edkolev/erlang-motions.vim'
 Plugin 'jimenezrick/vimerl'
 Plugin 'lambdatoast/elm.vim'
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
 
 call vundle#end()
 filetype plugin indent on
