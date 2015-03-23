@@ -111,6 +111,10 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_erlang_checkers=['syntaxerl']
 
+" gitgutter
+let g:gitgutter_enabled = 1
+map <silent><F8> :GitGutterToggle<CR>
+
 
 " disable old habits
 map <Left> <Nop>
