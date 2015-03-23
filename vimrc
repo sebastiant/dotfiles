@@ -18,6 +18,7 @@ Plugin 'jimenezrick/vimerl'
 Plugin 'lambdatoast/elm.vim'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
+Plugin 'airblade/vim-gitgutter'
 
 call vundle#end()
 filetype plugin indent on
