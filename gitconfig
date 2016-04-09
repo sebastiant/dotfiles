@@ -33,7 +33,7 @@
 	dw = diff --word-diff
 	dcw = diff --color-words
 	dh = diff --color-words head
-	dc = diff --cached
+	ds = diff --staged
 	master = checkout master
 	alias = !git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\\t => \\2/' | sort
 [difftool "sourcetree"]

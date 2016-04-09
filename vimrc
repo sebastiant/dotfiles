@@ -16,6 +16,9 @@ Plugin 'esneider/YUNOcommit.vim'
 Plugin 'edkolev/erlang-motions.vim'
 Plugin 'jimenezrick/vimerl'
 Plugin 'lambdatoast/elm.vim'
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
+Plugin 'airblade/vim-gitgutter'
 
 call vundle#end()
 filetype plugin indent on
@@ -34,11 +37,11 @@ set number
 map <silent><F11> :set invlist<CR>
 
 " toggle between terminal and vim mouse, default vim mouse
-map <silent><F12> :call ToggleMouseMode()<CR>
-imap <silent><F12> :call ToggleMouseMode()<CR>
-function ToggleMouseMode()
+function! ToggleMouseMode()
     let &mouse=(&mouse == "a"?"":"a")
 endfunction
+map <silent><F12> :call ToggleMouseMode()<CR>
+imap <silent><F12> <Esc> :call ToggleMouseMode()<CR>i
 set mouse=a
 
 " 4 spaced tabs
@@ -89,7 +92,7 @@ let g:airline_symbols.paste = '∥'
 let g:airline_symbols.whitespace = 'Ξ'
 
 " indentLine
-let g:indentLine_char = '︙'
+let g:indentLine_char = '│'
 
 " airline
 set statusline+=%#warningmsg#
@@ -107,6 +110,10 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_erlang_checkers=['syntaxerl']
+
+" gitgutter
+let g:gitgutter_enabled = 1
+map <silent><F8> :GitGutterToggle<CR>
 
 
 " disable old habits
@@ -126,4 +133,9 @@ let mapleader = ","
 " clear search
 nnoremap <leader><space> :noh<cr>
 
-
+" auto reload .vimrc
+" credits: sirlancelot http://stackoverflow.com/questions/2400264/is-it-possible-to-apply-vim-configurations-without-restarting/2403926#2403926 
+augroup myvimrc
+    au!
+    au BufWritePost .vimrc,_vimrc,vimrc,.gvimrc,_gvimrc,gvimrc so $MYVIMRC | if has('gui_running') | so $MYGVIMRC | endif
+augroup END
