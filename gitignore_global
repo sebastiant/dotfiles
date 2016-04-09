@@ -21,6 +21,10 @@ tags
 .idea/gradle.xml
 .idea/libraries
 
+# Gradle
+.gradle
+build/
+
 # Eclipse / Java
 *.class
 target
