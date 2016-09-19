@@ -34,6 +34,7 @@ ebin
 rel/example_project
 .concrete/DEV_MODE
 .rebar
+rebar.lock
 
 # vim
 *~
@@ -43,3 +44,8 @@ rel/example_project
 # OS X
 __MACOSX/
 *.DS_Store
+
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml
