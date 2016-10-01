@@ -44,8 +44,13 @@ map <silent><F12> :call ToggleMouseMode()<CR>
 imap <silent><F12> <Esc> :call ToggleMouseMode()<CR>i
 set mouse=a
 
-" 4 spaced tabs
-set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
+" tab indentation
+set noexpandtab
+set copyindent
+set preserveindent
+set softtabstop=0
+set shiftwidth=4
+set tabstop=4
 
 set wildmenu
 
