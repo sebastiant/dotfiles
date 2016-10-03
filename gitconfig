@@ -10,6 +10,7 @@
 [mergetool]
 	keepBackup = false
 [core]
+	editor = $(which vim)
 	excludesfile = ~/.gitignore_global
 [branch "master"]
 	remote = origin
