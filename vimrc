@@ -1,33 +1,35 @@
-set nocompatible
-
 " vundle setup
+set nocompatible
+filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
+Plugin 'VundleVim/Vundle.vim'
 
-" vundle plugins
-Plugin 'gmarik/Vundle.vim'
-
+" other plugins
+Plugin 'altercation/vim-colors-solarized'
 Plugin 'tpope/vim-fugitive'
-Plugin 'bling/vim-airline'
-Plugin 'Yggdroot/indentLine'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/syntastic'
 Plugin 'esneider/YUNOcommit.vim'
-Plugin 'edkolev/erlang-motions.vim'
-Plugin 'jimenezrick/vimerl'
-Plugin 'lambdatoast/elm.vim'
-Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'kien/ctrlp.vim'
+Plugin 'vim-erlang/vim-erlang-compiler'
+Plugin 'vim-erlang/vim-erlang-runtime'
+Plugin 'vim-erlang/vim-erlang-omnicomplete'
+Plugin 'vim-erlang/vim-erlang-tags'
+Plugin 'vim-erlang/vim-erlang-skeletons'
+Plugin 'nathanaelkane/vim-indent-guides'
 
 call vundle#end()
 filetype plugin indent on
 " end vundle setup
 
-set t_Co=256
 
 set encoding=utf-8  " The encoding displayed.¬
 set fileencoding=utf-8  " The encoding written to file.¬
+set t_Co=256
 
 " toggle line numbers, default on
 map <silent><F10> :set invnumber<CR>
@@ -61,7 +63,6 @@ set smartcase
 
 set laststatus=2
 set showtabline=2
-set autoindent
 set list
 set listchars=tab:▸\ ,eol:¬
 syntax enable
@@ -80,8 +81,9 @@ map <silent><F9> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
 " vim-airline
+let g:airline_theme='solarized'
 if !exists('g:airline_symbols')
-    let g:airline_symbols = {}
+	let g:airline_symbols = {}
 endif
 let g:airline_left_sep = '»'
 let g:airline_left_sep = '▶'
@@ -95,30 +97,15 @@ let g:airline_symbols.paste = 'ρ'
 let g:airline_symbols.paste = 'Þ'
 let g:airline_symbols.paste = '∥'
 let g:airline_symbols.whitespace = 'Ξ'
-
-" indentLine
-let g:indentLine_char = '│'
-
-" airline
 set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
-
-" syntastic
-" Show location view if syntax errors exist
-let g:syntastic_auto_loc_list = 1
-" Jump to first syntax error on save or open
-let g:syntastic_auto_jump = 2
-let g:airline#extensions#syntastic#enabled = 1
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_erlang_checkers=['syntaxerl']
 
 " gitgutter
 let g:gitgutter_enabled = 1
 map <silent><F8> :GitGutterToggle<CR>
+
+" vim-indent-guides
+autocmd VimEnter * :IndentGuidesEnable
 
 
 " disable old habits
