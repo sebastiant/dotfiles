@@ -90,7 +90,7 @@ let g:solarized_contrast = "high"
 
 " Plugin configuration
 " NERDTree
-map <silent><F9> :NERDTreeToggle<CR>
+map <silent><F8> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
 " vim-airline
@@ -115,7 +115,7 @@ set statusline+=%*
 
 " gitgutter
 let g:gitgutter_enabled = 1
-map <silent><F8> :GitGutterToggle<CR>
+map <silent><F9> :GitGutterToggle<CR>
 
 " vim-indent-guides
 autocmd VimEnter * :IndentGuidesEnable
