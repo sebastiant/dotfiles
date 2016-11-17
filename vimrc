@@ -26,6 +26,7 @@ call vundle#end()
 filetype plugin indent on
 " end vundle setup
 
+set backspace=indent,eol,start
 
 set encoding=utf-8  " The encoding displayed.¬
 set fileencoding=utf-8  " The encoding written to file.¬
