@@ -1,14 +1,17 @@
 [user]
 	name = Sebastian Tunstig
 	email = sebastian.tunstig@gmail.com
+[diff]
+	tool = vimdiff
 [merge]
-	tool = opendiff
+	tool = vimdiff
 	keepBackup = false
 [mergetool "diffmerge"]
 	cmd = diffmerge --merge\n--result=$MERGED $LOCAL $BASE $REMOTE
 	trustExitCode = true
 [mergetool]
 	keepBackup = false
+	trustExitCode = true
 [core]
 	editor = $(which vim)
 	excludesfile = ~/.gitignore_global
@@ -17,6 +20,7 @@
 	merge = refs/heads/master
 [difftool]
 	prompt = false
+	trustExitCode = true
 [alias]
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit
 	st = status -s
@@ -28,9 +32,3 @@
 	ds = diff --staged
 	master = checkout master
 	alias = !git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\\t => \\2/' | sort
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
-[mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
