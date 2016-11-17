@@ -32,9 +32,21 @@ set encoding=utf-8  " The encoding displayed.¬
 set fileencoding=utf-8  " The encoding written to file.¬
 set t_Co=256
 
-" toggle line numbers, default on
-map <silent><F10> :set invnumber<CR>
+"cycle line numbers/relative line numbers/no line numbers. default: relative
+function! NumberToggle()
+	if(&relativenumber == 1)
+		set number
+		set norelativenumber
+	elseif(&relativenumber == 0 && &number == 1)
+		set nonumber
+	else
+		set relativenumber
+		set number
+	endif
+endfunc
+map <silent><F10> :call NumberToggle()<CR>
 set number
+set relativenumber
 
 " toggle unprintable characters visible
 map <silent><F11> :set invlist<CR>
