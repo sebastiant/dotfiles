@@ -144,3 +144,9 @@ augroup myvimrc
     au!
     au BufWritePost .vimrc,_vimrc,vimrc,.gvimrc,_gvimrc,gvimrc so $MYVIMRC | if has('gui_running') | so $MYGVIMRC | endif
 augroup END
+
+" quit with error code
+" useful when git throws continuous diffs to vim when used as difftool
+if &diff
+	map Q :cquit<CR>
+  endif
