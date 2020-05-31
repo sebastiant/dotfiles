@@ -23,3 +23,6 @@ source $ZSH/oh-my-zsh.sh
 source ~/.bin/tmuxinator.zsh
 
 setopt interactivecomments
+
+if which jenv > /dev/null; then eval "$(jenv init -)"; fi
+[ -f "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env" ] && source "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env"
