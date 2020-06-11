@@ -29,6 +29,8 @@
 	ci = commit
 	co = checkout
 	d = difftool
+	dp = "!git --no-pager diff"
 	ds = diff --staged
+	dsp = "!git --no-pager diff --staged"
 	master = checkout master
 	alias = !git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\\t => \\2/' | sort
