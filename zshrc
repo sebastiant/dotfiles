@@ -24,5 +24,12 @@ source ~/.bin/tmuxinator.zsh
 
 setopt interactivecomments
 
+# jenv (Java environments)
+export PATH="$HOME/.jenv/bin:$PATH"
+eval "$(jenv init -)"
+
+# GHC (Haskell)
 if which jenv > /dev/null; then eval "$(jenv init -)"; fi
 [ -f "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env" ] && source "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env"
+
+
