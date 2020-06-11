@@ -105,10 +105,6 @@ let g:airline_symbols.whitespace = 'Ξ'
 set statusline+=%#warningmsg#
 set statusline+=%*
 
-" gitgutter
-let g:gitgutter_enabled = 1
-map <silent><F9> :GitGutterToggle<CR>
-
 " vim-indent-guides
 autocmd VimEnter * :IndentGuidesEnable
 
@@ -146,3 +142,7 @@ endif
 " CtrlP to ignore .gitignore specs
 " credits: https://medium.com/a-tiny-piece-of-vim/making-ctrlp-vim-load-100x-faster-7a722fae7df6
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
+
+" Fugitive
+command! Greview :Git! diff --staged
+nnoremap <leader>gr :Greview<cr>
