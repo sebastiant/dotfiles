@@ -27,6 +27,7 @@
       sqlite
       nodejs
       docker
+      alacritty
     ];
 
   fonts = {

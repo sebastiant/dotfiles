@@ -79,6 +79,8 @@ set background=dark
 colorscheme solarized
 let g:solarized_visibility = "high"
 let g:solarized_contrast = "high"
+" enable transparency for alacritty
+hi Normal ctermbg=NONE guibg=NONE
 
 " Plugin configuration
 " NERDTree
