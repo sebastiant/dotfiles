@@ -24,20 +24,10 @@ source ~/.bin/tmuxinator.zsh
 
 setopt interactivecomments
 
-# jenv (Java environments)
-export PATH="$HOME/.jenv/bin:$PATH"
-eval "$(jenv init -)"
-
 # GHC (Haskell)
 if which jenv > /dev/null; then eval "$(jenv init -)"; fi
 [ -f "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env" ] && source "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env"
 
-# pyenv (Python)
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-if command -v pyenv 1>/dev/null 2>&1; then
-	eval "$(pyenv init -)"
-fi
 
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
