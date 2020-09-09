@@ -3,7 +3,7 @@
 {
   environment.systemPackages = with pkgs;
     [ 
-      ( python38.withPackages (ps: with ps; [ pip flake8 black pynvim python-language-server.override { pylint = null; } ]) )
+      ( python38.withPackages (ps: with ps; [ pip flake8 black pynvim ipython python-language-server.override { pylint = null; } ]) )
       zsh
       vimHugeX
       tmux
@@ -27,6 +27,8 @@
       sqlite
       nodejs
       docker
+      reattach-to-user-namespace
+      sass
       alacritty
     ];
 
