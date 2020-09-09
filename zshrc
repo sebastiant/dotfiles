@@ -37,3 +37,6 @@ if [ -n "${commands[fzf-share]}" ]; then
 fi
 
 if [ -e ~/.nix-profile/etc/profile.d/nix.sh ]; then . ~/.nix-profile/etc/profile.d/nix.sh; fi
+
+# direnv
+eval "$(direnv hook zsh)"
