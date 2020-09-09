@@ -35,3 +35,5 @@ if [ -n "${commands[fzf-share]}" ]; then
   bindkey -r '^T'
   bindkey '^B' fzf-history-widget
 fi
+
+if [ -e ~/.nix-profile/etc/profile.d/nix.sh ]; then . ~/.nix-profile/etc/profile.d/nix.sh; fi
