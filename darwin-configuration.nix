@@ -32,7 +32,7 @@
 
   fonts = {
     enableFontDir = true;
-    fonts = with pkgs; [ fira-code ];
+    fonts = with pkgs; [ fira-code iosevka];
   };
 
   programs.zsh.enable = true;
