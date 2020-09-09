@@ -28,6 +28,10 @@ setopt interactivecomments
 if which jenv > /dev/null; then eval "$(jenv init -)"; fi
 [ -f "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env" ] && source "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env"
 
-
 # fzf
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+if [ -n "${commands[fzf-share]}" ]; then
+  source "$(fzf-share)/key-bindings.zsh"
+  source "$(fzf-share)/completion.zsh"
+  bindkey -r '^T'
+  bindkey '^B' fzf-history-widget
+fi
