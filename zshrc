@@ -7,7 +7,7 @@ CASE_SENSITIVE="true"
 DISABLE_AUTO_TITLE="true"
 
 COMPLETION_WAITING_DOTS="true"
-plugins=(git)
+plugins=(git nix-shell)
 
 # User configuration
 alias ls="ls -lF"
