@@ -30,6 +30,8 @@
       reattach-to-user-namespace
       sass
       alacritty
+      ghc
+      cabal-install
     ];
 
   fonts = {
