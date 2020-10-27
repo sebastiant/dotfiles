@@ -24,10 +24,6 @@ source ~/.bin/tmuxinator.zsh
 
 setopt interactivecomments
 
-# GHC (Haskell)
-if which jenv > /dev/null; then eval "$(jenv init -)"; fi
-[ -f "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env" ] && source "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env"
-
 # fzf
 if [ -n "${commands[fzf-share]}" ]; then
   source "$(fzf-share)/key-bindings.zsh"
@@ -36,7 +32,12 @@ if [ -n "${commands[fzf-share]}" ]; then
   bindkey '^B' fzf-history-widget
 fi
 
+#Nix
 if [ -e ~/.nix-profile/etc/profile.d/nix.sh ]; then . ~/.nix-profile/etc/profile.d/nix.sh; fi
+
+# GHC (Haskell)
+[ -f "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env" ] && source "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env"
+
 
 # direnv
 eval "$(direnv hook zsh)"
