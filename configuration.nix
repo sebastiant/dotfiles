@@ -73,36 +73,46 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
    users.users.sebastian = {
      isNormalUser = true;
-     extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
+     extraGroups = [ "wheel" ];
+     shell = pkgs.zsh;
    };
+  nix.allowedUsers = [
+    "sebastian"
+  ];
 
+  fonts.fonts = with pkgs; [
+      iosevka
+  ];
+
+  environment.systemPackages = with pkgs; [
+    zsh
+    oh-my-zsh
+    vim
+    emacs
+    alacritty
+    git
+    wget
+    pciutils
+    killall
+    firefox
+    jetbrains.pycharm-community
+    vscode-with-extensions
+    skypeforlinux
+    zoom-us
+    slack
+    spotify
+  ];
     
-    environment.systemPackages = with pkgs; [
-      wget
-      vim
-      emacs
-      git
-      firefox
-    ];
-
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
-
-  # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
-
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
+  nixpkgs.config.allowUnfree = true;
+  programs.zsh = {
+    enable = true;
+    ohMyZsh = {
+      enable = true;
+      plugins = [ "git" "python" "man"];
+      theme = "agnoster";
+    };
+  };
 
   system.stateVersion = "20.09";
-
 }
 
