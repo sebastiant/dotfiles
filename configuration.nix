@@ -74,6 +74,9 @@
     vim
     emacs
     alacritty
+    python3Full
+    python38Packages.pip
+    postgresql
     git
     wget
     pciutils
