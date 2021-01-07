@@ -5,26 +5,14 @@
     [ 
       ./hardware-configuration.nix
     ];
+  boot.loader.systemd-boot.enable = true;
 
-    boot.loader.systemd-boot.enable = true;
 
-    # hardware
-    boot = {
-      kernelModules = [ "acpi_call" ];
-      extraModulePackages = with config.boot.kernelPackages; [ acpi_call ];
-    };
-    boot.blacklistedKernelModules = lib.optionals (!config.hardware.enableRedistributableFirmware) [
-      "ath3k"
-    ];
-    services.xserver.libinput.enable = lib.mkDefault true;
-    services.tlp.enable = lib.mkDefault true;
-    boot.kernelParams = [ "acpi_backlight=native" ];
-    boot.kernelPackages = lib.mkIf (lib.versionOlder pkgs.linux.version "5.2") pkgs.linuxPackages_latest;
+  services.xserver.libinput.enable = lib.mkDefault true;
+  networking.networkmanager.enable = true;
+  networking.hostName = "t14";
 
-    networking.networkmanager.enable = true;
-    networking.hostName = "t14";
-
-    time.timeZone = "Europe/Stockholm";
+  time.timeZone = "Europe/Stockholm";
 
   networking.useDHCP = false;
   networking.interfaces.enp0s20f0u2u1.useDHCP = true;
@@ -63,19 +51,15 @@
   # services.xserver.layout = "us";
   # services.xserver.xkbOptions = "eurosign:e";
 
-    sound.enable = true;
-    hardware.pulseaudio.enable = true;
-
-  # Enable touchpad support (enabled default in most desktopManager).
-  # services.xserver.libinput.enable = true;
-
+  sound.enable = true;
+  hardware.pulseaudio.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-   users.users.sebastian = {
-     isNormalUser = true;
-     extraGroups = [ "wheel" ];
-     shell = pkgs.zsh;
-   };
+  users.users.sebastian = {
+    isNormalUser = true;
+    extraGroups = [ "wheel" ];
+    shell = pkgs.zsh;
+  };
   nix.allowedUsers = [
     "sebastian"
   ];
