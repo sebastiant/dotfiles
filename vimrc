@@ -19,7 +19,6 @@ Plug 'vim-erlang/vim-erlang-omnicomplete'
 Plug 'vim-erlang/vim-erlang-tags'
 Plug 'vim-erlang/vim-erlang-skeletons'
 Plug 'nathanaelkane/vim-indent-guides'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 call plug#end()
 
