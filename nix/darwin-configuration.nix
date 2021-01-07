@@ -28,7 +28,6 @@
       nodejs
       docker
       reattach-to-user-namespace
-      sass
       alacritty
       ghc
       cabal-install
