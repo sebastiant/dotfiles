@@ -6,18 +6,11 @@ endif
 call plug#begin('~/.vim/plugged')
 
 Plug 'altercation/vim-colors-solarized'
-Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'scrooloose/nerdtree'
-Plug 'esneider/YUNOcommit.vim'
 Plug 'plasticboy/vim-markdown'
 Plug 'kien/ctrlp.vim'
-Plug 'vim-erlang/vim-erlang-compiler'
-Plug 'vim-erlang/vim-erlang-runtime'
-Plug 'vim-erlang/vim-erlang-omnicomplete'
-Plug 'vim-erlang/vim-erlang-tags'
-Plug 'vim-erlang/vim-erlang-skeletons'
 Plug 'nathanaelkane/vim-indent-guides'
 
 call plug#end()
