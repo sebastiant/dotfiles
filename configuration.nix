@@ -7,7 +7,6 @@
     ];
   boot.loader.systemd-boot.enable = true;
 
-
   services.xserver.libinput.enable = lib.mkDefault true;
   networking.networkmanager.enable = true;
   networking.hostName = "t14";
@@ -15,8 +14,6 @@
   time.timeZone = "Europe/Stockholm";
 
   networking.useDHCP = false;
-  networking.interfaces.enp0s20f0u2u1.useDHCP = true;
-  networking.interfaces.enp0s31f6.useDHCP = true;
   networking.interfaces.wlp0s20f3.useDHCP = true;
 
   # Select internationalisation properties.
