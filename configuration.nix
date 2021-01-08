@@ -71,12 +71,20 @@
     vim
     emacs
     alacritty
+    arandr
+    autorandr
+    feh
+    picom
+    xmobar
+    dmenu
     python3Full
     python38Packages.pip
     postgresql
     git
     wget
     pciutils
+    tree
+    ripgrep
     killall
     firefox
     jetbrains.pycharm-community
@@ -85,6 +93,10 @@
     zoom-us
     slack
     spotify
+    docker
+    docker-compose
+    ansible
+    direnv
   ];
     
   nixpkgs.config.allowUnfree = true;
