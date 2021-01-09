@@ -4,7 +4,6 @@
   imports =
     [ (modulesPath + "/installer/scan/not-detected.nix")
     ];
-
   boot = {
     initrd = {
       availableKernelModules = [
@@ -22,11 +21,12 @@
     ];
     extraModulePackages = with config.boot.kernelPackages; [ acpi_call ];
     kernelParams = [ "acpi_backlight=native" ];
-    kernelPackages = lib.mkIf (lib.versionOlder pkgs.linux.version "5.2") pkgs.linuxPackages_latest;
+    kernelPackages = pkgs.linuxPackages_latest;
     blacklistedKernelModules = lib.optionals (!config.hardware.enableRedistributableFirmware) [
       "ath3k"
     ];
   };
+  environment.systemPackages = with pkgs; [ alsa-firmware] ;
   services = {
     tlp.enable = lib.mkDefault true;
     xserver.libinput.enable = true;
