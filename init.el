@@ -87,6 +87,20 @@
   :custom (evil-collection-outline-bind-tab-p nil)
   :config (evil-collection-init))
 
+(use-package projectile
+  :diminish projectile-mode
+  :config (projectile-mode)
+  :bind-keymap
+  ("C-c p" . projectile-command-map)
+  :init
+  (when (file-directory-p "~/dev")
+    (setq projectile-project-search-path '("~/dev")))
+  (setq projectile-switch-project-action #'projectile-dired))t
+
+(use-package counsel-projectile
+  :after projectile)
+
+
 ;; Utf-8
 (prefer-coding-system 'utf-8)
 (set-default-coding-systems 'utf-8)
