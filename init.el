@@ -147,11 +147,19 @@
 (setq show-paren-delay 0.0)
 (show-paren-mode t)
 
-;; Theme
-(use-package color-theme-sanityinc-solarized
-  :init (load-theme 'sanityinc-solarized-dark t))
 
+;; Theme
+(use-package all-the-icons)
+(use-package doom-modeline
+  :init (doom-modeline-mode 1)
+  :custom ((mode-line-height 15)))
+(use-package doom-themes
   :config
+  (setq doom-themes-enable-bold t
+	doom-themes-enable-italic t)
+  (load-theme 'doom-solarized-dark t)
+  (doom-themes-visual-bell-config))
+
 
 ;; Haskell
 (use-package haskell-mode)
