@@ -160,6 +160,9 @@
   (load-theme 'doom-solarized-dark t)
   (doom-themes-visual-bell-config))
 
+;; transparency
+(set-frame-parameter (selected-frame) 'alpha '(96 . 80))
+(add-to-list 'default-frame-alist '(alpha . (96 . 80)))
 
 (use-package which-key
   :init (which-key-mode)
