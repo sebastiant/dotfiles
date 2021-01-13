@@ -186,6 +186,18 @@
   ;;(evil-define-key 'insert haskell-interactive-mode-map (kbd "RET") 'haskell-interactive-mode-return)
   ;;(evil-define-key 'normal haskell-interactive-mode-map (kbd "RET") 'haskell-interactive-mode-return))
 
+;; Python
+(use-package python-mode
+  :ensure nil
+  :custom
+  (python-shell-interpreter "python3"))
+(use-package pyvenv)
+(use-package lsp-pyright
+  :ensure t
+  :hook (python-mode . (lambda ()
+                          (require 'lsp-pyright)
+                          (lsp))))  ; or lsp-deferred
+
 ;; lsp
 (setq lsp-keymap-prefix "s-l")
 
@@ -203,6 +215,14 @@
 
 ;; yaml
 (use-package yaml-mode)
+(use-package lsp-python-ms
+  :ensure t
+  :hook (python-mode . (lambda ()
+                         (require 'lsp-python-ms)
+                         (lsp)))
+  :init
+  (setq lsp-python-ms-executable (executable-find "python-language-server")))
+
 
 ;; Docker
 (use-package dockerfile-mode)
