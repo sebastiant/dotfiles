@@ -161,6 +161,11 @@
   (doom-themes-visual-bell-config))
 
 
+(use-package which-key
+  :init (which-key-mode)
+  :diminish which-key-mode
+  :config (setq which-key-idle-delay 1))
+
 ;; Haskell
 (use-package haskell-mode)
 (use-package hindent
