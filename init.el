@@ -167,9 +167,25 @@
   :config (setq which-key-idle-delay 1))
 
 ;; Haskell
-(use-package haskell-mode)
 (use-package hindent
-  :init (add-hook 'haskell-mode-hook #'hindent-mode))
+  :init
+  (setq hindent-style "johan-tibell"))
+(use-package haskell-mode
+  :init
+  (setq
+    haskell-process-type 'ghci
+    haskell-interactive-popup-errors nil
+    haskell-process-log t
+    )
+  :config
+  (add-hook 'haskell-mode-hook 'haskell-indent-mode)
+  (add-hook 'haskell-mode-hook 'interactive-haskell-mode)
+  (add-hook 'haskell-mode-hook 'haskell-doc-mode)
+  (add-hook 'haskell-mode-hook 'hindent-mode))
+  ;;(evil-define-key 'normal error-mode-map (kbd "RET") 'haskell-interactive-mode-return)
+  ;;(evil-define-key 'insert haskell-interactive-mode-map (kbd "RET") 'haskell-interactive-mode-return)
+  ;;(evil-define-key 'normal haskell-interactive-mode-map (kbd "RET") 'haskell-interactive-mode-return))
+
 ;; lsp
 (setq lsp-keymap-prefix "s-l")
 
