@@ -147,6 +147,14 @@
 (setq show-paren-delay 0.0)
 (show-paren-mode t)
 
+;; Packages without configuration
+(dolist (package '(nix-mode
+		   nginx-mode
+		   markdown-mode
+		   yaml-mode
+		   dockerfile-mode
+		   dockerfile-mode))
+  (use-package package))
 
 ;; Theme
 (use-package all-the-icons)
@@ -216,8 +224,6 @@
 (use-package dap-mode)
 
 
-;; yaml
-(use-package yaml-mode)
 (use-package lsp-python-ms
   :ensure t
   :hook (python-mode . (lambda ()
@@ -227,9 +233,13 @@
   (setq lsp-python-ms-executable (executable-find "python-language-server")))
 
 
-;; Docker
-(use-package dockerfile-mode)
 
 (custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(custom-safe-themes
+   '("5d09b4ad5649fea40249dd937eaaa8f8a229db1cec9a1a0ef0de3ccf63523014" "990e24b406787568c592db2b853aa65ecc2dcd08146c0d22293259d400174e37" default))
  '(package-selected-packages
-   '(dockerfile-mode yaml-mode hindent haskell-mode telephone-line color-theme-sanityinc-solarized evil rainbow-delimiters magit helm use-package)))
+   '(projectile evil-collection lsp-pyright lsp-python-ms dap-mode lsp-treemacs lsp-ivy lsp-ui python-mode which-key all-the-icons-ivy doom-modeline doom-themes markdown-mode nginx-mode nix-mode dockerfile-mode yaml-mode hindent haskell-mode color-theme-sanityinc-solarized evil rainbow-delimiters magit helm use-package)))
