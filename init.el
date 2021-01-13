@@ -17,6 +17,9 @@
 (scroll-bar-mode -1)
 (setq initial-scratch-message nil)
 
+;; Move betweeen windows using M-<left/right/up/down>
+(windmove-default-keybindings 'meta)
+
 (use-package ivy
   :diminish
   :bind (("C-s" . swiper)
