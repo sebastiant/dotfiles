@@ -53,8 +53,16 @@
 (add-hook 'prog-mode-hook #'rainbow-delimiters-mode))
 
 ;; Evil-mode
+(defun st/evil-hook ()
+  (dolist (mode '(custom-mode
+		  eshell-mode
+		  git-rebase-mode
+		  term-mode))
+    (add-to-list 'evil-emacs-state-modes mode)))
 (use-package evil
   :init
+  (setq evil-want-integration t)
+  (setq evil-want-keybinding nil)
   (setq evil-search-module 'evil-search)
   (setq evil-ex-complete-emacs-commands nil)
   (setq evil-vsplit-window-right t)
@@ -62,8 +70,19 @@
   (setq evil-shift-round nil)
   (setq evil-want-C-u-scroll t)
   :config
-  (evil-mode)
+  (add-hook 'evil-mode-hook 'st/evil-hook)
+  (evil-mode 1)
+  (define-key evil-insert-state-map (kbd "C-g") 'evil-normal-state)
+  (define-key evil-motion-state-map "h" nil)
+  (define-key evil-motion-state-map "l" 'evil-backward-char)
+  (define-key evil-motion-state-map ";" 'evil-forward-char)
+  (define-key evil-motion-state-map "ö" 'evil-forward-char)
   (define-key evil-normal-state-map (kbd ", w") 'evil-window-vsplit))
+
+(use-package evil-collection
+  :after evil
+  :custom (evil-collection-outline-bind-tab-p nil)
+  :config (evil-collection-init))
 
 ;; Utf-8
 (prefer-coding-system 'utf-8)
