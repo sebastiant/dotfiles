@@ -170,6 +170,20 @@
 (use-package haskell-mode)
 (use-package hindent
   :init (add-hook 'haskell-mode-hook #'hindent-mode))
+;; lsp
+(setq lsp-keymap-prefix "s-l")
+
+(use-package lsp-mode
+    :hook ((python-mode . lsp)
+            (lsp-mode . lsp-enable-which-key-integration))
+    :commands lsp)
+;; optionally
+(use-package lsp-ui :commands lsp-ui-mode)
+;; if you are ivy user
+(use-package lsp-ivy :commands lsp-ivy-workspace-symbol)
+(use-package lsp-treemacs :commands lsp-treemacs-errors-list)
+(use-package dap-mode)
+
 
 ;; yaml
 (use-package yaml-mode)
