@@ -81,6 +81,7 @@
     xmobar
     dmenu
     stalonetray
+    jdk14
     python3Full
     python38Packages.pip
     postgresql
