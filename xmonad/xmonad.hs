@@ -16,7 +16,7 @@ myFocusFollowsMouse = False
 myClickJustFocuses = False
 myBorderWidth   = 4
 myModMask       = mod4Mask
-myWorkspaces    = map show [1..9]
+myWorkspaces    = ["dev", "web", "com"] ++ map show [3..9]
 myNormalBorderColor  = "#dddddd"
 myFocusedBorderColor = "#2000e0"
 xmobarCurrentWorkspaceColor = "#ff0000"
@@ -77,6 +77,7 @@ myManageHook = composeAll
 
 main = do
     xmobarproc <- spawnPipe "xmobar ~/.xmonad/xmobar.hs"
+    spawnPipe "stalonetray"
     xmonad $ docks $ defaults {
       logHook = dynamicLogWithPP $ xmobarPP {
           ppOutput = hPutStrLn xmobarproc

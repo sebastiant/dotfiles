@@ -5,7 +5,7 @@ Config { font = "xft:iosevka-regular:pixelSize=14:antialias=true"
        , bgColor = "black"
        , fgColor = "grey"
        , alpha = 255
-       , position = Top
+       , position = TopP 0 225
        , textOffset = -1
        , iconOffset = -1
        , lowerOnStart = True
@@ -27,6 +27,6 @@ Config { font = "xft:iosevka-regular:pixelSize=14:antialias=true"
                     ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = " %StdinReader% }{%kbd% | <fc=#ee9a00>%date%</fc> | %wlp0s20f3% | %cpu% | %memory% %swap% "
+       , template = " %StdinReader% }{%kbd% | %date% | %wlp0s20f3% | %cpu% | %memory% %swap% "
        }
 

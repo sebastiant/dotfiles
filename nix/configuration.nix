@@ -77,6 +77,7 @@
     picom
     xmobar
     dmenu
+    stalonetray
     python3Full
     python38Packages.pip
     postgresql
