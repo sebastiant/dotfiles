@@ -125,7 +125,7 @@
 (global-auto-revert-mode t)
 
 ;; Font and ligatures
-(set-frame-font "Iosevka 15" t)
+(set-frame-font "Iosevka 18" t)
 (if (fboundp 'mac-auto-operator-composition-mode)
     (mac-auto-operator-composition-mode t))
 
