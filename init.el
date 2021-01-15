@@ -95,7 +95,7 @@
   :init
   (when (file-directory-p "~/dev")
     (setq projectile-project-search-path '("~/dev")))
-  (setq projectile-switch-project-action #'projectile-dired))t
+  (setq projectile-switch-project-action #'projectile-dired))
 
 (use-package counsel-projectile
   :config (counsel-projectile-mode))
@@ -198,19 +198,25 @@
 
 ;; Python
 (use-package python-mode
-  :ensure nil
+  :hook (python-mode . lsp-deferred)
   :custom
-  (python-shell-interpreter "python3"))
-(use-package pyvenv)
-(use-package lsp-pyright
-  :ensure t
-  :hook (python-mode . (lambda ()
-                          (require 'lsp-pyright)
-                          (lsp))))  ; or lsp-deferred
+  (python-shell-interpreter "python3")
+  (dap-python-executable "python3")
+  :config
+  (require 'dap-python))
+(use-package pyvenv
+  :config (pyvenv-mode 1))
+(defun projectile-pyenv-mode-set ()
+  "Set pyenv version matching project name."
+  (let ((project (projectile-project-name)))
+    (if (member project (pyenv-mode-versions))
+        (pyenv-mode-set project)
+      (pyenv-mode-unset))))
+
+(add-hook 'projectile-after-switch-project-hook 'projectile-pyenv-mode-set)
 
 ;; lsp
 (setq lsp-keymap-prefix "s-l")
-
 (use-package lsp-mode
     :hook ((python-mode . lsp)
             (lsp-mode . lsp-enable-which-key-integration))
@@ -222,23 +228,13 @@
 (use-package lsp-treemacs :commands lsp-treemacs-errors-list)
 (use-package dap-mode)
 
-
 (use-package lsp-python-ms
   :ensure t
+  :init (setq lsp-python-ms-auto-install-server t)
   :hook (python-mode . (lambda ()
-                         (require 'lsp-python-ms)
-                         (lsp)))
-  :init
-  (setq lsp-python-ms-executable (executable-find "python-language-server")))
-
-
+                          (require 'lsp-python-ms))))
 
 (custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(custom-safe-themes
-   '("5d09b4ad5649fea40249dd937eaaa8f8a229db1cec9a1a0ef0de3ccf63523014" "990e24b406787568c592db2b853aa65ecc2dcd08146c0d22293259d400174e37" default))
  '(package-selected-packages
-   '(counsel-projectile projectile evil-collection lsp-pyright lsp-python-ms dap-mode lsp-treemacs lsp-ivy lsp-ui python-mode which-key all-the-icons-ivy doom-modeline doom-themes markdown-mode nginx-mode nix-mode dockerfile-mode yaml-mode hindent haskell-mode color-theme-sanityinc-solarized evil rainbow-delimiters magit helm use-package)))
+   (quote
+    (lsp-python-ms dap-mode lsp-treemacs lsp-ivy lsp-ui lsp-mode pyvenv python-mode haskell-mode hindent which-key doom-themes doom-modeline all-the-icons counsel-projectile projectile evil-collection evil rainbow-delimiters magit counsel ivy use-package))))
