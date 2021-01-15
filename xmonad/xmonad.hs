@@ -88,7 +88,7 @@ main = do
       , layoutHook = avoidStruts $ myLayout
       , startupHook = do
           spawnOnce "feh --bg-scale ~/Pictures/wallpapers/active.jpg"
-          spawnOnce "picom -CG --config ~/.config/picom.conf"
+          spawnOnce "picom --config ~/.config/picom.conf"
           setWMName "LG3D"
       , handleEventHook = mempty
           
