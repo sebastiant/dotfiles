@@ -89,16 +89,25 @@
   :custom (evil-collection-outline-bind-tab-p nil)
   :config (evil-collection-init))
 
+(use-package pyvenv
+  :init (setenv "WORKON_HOME" "~/.pyenv/versions")
+  :config (pyvenv-mode 1))
+(defun projectile-pyenv-mode-set ()
+  "Set pyenv version matching project name."
+  (let ((project (projectile-project-name)))
+    (if (member project (pyvenv-virtualenv-list t))
+        (pyvenv-workon project)
+      (pyvenv-mode-unset))))
 (use-package projectile
   :diminish projectile-mode
   :config (projectile-mode)
+  :hook (projectile-after-switch-project . projectile-pyenv-mode-set)
   :bind-keymap
   ("C-c p" . projectile-command-map)
   :init
   (when (file-directory-p "~/dev")
     (setq projectile-project-search-path '("~/dev")))
   (setq projectile-switch-project-action #'projectile-dired))
-
 (use-package counsel-projectile
   :config (counsel-projectile-mode))
 
@@ -206,16 +215,6 @@
   (dap-python-executable "python3")
   :config
   (require 'dap-python))
-(use-package pyvenv
-  :config (pyvenv-mode 1))
-(defun projectile-pyenv-mode-set ()
-  "Set pyenv version matching project name."
-  (let ((project (projectile-project-name)))
-    (if (member project (pyenv-mode-versions))
-        (pyenv-mode-set project)
-      (pyenv-mode-unset))))
-
-(add-hook 'projectile-after-switch-project-hook 'projectile-pyenv-mode-set)
 
 ;; lsp
 (setq lsp-keymap-prefix "s-l")
