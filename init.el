@@ -20,6 +20,8 @@
 ;; Move betweeen windows using M-<left/right/up/down>
 (windmove-default-keybindings 'meta)
 
+(use-package no-littering)
+
 (use-package ivy
   :diminish
   :bind (("C-s" . swiper)
@@ -235,6 +237,11 @@
                           (require 'lsp-python-ms))))
 
 (custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (lsp-python-ms dap-mode lsp-treemacs lsp-ivy lsp-ui lsp-mode pyvenv python-mode haskell-mode hindent which-key doom-themes doom-modeline all-the-icons counsel-projectile projectile evil-collection evil rainbow-delimiters magit counsel ivy use-package))))
+    (no-littering lsp-python-ms dap-mode lsp-treemacs lsp-ivy lsp-ui lsp-mode pyvenv python-mode haskell-mode hindent which-key doom-themes doom-modeline all-the-icons counsel-projectile projectile evil-collection evil rainbow-delimiters magit counsel ivy use-package)))
+ '(pyvenv-mode t))
