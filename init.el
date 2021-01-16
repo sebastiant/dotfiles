@@ -215,18 +215,21 @@
   (dap-python-executable "python3")
   :config
   (require 'dap-python))
-
-;; lsp
-(setq lsp-keymap-prefix "s-l")
+(defun st/lsp-mode-setup ()
+  (setq lsp-headerline-breadcrumb-segments '(path-up-to-project file symbols))
+  (lsp-headerline-breadcrumb-mode))
 (use-package lsp-mode
-    :hook ((python-mode . lsp)
-            (lsp-mode . lsp-enable-which-key-integration))
-    :commands lsp)
-;; optionally
-(use-package lsp-ui :commands lsp-ui-mode)
-;; if you are ivy user
+  :commands (lsp lsp-deferred)
+  :hook (lsp-mode . st/lsp-mode-setup)
+  :init (setq lsp-keymap-prefix "C-c l")
+  :config (lsp-enable-which-key-integration t))
+(use-package lsp-ui
+  :hook (lsp-mode . lsp-ui-mode)
+  :custom (lsp-ui-doc-positoin 'bottom))
 (use-package lsp-ivy :commands lsp-ivy-workspace-symbol)
-(use-package lsp-treemacs :commands lsp-treemacs-errors-list)
+(use-package lsp-treemacs
+  :after lsp
+  :commands lsp-treemacs-errors-list)
 (use-package dap-mode)
 
 (use-package lsp-python-ms
