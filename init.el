@@ -166,7 +166,8 @@
 		   markdown-mode
 		   yaml-mode
 		   dockerfile-mode
-		   dockerfile-mode))
+		   dockerfile-mode
+		   js-mode))
   (use-package package))
 
 ;; Theme
