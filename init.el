@@ -229,7 +229,7 @@
   :config (lsp-enable-which-key-integration t))
 (use-package lsp-ui
   :hook (lsp-mode . lsp-ui-mode)
-  :custom (lsp-ui-doc-positoin 'bottom))
+  :custom (lsp-ui-doc-position 'bottom))
 (use-package lsp-ivy :commands lsp-ivy-workspace-symbol)
 (use-package lsp-treemacs
   :after lsp
