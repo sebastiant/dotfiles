@@ -21,6 +21,9 @@
 (windmove-default-keybindings 'meta)
 
 (use-package no-littering)
+(setq create-lockfiles nil)
+(setq auto-save-file-name-transforms
+      `((".*" ,(no-littering-expand-var-file-name "auto-save/") t)))
 
 (use-package ivy
   :diminish
