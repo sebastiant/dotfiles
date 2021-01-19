@@ -95,16 +95,16 @@
 (use-package pyvenv
   :init (setenv "WORKON_HOME" "~/.pyenv/versions")
   :config (pyvenv-mode 1))
-(defun projectile-pyenv-mode-set ()
-  "Set pyenv version matching project name."
+(defun st/pyvenv-projectile-mode-hook ()
+  "Activate pyvenv for matching project name."
   (let ((project (projectile-project-name)))
-    (if (member project (pyvenv-virtualenv-list t))
-        (pyvenv-workon project)
-      (pyvenv-mode-unset))))
+    (when (member project (pyvenv-virtualenv-list t))
+      (pyvenv-workon project))))
+
 (use-package projectile
   :diminish projectile-mode
   :config (projectile-mode)
-  :hook (projectile-after-switch-project . projectile-pyenv-mode-set)
+  :hook (projectile-after-switch-project . st/pyvenv-projectile-mode-hook)
   :bind-keymap
   ("C-c p" . projectile-command-map)
   :init
