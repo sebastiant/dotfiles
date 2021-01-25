@@ -25,6 +25,11 @@
 (setq auto-save-file-name-transforms
       `((".*" ,(no-littering-expand-var-file-name "auto-save/") t)))
 
+(use-package rainbow-delimiters
+:commands (rainbow-delimiters-mode)
+:init
+(add-hook 'prog-mode-hook #'rainbow-delimiters-mode))
+
 (use-package ivy
   :diminish
   :bind (("C-s" . swiper)
@@ -50,15 +55,15 @@
          ("C-M-j" . counsel-find-file)
          :map minibuffer-local-map
          ("C-r" . 'counsel-minibuffer-history)))
-;; magit
+
+(use-package ivy-prescient
+  :ensure t
+  :after counsel
+  :config (ivy-prescient-mode 1))
+
 (use-package magit
   :init (global-set-key (kbd "C-x g") 'magit-status))
 
-;; Rainbow-delimeters
-(use-package rainbow-delimiters
-:commands (rainbow-delimiters-mode)
-:init
-(add-hook 'prog-mode-hook #'rainbow-delimiters-mode))
 
 ;; Evil-mode
 (defun st/evil-hook ()
@@ -248,5 +253,4 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (no-littering lsp-python-ms dap-mode lsp-treemacs lsp-ivy lsp-ui lsp-mode pyvenv python-mode haskell-mode hindent which-key doom-themes doom-modeline all-the-icons counsel-projectile projectile evil-collection evil rainbow-delimiters magit counsel ivy use-package)))
- '(pyvenv-mode t))
+    (ivy-prescient web-mode company-anaconda company-jedi company-box company no-littering lsp-python-ms dap-mode lsp-treemacs lsp-ivy lsp-ui lsp-mode pyvenv python-mode haskell-mode hindent which-key doom-themes doom-modeline all-the-icons counsel-projectile projectile evil-collection evil rainbow-delimiters magit counsel ivy use-package))))
