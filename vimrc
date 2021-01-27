@@ -114,12 +114,6 @@ map <Right> <Nop>
 map <Up> <Nop>
 map <Down> <Nop>
 
-" jkl; for navigation
-noremap l h
-noremap ; l
-nnoremap <C-l> <C-w>h
-nnoremap <C-;> <C-w>l
-
 " , for custom commands
 let mapleader = ","
 " clear search

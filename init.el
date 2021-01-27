@@ -90,10 +90,6 @@
   (add-hook 'evil-mode-hook 'st/evil-hook)
   (evil-mode 1)
   (define-key evil-insert-state-map (kbd "C-g") 'evil-normal-state)
-  (define-key evil-motion-state-map "h" nil)
-  (define-key evil-motion-state-map "l" 'evil-backward-char)
-  (define-key evil-motion-state-map ";" 'evil-forward-char)
-  (define-key evil-motion-state-map "ö" 'evil-forward-char)
   (define-key evil-normal-state-map (kbd ", w") 'evil-window-vsplit))
 
 (use-package evil-collection
