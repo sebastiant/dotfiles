@@ -64,6 +64,10 @@
 (use-package magit
   :init (global-set-key (kbd "C-x g") 'magit-status))
 
+(setq ediff-window-setup-function 'ediff-setup-windows-plain)
+(setq ediff-split-window-function 'split-window-horizontally)
+(winner-mode)
+(add-hook 'ediff-after-quit-hook-internal 'winner-undo)
 
 ;; Evil-mode
 (defun st/evil-hook ()
