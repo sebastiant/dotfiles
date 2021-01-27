@@ -241,10 +241,10 @@
   :commands lsp-treemacs-errors-list)
 (use-package dap-mode)
 
-(use-package lsp-python-ms
-  :init (setq lsp-python-ms-auto-install-server t)
+(use-package lsp-pyright
   :hook (python-mode . (lambda ()
-                          (require 'lsp-python-ms))))
+                          (require 'lsp-pyright)
+                          (lsp-deferred))))
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -253,4 +253,4 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (ivy-prescient web-mode company-anaconda company-jedi company-box company no-littering lsp-python-ms dap-mode lsp-treemacs lsp-ivy lsp-ui lsp-mode pyvenv python-mode haskell-mode hindent which-key doom-themes doom-modeline all-the-icons counsel-projectile projectile evil-collection evil rainbow-delimiters magit counsel ivy use-package))))
+    (lsp-pyright ivy-prescient web-mode company-anaconda company-jedi company-box company no-littering dap-mode lsp-treemacs lsp-ivy lsp-ui lsp-mode pyvenv python-mode haskell-mode hindent which-key doom-themes doom-modeline all-the-icons counsel-projectile projectile evil-collection evil rainbow-delimiters magit counsel ivy use-package))))
