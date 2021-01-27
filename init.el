@@ -241,6 +241,9 @@
   :commands lsp-treemacs-errors-list)
 (use-package dap-mode)
 
+(use-package web-mode
+  :config (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode)))
+
 (use-package lsp-pyright
   :hook (python-mode . (lambda ()
                           (require 'lsp-pyright)
