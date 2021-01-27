@@ -244,6 +244,21 @@
 (use-package web-mode
   :config (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode)))
 
+
+(use-package company
+  :after lsp-mode
+  :hook (lsp-mode . company-mode)
+  :bind (:map company-active-map
+         ("<tab>" . company-complete-selection))
+        (:map lsp-mode-map
+         ("<tab>" . company-indent-or-complete-common))
+  :custom
+  (company-minimum-prefix-length 1)
+  (company-idle-delay 0.0))
+
+(use-package company-box
+  :hook (company-mode . company-box-mode))
+
 (use-package lsp-pyright
   :hook (python-mode . (lambda ()
                           (require 'lsp-pyright)
@@ -256,4 +271,4 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (lsp-pyright ivy-prescient web-mode company-anaconda company-jedi company-box company no-littering dap-mode lsp-treemacs lsp-ivy lsp-ui lsp-mode pyvenv python-mode haskell-mode hindent which-key doom-themes doom-modeline all-the-icons counsel-projectile projectile evil-collection evil rainbow-delimiters magit counsel ivy use-package))))
+    (lsp-pyright ivy-prescient web-mode company-box company no-littering dap-mode lsp-treemacs lsp-ivy lsp-ui lsp-mode pyvenv python-mode haskell-mode hindent which-key doom-themes doom-modeline all-the-icons counsel-projectile projectile evil-collection evil rainbow-delimiters magit counsel ivy use-package))))
