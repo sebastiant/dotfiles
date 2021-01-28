@@ -59,7 +59,9 @@
 (use-package ivy-prescient
   :ensure t
   :after counsel
-  :config (ivy-prescient-mode 1))
+  :config
+  (prescient-persist-mode 1)
+  (ivy-prescient-mode 1))
 
 (use-package magit
   :init (global-set-key (kbd "C-x g") 'magit-status))
