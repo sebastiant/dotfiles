@@ -7,7 +7,7 @@ CASE_SENSITIVE="true"
 DISABLE_AUTO_TITLE="true"
 
 COMPLETION_WAITING_DOTS="true"
-plugins=(git nix-shell)
+plugins=(git tmuxinator nix-shell)
 
 # User configuration
 alias ls="ls -lF"
@@ -18,7 +18,6 @@ export EDITOR='vim'
 export TERM="xterm-256color"
 
 source $ZSH/oh-my-zsh.sh
-source ~/.bin/tmuxinator.zsh
 
 setopt interactivecomments
 
