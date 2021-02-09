@@ -42,6 +42,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm              , xK_period), sendMessage (IncMasterN (-1)))
     , ((modm .|. shiftMask, xK_y     ), io (exitWith ExitSuccess))
     , ((modm              , xK_y     ), spawn "xmonad --recompile; xmonad --restart")
+    , ((modm .|. shiftMask, xK_l     ), spawn "dm-tool lock")
     , ((modm .|. shiftMask, xK_slash ), spawn ("echo \"" ++ help ++ "\" | xmessage -file -"))
     , ((modm,               xK_x     ), spawn ("(setxkbmap -query | grep -q \"layout:\\s\\+us\") && setxkbmap se || setxkbmap us"))
     ]
