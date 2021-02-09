@@ -40,8 +40,8 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm,               xK_t     ), withFocused $ windows . W.sink)
     , ((modm              , xK_comma ), sendMessage (IncMasterN 1))
     , ((modm              , xK_period), sendMessage (IncMasterN (-1)))
-    , ((modm .|. shiftMask, xK_q     ), io (exitWith ExitSuccess))
-    , ((modm              , xK_q     ), spawn "xmonad --recompile; xmonad --restart")
+    , ((modm .|. shiftMask, xK_y     ), io (exitWith ExitSuccess))
+    , ((modm              , xK_y     ), spawn "xmonad --recompile; xmonad --restart")
     , ((modm .|. shiftMask, xK_slash ), spawn ("echo \"" ++ help ++ "\" | xmessage -file -"))
     , ((modm,               xK_x     ), spawn ("(setxkbmap -query | grep -q \"layout:\\s\\+us\") && setxkbmap se || setxkbmap us"))
     ]
@@ -91,7 +91,6 @@ main = do
           spawnOnce "picom --config ~/.config/picom.conf"
           setWMName "LG3D"
       , handleEventHook = mempty
-          
     }
 
 defaults = def {
