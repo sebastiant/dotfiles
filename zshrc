@@ -14,7 +14,6 @@ alias ls="ls -lF"
 alias bat="batcat"
 
 export PATH="/run/current-system/sw/bin:/usr/local/bin:/bin:/usr/sbin:/sbin:/usr/bin:/usr/local/git/bin:/usr/texbin:$HOME/.local/bin"
-export JAVA_HOME="$(/usr/libexec/java_home -v 1.8)"
 export EDITOR='vim'
 export TERM="xterm-256color"
 
