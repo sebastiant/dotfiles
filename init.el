@@ -67,6 +67,8 @@
 
 (use-package magit
   :init (global-set-key (kbd "C-x g") 'magit-status))
+(use-package git-gutter
+  :init (global-git-gutter-mode))
 
 (setq ediff-window-setup-function 'ediff-setup-windows-plain)
 (setq ediff-split-window-function 'split-window-horizontally)
