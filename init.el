@@ -176,9 +176,7 @@
 		   nginx-mode
 		   markdown-mode
 		   yaml-mode
-		   dockerfile-mode
-		   dockerfile-mode
-		   js-mode))
+		   dockerfile-mode))
   (use-package package))
 
 ;; Theme
@@ -250,6 +248,15 @@
 (use-package web-mode
   :config (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode)))
 
+(use-package js2-mode
+  :mode "\\.js\\'"
+  :hook (js2-mode . lsp-deferred))
+
+(use-package typescript-mode
+  :mode "\\.ts\\'"
+  :hook (typescript-mode . lsp-deferred)
+  :config
+  (setq typescript-indent-level 2))
 
 (use-package company
   :after lsp-mode
@@ -278,4 +285,4 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(org-mode lsp-pyright ivy-prescient web-mode company-box company no-littering dap-mode lsp-treemacs lsp-ivy lsp-ui lsp-mode pyvenv python-mode haskell-mode hindent which-key doom-themes doom-modeline all-the-icons counsel-projectile projectile evil-collection evil rainbow-delimiters magit counsel ivy use-package)))
+   '(js2-mode typescript-mode git-gutter org-mode lsp-pyright ivy-prescient web-mode company-box company no-littering dap-mode lsp-treemacs lsp-ivy lsp-ui lsp-mode pyvenv python-mode haskell-mode hindent which-key doom-themes doom-modeline all-the-icons counsel-projectile projectile evil-collection evil rainbow-delimiters magit counsel ivy use-package)))
