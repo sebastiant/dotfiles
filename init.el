@@ -246,7 +246,11 @@
 (use-package dap-mode)
 
 (use-package web-mode
-  :config (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode)))
+  :config (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+  :custom
+  (web-mode-markup-indent-offset 2)
+  (web-mode-css-indent-offset 2)
+  (web-mode-code-indent-offset 2))
 
 (use-package js2-mode
   :mode "\\.js\\'"
