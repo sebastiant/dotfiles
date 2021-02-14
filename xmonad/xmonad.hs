@@ -88,6 +88,7 @@ main = do
       , manageHook = manageDocks <+> myManageHook
       , layoutHook = avoidStruts $ myLayout
       , startupHook = do
+          spawnOnce "dunst"
           spawnOnce "feh --bg-scale ~/Pictures/wallpapers/active.jpg"
           spawnOnce "picom --config ~/.config/picom.conf"
           setWMName "LG3D"

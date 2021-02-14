@@ -1,0 +1,69 @@
+[global]
+    monitor = 0
+    follow = keyboard
+    geometry = "600x50-50+65"
+    indicate_hidden = yes
+    shrink = yes
+    transparency = 10
+    notification_height = 0
+    separator_height = 2
+    padding = 8
+    horizontal_padding = 16
+    frame_width = 3
+    frame_color = "#aaaaaa"
+    separator_color = frame
+    sort = yes
+    idle_threshold = 120
+    font = Iosevka Regular 18
+    line_height = 4
+    markup = full
+    format = "<b>%s</b>\n%b"
+    alignment = left
+    vertical_alignment = center
+    show_age_threshold = 60
+    word_wrap = yes
+    ellipsize = middle
+    ignore_newline = no
+    stack_duplicates = true
+    hide_duplicate_count = false
+    show_indicators = yes
+    icon_position = left
+    min_icon_size = 0
+    max_icon_size = 32
+    icon_path = /usr/share/icons/Adwaita/48x48/status/:/usr/share/icons/Adwaita/48x48/devices/:/usr/share/icons/Adwaita/48x48/legacy/
+
+    sticky_history = yes
+    history_length = 20
+    dmenu = /usr/bin/dmenu -p dunst:
+    browser = /usr/bin/sensible-browser
+    always_run_script = true
+    title = Dunst
+    class = Dunst
+    startup_notification = false
+    verbosity = mesg
+    corner_radius = 0
+    ignore_dbusclose = false
+    force_xinerama = false
+    mouse_left_click = close_current
+    mouse_middle_click = do_action, close_current
+    mouse_right_click = close_all
+[experimental]
+    per_monitor_dpi = false
+[shortcuts]
+    close = ctrl+space
+    close_all = ctrl+shift+space
+    history = ctrl+grave
+    context = ctrl+shift+period
+[urgency_low]
+    background = "#222222"
+    foreground = "#888888"
+    timeout = 10
+[urgency_normal]
+    background = "#285577"
+    foreground = "#ffffff"
+    timeout = 10
+[urgency_critical]
+    background = "#900000"
+    foreground = "#ffffff"
+    frame_color = "#ff0000"
+    timeout = 0
