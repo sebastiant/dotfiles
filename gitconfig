@@ -3,6 +3,7 @@
 	email = sebastian.tunstig@gmail.com
 [diff]
 	tool = vimdiff
+	colorMoved = zebra
 [merge]
 	tool = vimdiff
 	keepBackup = false
@@ -34,3 +35,7 @@
 	dsp = "!git --no-pager diff --staged"
 	master = checkout master
 	alias = !git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\\t => \\2/' | sort
+[fetch]
+	prune = true
+[pull]
+	rebase = true
