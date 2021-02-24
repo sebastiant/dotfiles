@@ -71,11 +71,13 @@ myLayout = tiled ||| Mirror tiled ||| Full
      ratio   = 1/2
      delta   = 3/100
 
+windowSpacing = spacingRaw True (Border 5 5 5 5) True (Border 15 15 15 15) True
+
 main = do
     xmonad $ docks $ ewmh defaults {
         logHook = ewmhDesktopsLogHook
       , manageHook = manageDocks
-      , layoutHook = avoidStruts $ myLayout
+      , layoutHook = windowSpacing $ avoidStruts $ myLayout
       , startupHook = do
           spawn "sh .config/polybar/launch.sh"
           spawnOnce "dunst"
