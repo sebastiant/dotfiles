@@ -1,10 +1,12 @@
 import System.IO
 import XMonad
-import XMonad.Util.Run(spawnPipe)
-import XMonad.Util.SpawnOnce
 import XMonad.Hooks.DynamicLog
+import XMonad.Hooks.EwmhDesktops
 import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.SetWMName
+import XMonad.Layout.Spacing
+import XMonad.Util.Run(spawnPipe)
+import XMonad.Util.SpawnOnce
 import Data.Monoid
 import System.Exit
 
@@ -19,7 +21,6 @@ myModMask       = mod4Mask
 myWorkspaces    = ["dev", "web", "com"] ++ map show [3..9]
 myNormalBorderColor  = "#dddddd"
 myFocusedBorderColor = "#2000e0"
-xmobarCurrentWorkspaceColor = "#ff0000"
 
 myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     [ ((modm .|. shiftMask, xK_Return), spawn $ XMonad.terminal conf)
@@ -70,24 +71,13 @@ myLayout = tiled ||| Mirror tiled ||| Full
      ratio   = 1/2
      delta   = 3/100
 
-myManageHook = composeAll
-    [ className =? "MPlayer"        --> doFloat
-    , className =? "Gimp"           --> doFloat
-    , resource  =? "desktop_window" --> doIgnore
-    , resource  =? "kdesktop"       --> doIgnore ]
-
 main = do
-    xmobarproc <- spawnPipe "xmobar ~/.xmonad/xmobar.hs"
-    spawnPipe "stalonetray"
-    xmonad $ docks $ defaults {
-      logHook = dynamicLogWithPP $ xmobarPP {
-          ppOutput = hPutStrLn xmobarproc
-        , ppCurrent = xmobarColor xmobarCurrentWorkspaceColor ""
-        , ppOrder = \(ws:_:_) -> [ws]
-      }
-      , manageHook = manageDocks <+> myManageHook
+    xmonad $ docks $ ewmh defaults {
+        logHook = ewmhDesktopsLogHook
+      , manageHook = manageDocks
       , layoutHook = avoidStruts $ myLayout
       , startupHook = do
+          spawn "sh .config/polybar/launch.sh"
           spawnOnce "dunst"
           spawnOnce "feh --bg-scale ~/Pictures/wallpapers/active.jpg"
           spawnOnce "picom --config ~/.config/picom.conf"
