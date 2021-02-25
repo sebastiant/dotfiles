@@ -207,6 +207,11 @@
 (set-frame-parameter (selected-frame) 'alpha '(96 . 80))
 (add-to-list 'default-frame-alist '(alpha . (96 . 80)))
 
+(require 'ansi-color)
+(defun st/colorize-compilation-buffer ()
+ (ansi-color-apply-on-region (point-min) (point-max)))
+(add-hook 'compilation-filter-hook 'st/colorize-compilation-buffer)
+
 (use-package which-key
   :init (which-key-mode)
   :diminish which-key-mode
