@@ -250,8 +250,11 @@
 (use-package lsp-mode
   :commands (lsp lsp-deferred)
   :hook (lsp-mode . st/lsp-mode-setup)
-  :init (setq lsp-keymap-prefix "C-c l")
-  :config (lsp-enable-which-key-integration t))
+  :init
+  (setq lsp-keymap-prefix "C-c l")
+  (setq lsp-enable-file-watchers nil)
+  :config
+  (lsp-enable-which-key-integration t))
 (use-package lsp-ui
   :hook (lsp-mode . lsp-ui-mode)
   :custom (lsp-ui-doc-position 'bottom))
