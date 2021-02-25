@@ -103,6 +103,18 @@
   :custom (evil-collection-outline-bind-tab-p nil)
   :config (evil-collection-init))
 
+(use-package dired
+  :ensure nil
+  :commands (dired dired-jump)
+  :bind (("C-x C-j" . dired-jump))
+  :custom ((dired-listing-switches "-agho --group-directories-first"))
+  :config
+  (evil-collection-define-key 'normal 'dired-mode-map
+    "h" 'dired-single-up-directory
+    "l" 'dired-single-buffer))
+(use-package dired-single
+  :commands (dired dired-jump))
+
 (use-package pyvenv
   :init (setenv "WORKON_HOME" "~/.pyenv/versions")
   :config (pyvenv-mode 1))
@@ -200,7 +212,11 @@
   :diminish which-key-mode
   :config (setq which-key-idle-delay 1))
 
-;; Haskell
+(use-package elixir-mode
+  :hook (elixir-mode . lsp-deferred)
+  :init (add-to-list 'exec-path "~/language-servers/elixir"))
+(use-package alchemist)
+
 (use-package hindent
   :init
   (setq hindent-style "johan-tibell"))
@@ -282,6 +298,10 @@
                           (lsp-deferred))))
 (use-package org
   :pin org)
+(use-package perspective
+  :config
+  (unless persp-mode
+    (persp-mode 1)))
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -289,4 +309,4 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(js2-mode typescript-mode git-gutter org-mode lsp-pyright ivy-prescient web-mode company-box company no-littering dap-mode lsp-treemacs lsp-ivy lsp-ui lsp-mode pyvenv python-mode haskell-mode hindent which-key doom-themes doom-modeline all-the-icons counsel-projectile projectile evil-collection evil rainbow-delimiters magit counsel ivy use-package)))
+   '(dired-single alchemist perspective elixir-mode js2-mode typescript-mode git-gutter org-mode lsp-pyright ivy-prescient web-mode company-box company no-littering dap-mode lsp-treemacs lsp-ivy lsp-ui lsp-mode pyvenv python-mode haskell-mode hindent which-key doom-themes doom-modeline all-the-icons counsel-projectile projectile evil-collection evil rainbow-delimiters magit counsel ivy use-package)))
