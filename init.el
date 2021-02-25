@@ -65,16 +65,6 @@
   (prescient-persist-mode 1)
   (ivy-prescient-mode 1))
 
-(use-package magit
-  :init (global-set-key (kbd "C-x g") 'magit-status))
-(use-package git-gutter
-  :init (global-git-gutter-mode))
-
-(setq ediff-window-setup-function 'ediff-setup-windows-plain)
-(setq ediff-split-window-function 'split-window-horizontally)
-(winner-mode)
-(add-hook 'ediff-after-quit-hook-internal 'winner-undo)
-
 ;; Evil-mode
 (defun st/evil-hook ()
   (dolist (mode '(custom-mode
@@ -114,6 +104,16 @@
     "l" 'dired-single-buffer))
 (use-package dired-single
   :commands (dired dired-jump))
+
+(use-package magit
+  :init (global-set-key (kbd "C-x g") 'magit-status))
+(use-package git-gutter
+  :init (global-git-gutter-mode))
+
+(setq ediff-window-setup-function 'ediff-setup-windows-plain)
+(setq ediff-split-window-function 'split-window-horizontally)
+(winner-mode)
+(add-hook 'ediff-after-quit-hook-internal 'winner-undo)
 
 (use-package pyvenv
   :init (setenv "WORKON_HOME" "~/.pyenv/versions")
