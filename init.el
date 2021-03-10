@@ -153,6 +153,8 @@
 (use-package dired-single
   :commands (dired dired-jump))
 
+(use-package vterm)
+
 (use-package magit
   :init (global-set-key (kbd "C-x g") 'magit-status))
 (use-package git-gutter
