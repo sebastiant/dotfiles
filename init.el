@@ -68,7 +68,52 @@
   (prescient-persist-mode 1)
   (ivy-prescient-mode 1))
 
-;; Evil-mode
+
+(use-package general
+  :after which-key
+  :config
+  (general-override-mode 1)
+  (general-create-definer tyrant-def
+    :states '(normal visual insert motion emacs)
+    :prefix "SPC"
+    :non-normal-prefix "C-SPC")
+  (tyrant-def
+    ""    nil
+
+    "b"   '(:ignore t :which-key "buffer")
+    "bb"  'persp-counsel-switch-buffer
+    "bd"  'persp-kill-buffer
+    "bs"  'save-buffer
+
+    "l"   '(:ignore t :which-key "lsp")
+    "ll"  (general-simulate-key "C-c l")
+    "ld"  'lsp-ui-peek-find-definitions
+    "lr"  'lsp-ui-peek-find-references
+
+    "v"   'persp-switch
+
+    "f"   '(:ignore t :which-key "files")
+    "ff"  'counsel-find-file
+
+    "g"   '(:ignore t :which-key "magit")
+    "gg"  'magit-status
+    "gb"  'magit-blame
+
+    "p"   '(:ignore t :which-key "projectile")
+    "pp"  'counsel-projectile-switch-project
+    "pf"  'counsel-projectile-find-file
+    "ps"  'counsel-projectile-rg
+    "pt"  'projectile-run-vterm
+
+    "s"   'swiper
+
+    "w"   '(:ignore t :which-key "window")
+    "ww"  'evil-window-next
+    "wd"  'delete-window
+    "ws"  'split-window-horizontally
+    "ww"  'evil-window-next
+    "wv"  'split-window-vertically))
+
 (defun st/evil-hook ()
   (dolist (mode '(custom-mode
 		  eshell-mode
