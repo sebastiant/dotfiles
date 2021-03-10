@@ -1,3 +1,4 @@
+import Graphics.X11.ExtraTypes.XF86
 import System.IO
 import XMonad
 import XMonad.Hooks.DynamicLog
@@ -55,6 +56,11 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     [((m .|. modm, key), screenWorkspace sc >>= flip whenJust (windows . f))
         | (key, sc) <- zip [xK_e, xK_w, xK_r] [0..]
         , (f, m) <- [(W.view, 0), (W.shift, shiftMask)]]
+    ++
+    [ ((0, xF86XK_AudioLowerVolume   ), spawn "pactl set-sink-volume @DEFAULT_SINK@ -5%")
+    , ((0, xF86XK_AudioRaiseVolume   ), spawn "pactl set-sink-volume @DEFAULT_SINK@ +5%")
+    , ((0,        xF86XK_AudioMute   ), spawn "pactl set-sink-mute @DEFAULT_SINK@ toggle")
+    ]
 
 myMouseBindings (XConfig {XMonad.modMask = modm}) = M.fromList $
     [ ((modm, button1), (\w -> focus w >> mouseMoveWindow w
