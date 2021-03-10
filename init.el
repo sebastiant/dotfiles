@@ -26,6 +26,9 @@
 (setq create-lockfiles nil)
 (setq auto-save-file-name-transforms
       `((".*" ,(no-littering-expand-var-file-name "auto-save/") t)))
+(use-package beacon
+  :config
+  (beacon-mode))
 
 (use-package rainbow-delimiters
 :commands (rainbow-delimiters-mode)
