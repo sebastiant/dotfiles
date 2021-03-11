@@ -71,11 +71,11 @@
 
 
 (use-package general
-  :after which-key
+  :after evil
   :config
   (general-override-mode 1)
   (general-create-definer tyrant-def
-    :states '(normal visual insert motion emacs)
+    :states '(normal visual insert motion emacs magit-mode-map)
     :prefix "SPC"
     :non-normal-prefix "C-SPC")
   (tyrant-def
