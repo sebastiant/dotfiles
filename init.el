@@ -22,10 +22,11 @@
 ;; Move betweeen windows using M-<left/right/up/down>
 (windmove-default-keybindings 'meta)
 
-(use-package no-littering)
-(setq create-lockfiles nil)
-(setq auto-save-file-name-transforms
+(use-package no-littering
+:config (setq auto-save-file-name-transforms
       `((".*" ,(no-littering-expand-var-file-name "auto-save/") t)))
+)
+(setq create-lockfiles nil)
 (use-package beacon
   :config
   (beacon-mode))

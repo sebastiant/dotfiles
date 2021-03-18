@@ -73,14 +73,15 @@
     oh-my-zsh
     vim
     emacs
+    ((emacsPackagesNgGen emacs).emacsWithPackages (epkgs: [
+      epkgs.vterm
+    ]))
     alacritty
     arandr
     autorandr
     feh
     picom
-    xmobar
     dmenu
-    stalonetray
     jdk14
     python3Full
     python38Packages.pip
@@ -102,6 +103,13 @@
     docker-compose
     ansible
     direnv
+    pavucontrol
+    polybar
+    dunst
+    cmake
+    gcc
+    gnumake
+    libtool
   ];
     
   nixpkgs.config.allowUnfree = true;
@@ -110,7 +118,8 @@
     ohMyZsh = {
       enable = true;
       plugins = [ "git" "python" "man"];
-      theme = "agnoster";
+      theme = "af-no-magic";
+      custom = "$HOME/.oh-my-zsh-custom";
     };
   };
 
