@@ -57,7 +57,7 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.sebastian = {
     isNormalUser = true;
-    extraGroups = [ "wheel" ];
+    extraGroups = [ "wheel" "docker" ];
     shell = pkgs.zsh;
   };
   nix.allowedUsers = [
@@ -99,7 +99,6 @@
     zoom-us
     slack
     spotify
-    docker
     docker-compose
     ansible
     direnv
@@ -112,6 +111,8 @@
     libtool
   ];
     
+  virtualisation.docker.enable = true;
+
   nixpkgs.config.allowUnfree = true;
   programs.zsh = {
     enable = true;
