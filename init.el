@@ -14,9 +14,6 @@
 
 ;; Clean buffers and no menu bars
 (setq inhibit-startup-screen t)
-(menu-bar-mode -1)
-(tool-bar-mode -1)
-(scroll-bar-mode -1)
 (setq initial-scratch-message nil)
 
 ;; Move betweeen windows using M-<left/right/up/down>
