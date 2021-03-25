@@ -286,21 +286,20 @@
 (use-package hindent
   :init
   (setq hindent-style "johan-tibell"))
+
 (use-package haskell-mode
   :init
   (setq
     haskell-process-type 'ghci
     haskell-interactive-popup-errors nil
-    haskell-process-log t
-    )
+    haskell-process-log t)
   :config
+  (add-to-list 'auto-mode-alist '("\\.cabal?\\'" . haskell-mode))
   (add-hook 'haskell-mode-hook 'haskell-indent-mode)
   (add-hook 'haskell-mode-hook 'interactive-haskell-mode)
   (add-hook 'haskell-mode-hook 'haskell-doc-mode)
   (add-hook 'haskell-mode-hook 'hindent-mode))
-  ;;(evil-define-key 'normal error-mode-map (kbd "RET") 'haskell-interactive-mode-return)
-  ;;(evil-define-key 'insert haskell-interactive-mode-map (kbd "RET") 'haskell-interactive-mode-return)
-  ;;(evil-define-key 'normal haskell-interactive-mode-map (kbd "RET") 'haskell-interactive-mode-return))
+
 ;; Python
 (use-package python-mode
   :hook (python-mode . lsp-deferred)
