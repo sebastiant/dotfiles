@@ -335,7 +335,9 @@
 (use-package dap-mode)
 
 (use-package web-mode
-  :config (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+  :config
+  (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.html.eex?\\'" . web-mode))
   :custom
   (web-mode-markup-indent-offset 2)
   (web-mode-css-indent-offset 2)
