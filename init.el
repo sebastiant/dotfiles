@@ -111,6 +111,7 @@
     "ww"  'evil-window-next
     "wv"  'split-window-vertically))
 
+(global-set-key (kbd "<escape>") 'keybaord-escape-quit)
 (use-package undo-tree
   :init (global-undo-tree-mode t))
 
@@ -300,7 +301,6 @@
   ;;(evil-define-key 'normal error-mode-map (kbd "RET") 'haskell-interactive-mode-return)
   ;;(evil-define-key 'insert haskell-interactive-mode-map (kbd "RET") 'haskell-interactive-mode-return)
   ;;(evil-define-key 'normal haskell-interactive-mode-map (kbd "RET") 'haskell-interactive-mode-return))
-
 ;; Python
 (use-package python-mode
   :hook (python-mode . lsp-deferred)
