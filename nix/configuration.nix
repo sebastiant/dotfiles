@@ -2,7 +2,7 @@
 
 {
   imports =
-    [ 
+    [
       ./hardware-configuration.nix
     ];
   boot.loader.systemd-boot.enable = true;
@@ -45,7 +45,6 @@
   services.autorandr = {
     enable = true;
   };
-  
 
   # Configure keymap in X11
   # services.xserver.layout = "us";
@@ -110,8 +109,9 @@
     gcc
     gnumake
     libtool
+    ghc
   ];
-    
+
   virtualisation.docker.enable = true;
 
   nixpkgs.config.allowUnfree = true;
