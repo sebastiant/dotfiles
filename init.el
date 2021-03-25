@@ -312,6 +312,9 @@
 (defun st/lsp-mode-setup ()
   (setq lsp-headerline-breadcrumb-segments '(path-up-to-project file symbols))
   (lsp-headerline-breadcrumb-mode))
+(use-package flycheck
+  :ensure t
+  :init (global-flycheck-mode))
 (use-package lsp-mode
   :commands (lsp lsp-deferred)
   :hook (lsp-mode . st/lsp-mode-setup)
@@ -322,7 +325,9 @@
   (lsp-enable-which-key-integration t))
 (use-package lsp-ui
   :hook (lsp-mode . lsp-ui-mode)
-  :custom (lsp-ui-doc-position 'bottom))
+  :custom
+  (lsp-ui-doc-position 'bottom)
+  (lsp-ui-sideline-show-code-actions nil))
 (use-package lsp-ivy :commands lsp-ivy-workspace-symbol)
 (use-package lsp-treemacs
   :after lsp
