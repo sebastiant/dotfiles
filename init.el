@@ -218,6 +218,11 @@
 (if (fboundp 'mac-auto-operator-composition-mode)
     (mac-auto-operator-composition-mode t))
 
+;; Editing
+(setq-default indent-tabs-mode nil)
+(setq-default tab-width 2)
+(setq-default evil-shift-width tab-width)
+
 ;; highlight trailing whitespace
 (defun my/buf-show-trailing-whitespace ()
   (interactive)
