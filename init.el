@@ -106,7 +106,7 @@
 
     "w"   '(:ignore t :which-key "window")
     "ww"  'evil-window-next
-    "wd"  'delete-window
+    "wc"  'delete-window
     "ws"  'split-window-horizontally
     "ww"  'evil-window-next
     "wv"  'split-window-vertically))
