@@ -223,6 +223,9 @@
 (setq-default tab-width 2)
 (setq-default evil-shift-width tab-width)
 
+(use-package evil-nerd-commenter
+  :bind ("M-/" . evilnc-comment-or-uncomment-lines))
+
 ;; highlight trailing whitespace
 (defun my/buf-show-trailing-whitespace ()
   (interactive)
