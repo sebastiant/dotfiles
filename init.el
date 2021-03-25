@@ -111,6 +111,9 @@
     "ww"  'evil-window-next
     "wv"  'split-window-vertically))
 
+(use-package undo-tree
+  :init (global-undo-tree-mode t))
+
 (defun st/evil-hook ()
   (dolist (mode '(custom-mode
 		  eshell-mode
@@ -127,6 +130,8 @@
   (setq evil-split-window-below t)
   (setq evil-shift-round nil)
   (setq evil-want-C-u-scroll t)
+  (setq evil-want-fine-undo t)
+  (setq evil-undo-system 'undo-tree)
   :config
   (add-hook 'evil-mode-hook 'st/evil-hook)
   (evil-mode 1)
