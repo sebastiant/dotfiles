@@ -100,6 +100,7 @@
     slack
     spotify
     docker-compose
+    terraform
     ansible
     direnv
     pavucontrol
