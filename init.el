@@ -107,9 +107,9 @@
     "w"   '(:ignore t :which-key "window")
     "ww"  'evil-window-next
     "wc"  'delete-window
-    "ws"  'split-window-horizontally
+    "wv"  'split-window-horizontally
     "ww"  'evil-window-next
-    "wv"  'split-window-vertically))
+    "ws"  'split-window-vertically))
 
 (global-set-key (kbd "<escape>") 'keybaord-escape-quit)
 (use-package undo-tree
