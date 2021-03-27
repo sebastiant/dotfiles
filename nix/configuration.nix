@@ -80,7 +80,6 @@
     feh
     picom
     dmenu
-    jdk14
     python3Full
     python38Packages.pip
     postgresql
