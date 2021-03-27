@@ -71,7 +71,6 @@
     zsh
     oh-my-zsh
     vim
-    emacs
     ((emacsPackagesNgGen emacs).emacsWithPackages (epkgs: [
       epkgs.vterm
     ]))
