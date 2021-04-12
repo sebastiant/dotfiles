@@ -160,6 +160,8 @@
 
 (use-package magit
   :init (global-set-key (kbd "C-x g") 'magit-status))
+(use-package forge
+  :after magit)
 (use-package git-gutter
   :init (global-git-gutter-mode))
 
@@ -379,6 +381,14 @@
 
 (use-package nix-mode
   :mode "\\.nix\\'")
+(use-package sh-mode
+  :mode "zshrc\\'"
+  :ensure nil)
+
+(use-package envrc
+  :init (envrc-global-mode))
+
+(use-package yaml-mode)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -388,4 +398,4 @@
  '(custom-safe-themes
    '("aaa4c36ce00e572784d424554dcc9641c82d1155370770e231e10c649b59a074" "08a27c4cde8fcbb2869d71fdc9fa47ab7e4d31c27d40d59bf05729c4640ce834" default))
  '(package-selected-packages
-   '(nix-mode undo-tree evil-nerd-commenter flycheck beacon vterm general dired-single alchemist perspective elixir-mode js2-mode typescript-mode git-gutter org-mode lsp-pyright ivy-prescient web-mode company-box company no-littering dap-mode lsp-treemacs lsp-ivy lsp-ui lsp-mode pyvenv python-mode haskell-mode hindent which-key doom-themes doom-modeline all-the-icons counsel-projectile projectile evil-collection evil rainbow-delimiters magit counsel ivy use-package)))
+   '(yaml-mode forge lsp-haskell envrc nix-mode undo-tree evil-nerd-commenter flycheck beacon vterm general dired-single alchemist perspective elixir-mode js2-mode typescript-mode git-gutter org-mode lsp-pyright ivy-prescient web-mode company-box company no-littering dap-mode lsp-treemacs lsp-ivy lsp-ui lsp-mode pyvenv python-mode haskell-mode hindent which-key doom-themes doom-modeline all-the-icons counsel-projectile projectile evil-collection evil rainbow-delimiters magit counsel ivy use-package)))
