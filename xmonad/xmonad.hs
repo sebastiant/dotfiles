@@ -19,7 +19,7 @@ myFocusFollowsMouse = False
 myClickJustFocuses = False
 myBorderWidth   = 4
 myModMask       = mod4Mask
-myWorkspaces    = ["dev", "web", "com"] ++ map show [3..9]
+myWorkspaces    = map show [1..9]
 myNormalBorderColor  = "#dddddd"
 myFocusedBorderColor = "#2000e0"
 
