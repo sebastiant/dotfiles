@@ -78,12 +78,29 @@ myLayout = tiled ||| Mirror tiled ||| reflectHoriz tiled ||| Full
      ratio   = 1/2
      delta   = 3/100
 
+myManageHook :: XMonad.Query (Data.Monoid.Endo WindowSet)
+myManageHook = composeAll
+     [ className  =? "confirm"                            --> doFloat
+     , className  =? "file_progress"                      --> doFloat
+     , className  =? "dialog"                             --> doFloat
+     , className  =? "download"                           --> doFloat
+     , className  =? "error"                              --> doFloat
+     , className  =? "notification"                       --> doFloat
+     , className  =? "toolbar"                            --> doFloat
+     , (className =? "firefox" <&&> resource =? "Dialog") --> doFloat
+     , className  =? "Emacs"                              --> doShift "1"
+     , title      =? "Mozilla Firefox"                    --> doShift "2"
+     , className  =? "Slack"                              --> doShift "3"
+     , className  =? ""                                   --> doShift "5"
+     ]
+
+
 windowSpacing = spacingRaw True (Border 5 5 5 5) True (Border 15 15 15 15) True
 
 main = do
     xmonad $ docks $ ewmh defaults {
         logHook = ewmhDesktopsLogHook
-      , manageHook = manageDocks
+      , manageHook = myManageHook <+> manageDocks
       , layoutHook = windowSpacing $ avoidStruts $ myLayout
       , startupHook = do
           spawn "sh .config/polybar/launch.sh"
