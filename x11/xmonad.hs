@@ -101,11 +101,11 @@ main = do
     xmonad $ docks $ ewmh defaults {
         logHook = ewmhDesktopsLogHook
       , manageHook = myManageHook <+> manageDocks
-      , layoutHook = windowSpacing $ avoidStruts $ myLayout
+      , layoutHook = windowSpacing $ avoidStruts myLayout
       , startupHook = do
           spawn "sh .config/polybar/launch.sh"
           spawnOnce "dunst"
-          spawnOnce "autorandr --change && feh --bg-scale ~/Pictures/wallpapers/active.jpg"
+          spawnOnce "autorandr --change" -- && feh --bg-scale ~/Pictures/wallpapers/active.jpg"
           setWMName "LG3D"
       , handleEventHook = mempty
     }
