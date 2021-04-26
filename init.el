@@ -179,6 +179,9 @@
     (when (member project (pyvenv-virtualenv-list t))
       (pyvenv-workon project))))
 
+(use-package py-isort
+  :config (add-hook 'before-save-hook 'py-isort-before-save))
+
 (use-package projectile
   :diminish projectile-mode
   :config (projectile-mode)
