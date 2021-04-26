@@ -285,22 +285,21 @@
   :init (add-to-list 'exec-path "~/language-servers/elixir"))
 (use-package alchemist)
 
-(use-package hindent
-  :init
-  (setq hindent-style "johan-tibell"))
-
+(use-package lsp-haskell)
 (use-package haskell-mode
+  :hook
+  (haskell-literate-mode . lsp-deferred)
+  (haskell-mode . lsp-deferred)
+  (haskell-mode . haskell-indentation-mode)
+  (haskell.mode . haskell-interactive-mode)
   :init
   (setq
-    haskell-process-type 'ghci
-    haskell-interactive-popup-errors nil
-    haskell-process-log t)
+   haskell-indentation-electric-flag t
+   haskell-process-type 'cabal-repl
+   haskell-interactive-popup-errors nil
+   haskell-process-log t)
   :config
-  (add-to-list 'auto-mode-alist '("\\.cabal?\\'" . haskell-mode))
-  (add-hook 'haskell-mode-hook 'haskell-indent-mode)
-  (add-hook 'haskell-mode-hook 'interactive-haskell-mode)
-  (add-hook 'haskell-mode-hook 'haskell-doc-mode)
-  (add-hook 'haskell-mode-hook 'hindent-mode))
+  (add-to-list 'auto-mode-alist '("\\.cabal?\\'" . haskell-mode)))
 
 ;; Python
 (use-package python-mode
@@ -317,6 +316,7 @@
   :ensure t
   :init (global-flycheck-mode))
 (use-package lsp-mode
+  :after evil
   :commands (lsp lsp-deferred)
   :hook (lsp-mode . st/lsp-mode-setup)
   :init
@@ -357,21 +357,18 @@
 (use-package company
   :after lsp-mode
   :hook (lsp-mode . company-mode)
-  :bind (:map company-active-map
-         ("<tab>" . company-complete-selection))
-        (:map lsp-mode-map
-         ("<tab>" . company-indent-or-complete-common))
+;;  :config (global-set-key (kbd "TAB") #'company-indent-or-complete-common)
   :custom
   (company-minimum-prefix-length 1)
   (company-idle-delay 0.0))
-
+(global-set-key (kbd "TAB") #'company-indent-or-complete-common)
 (use-package company-box
-  :hook (company-mode . company-box-mode))
+ :hook (company-mode . company-box-mode))
 
 (use-package lsp-pyright
   :hook (python-mode . (lambda ()
                           (require 'lsp-pyright)
-                          (lsp-deferred))))
+                          (lsp))))
 (use-package org
   :pin org)
 (use-package perspective
@@ -399,3 +396,5 @@
    '("aaa4c36ce00e572784d424554dcc9641c82d1155370770e231e10c649b59a074" "08a27c4cde8fcbb2869d71fdc9fa47ab7e4d31c27d40d59bf05729c4640ce834" default))
  '(package-selected-packages
    '(yaml-mode forge lsp-haskell envrc nix-mode undo-tree evil-nerd-commenter flycheck beacon vterm general dired-single alchemist perspective elixir-mode js2-mode typescript-mode git-gutter org-mode lsp-pyright ivy-prescient web-mode company-box company no-littering dap-mode lsp-treemacs lsp-ivy lsp-ui lsp-mode pyvenv python-mode haskell-mode hindent which-key doom-themes doom-modeline all-the-icons counsel-projectile projectile evil-collection evil rainbow-delimiters magit counsel ivy use-package)))
+(provide 'init)
+;;; init.el ends here

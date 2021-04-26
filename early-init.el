@@ -13,6 +13,7 @@
 (setq file-name-handler-alist nil)
 
 ;; GarbageCollection
+(setq garbage-collection-messages t)
 (setq gc-cons-threshold 402653184
       gc-cons-percentage 0.6)
 (add-hook 'after-init-hook
