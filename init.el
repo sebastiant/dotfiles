@@ -257,11 +257,6 @@
 		   dockerfile-mode))
   (use-package package))
 
-;; Theme
-(use-package all-the-icons)
-(use-package doom-modeline
-  :init (doom-modeline-mode 1)
-  :custom ((mode-line-height 15)))
 (use-package doom-themes
   :config
   (setq doom-themes-enable-bold t
