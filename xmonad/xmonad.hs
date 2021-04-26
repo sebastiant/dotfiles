@@ -6,6 +6,7 @@ import XMonad.Hooks.EwmhDesktops
 import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.SetWMName
 import XMonad.Layout.Spacing
+import XMonad.Layout.Reflect
 import XMonad.Util.Run(spawnPipe)
 import XMonad.Util.SpawnOnce
 import Data.Monoid
@@ -70,7 +71,7 @@ myMouseBindings (XConfig {XMonad.modMask = modm}) = M.fromList $
                                        >> windows W.shiftMaster))
     ]
 
-myLayout = tiled ||| Mirror tiled ||| Full
+myLayout = tiled ||| Mirror tiled ||| reflectHoriz tiled ||| Full
   where
      tiled   = Tall nmaster delta ratio
      nmaster = 1
