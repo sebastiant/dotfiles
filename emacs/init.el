@@ -71,7 +71,8 @@
   :config
   (general-override-mode 1)
   (general-create-definer tyrant-def
-    :states '(normal visual insert motion emacs magit-mode-map)
+    :states '(normal visual insert motion emacs)
+    :keymaps 'override
     :prefix "SPC"
     :non-normal-prefix "C-SPC")
   (tyrant-def
