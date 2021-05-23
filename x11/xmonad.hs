@@ -105,7 +105,6 @@ main = do
       , startupHook = do
           spawn "sh .config/polybar/launch.sh"
           spawnOnce "dunst"
-          spawnOnce "picom"
           spawnOnce "autorandr --change" -- && feh --bg-scale ~/Pictures/wallpapers/active.jpg"
           setWMName "LG3D"
       , handleEventHook = mempty
