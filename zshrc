@@ -62,3 +62,9 @@ if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
   . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
 fi
 # End Nix
+
+# For stuff not suppose to be version controlled
+if [ -e ~/.env ]; then
+  source ~/.env
+fi
+
