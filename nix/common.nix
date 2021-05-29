@@ -14,14 +14,8 @@
       ghc
       haskell-language-server
       stack
-      zlib
-      xmonad-with-packages
-      dmenu
       ripgrep
       tree
-      autorandr
-      arandr
-      picom
     ];
   };
 
