@@ -2,8 +2,8 @@
 {
   imports = 
   [
-    ./neovim.nix
-    ./git.nix
+    ./programs/neovim.nix
+    ./programs/git.nix
   ];
   home = {
     username = "sebastian";
