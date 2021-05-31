@@ -4,7 +4,6 @@
 
   home.packages = with pkgs; [
     zlib
-    xmonad-with-packages
     dmenu
     autorandr
     arandr
