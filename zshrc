@@ -13,7 +13,7 @@ plugins=(git tmuxinator nix-shell)
 alias ls="ls -lF"
 alias bat="batcat"
 
-export PATH="/run/current-system/sw/bin:/usr/local/bin:/bin:/usr/sbin:/sbin:/usr/bin:/usr/local/git/bin:/usr/texbin:$HOME/.local/bin:$HOME/.cargo/bin"
+export PATH="/run/current-system/sw/bin:/usr/local/bin:/bin:/usr/sbin:/sbin:/usr/bin:$HOME/.local/bin:$HOME/.cargo/bin"
 export EDITOR='vim'
 export TERM="xterm-256color"
 
