@@ -1,10 +1,11 @@
 { config, pkgs, ... }:
 {
-  imports = 
-  [
-    ./programs/neovim.nix
-    ./programs/git.nix
-  ];
+  imports =
+    [
+      ./programs/neovim.nix
+      ./programs/git.nix
+      ./programs/emacs.nix
+    ];
   home = {
     username = "sebastian";
     homeDirectory = "/home/sebastian";
