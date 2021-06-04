@@ -2,6 +2,7 @@
 {
   imports =
     [
+      ./programs/zsh.nix
       ./programs/neovim.nix
       ./programs/git.nix
       ./programs/emacs.nix
