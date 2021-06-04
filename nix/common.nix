@@ -30,4 +30,5 @@
   };
 
   xdg.configFile."alacritty/alacritty.yml".source = ../x11/alacritty.yml;
+  xdg.configFile."dunst/dunstrc".source = ../x11/dunstrc;
 }
