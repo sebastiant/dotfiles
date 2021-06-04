@@ -28,4 +28,6 @@
       config.theme = "ansi-dark";
     };
   };
+
+  xdg.configFile."alacritty/alacritty.yml".source = ../x11/alacritty.yml;
 }
