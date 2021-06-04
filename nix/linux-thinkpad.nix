@@ -12,4 +12,6 @@
     arandr
     picom
   ];
+
+  home.file.".xmonad/xmonad.hs".source = ../x11/xmonad.hs;
 }
