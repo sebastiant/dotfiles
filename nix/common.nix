@@ -21,12 +21,11 @@
     ];
   };
 
-  programs = {
-    home-manager.enable = true;
-    bat = {
-      enable = true;
-      config.theme = "ansi-dark";
-    };
+  programs.home-manager.enable = true;
+  programs.fzf.enable = true;
+  programs.bat = {
+    enable = true;
+    config.theme = "ansi-dark";
   };
 
   xdg.configFile."alacritty/alacritty.yml".source = ../x11/alacritty.yml;
