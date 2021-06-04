@@ -1,6 +1,9 @@
 { config, pkgs, ... }:
 {
-  imports = [ ./common.nix ];
+  imports = [
+    ./common.nix
+    ./programs/tmux.nix
+  ];
 
   home.packages = with pkgs; [
     zlib
