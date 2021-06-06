@@ -1,9 +1,12 @@
 { config, pkgs, ... }:
 {
+  programs.home-manager.enable = true;
   imports = [
     ./common.nix
     ./programs/tmux.nix
   ];
+  home.username = "sebastian";
+  home.homeDirectory = "/home/sebastian";
 
   home.packages = with pkgs; [
     zlib

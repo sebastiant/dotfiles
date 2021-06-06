@@ -1,13 +1,16 @@
 { config, pkgs, ... }:
-
 {
+  imports = [ <home-manager/nix-darwin> ];
+  home-manager.useUserPackages = true;
+  home-manager.users.sebastian = { pkgs, ... }: {
+    imports = [
+      ./common.nix
+    ];
+  };
+
   environment.systemPackages = with pkgs;
     [ 
       ( python38.withPackages (ps: with ps; [ pip flake8 black pynvim ipython python-language-server.override { pylint = null; } ]) )
-      zsh
-      vimHugeX
-      tmux
-      tmuxinator
       httpie
       ffmpeg
       gnupg
@@ -18,7 +21,6 @@
       httpie
       ripgrep
       fzf
-      git
       irssi
       tig
       tree

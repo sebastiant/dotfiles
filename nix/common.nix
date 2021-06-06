@@ -7,9 +7,8 @@
       ./programs/git.nix
       ./programs/emacs.nix
     ];
+
   home = {
-    username = "sebastian";
-    homeDirectory = "/home/sebastian";
     stateVersion = "21.05";
     packages = with pkgs; [
       pandoc
@@ -22,7 +21,6 @@
     ];
   };
 
-  programs.home-manager.enable = true;
   programs.fzf.enable = true;
   programs.bat = {
     enable = true;
