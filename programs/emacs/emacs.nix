@@ -1,6 +1,7 @@
 { config, pkgs, ... }:
 {
-  home.file.".emacs.d" = { source = ./emacs.d; recursive = true; };
+  home.file.".emacs.d/init.el".source = ./init.el;
+  home.file.".emacs.d/early-init.el".source = ./early-init.el;
 
   programs.emacs = {
     enable = true;

@@ -3,7 +3,7 @@
   programs.zsh = {
     enable = true;
     enableCompletion = false;
-    initExtraBeforeCompInit = builtins.readFile ../../zshrc;
+    initExtraBeforeCompInit = builtins.readFile ./zshrc;
   };
   programs.fzf.enableZshIntegration = true;
 }
