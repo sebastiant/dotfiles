@@ -6,4 +6,5 @@
     initExtraBeforeCompInit = builtins.readFile ./zshrc;
   };
   programs.fzf.enableZshIntegration = true;
+  home.file.".oh-my-zsh/themes/af-no-magic.zsh-theme".source = ./af-no-magic.zsh-theme;
 }
