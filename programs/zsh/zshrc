@@ -32,9 +32,6 @@ eval "$(direnv hook zsh)"
 
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PATH:$PYENV_ROOT/bin:/usr/local/bin:/bin:/usr/sbin:/sbin:/usr/bin:$HOME/.local/bin:$HOME/.cargo/bin"
-if command -v pyenv 1>/dev/null 2>&1; then
-  eval "$(pyenv init -)"
-fi
 
 vterm_printf(){
     if [ -n "$TMUX" ] && ([ "${TERM%%-*}" = "tmux" ] || [ "${TERM%%-*}" = "screen" ] ); then
