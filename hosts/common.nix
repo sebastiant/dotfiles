@@ -2,10 +2,10 @@
 {
   imports =
     [
-      ./programs/zsh/zsh.nix
-      ./programs/neovim/neovim.nix
-      ./programs/git.nix
-      ./programs/emacs/emacs.nix
+      ../programs/zsh/zsh.nix
+      ../programs/neovim/neovim.nix
+      ../programs/git.nix
+      ../programs/emacs/emacs.nix
     ];
 
   home = {
@@ -29,6 +29,6 @@
     config.theme = "ansi-dark";
   };
 
-  xdg.configFile."alacritty/alacritty.yml".source = ./programs/alacritty.yml;
-  xdg.configFile."dunst/dunstrc".source = ./programs/dunstrc;
+  xdg.configFile."alacritty/alacritty.yml".source = ../programs/alacritty.yml;
+  xdg.configFile."dunst/dunstrc".source = ../programs/dunstrc;
 }

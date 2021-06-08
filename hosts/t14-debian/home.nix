@@ -2,7 +2,7 @@
 {
   programs.home-manager.enable = true;
   imports = [
-    ../../common.nix
+    ../common.nix
     ../../programs/tmux/tmux.nix
   ];
   home.username = "sebastian";
