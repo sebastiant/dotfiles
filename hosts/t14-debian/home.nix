@@ -14,6 +14,8 @@
     autorandr
     arandr
     picom
+    espeak
+    blink1-tool
   ];
 
   home.file.".xmonad/xmonad.hs".source = ../../programs/xmonad.hs;

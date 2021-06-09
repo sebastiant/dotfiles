@@ -18,8 +18,6 @@
       stack
       ripgrep
       tree
-      espeak
-      blink1-tool
     ];
   };
 
