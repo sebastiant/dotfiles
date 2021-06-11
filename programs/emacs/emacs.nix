@@ -56,6 +56,7 @@
       which-key
       vterm
       yaml-mode
+      editorconfig
     ];
   };
 }
