@@ -1,12 +1,10 @@
 { config, pkgs, ... }:
 {
-  imports = [ <home-manager/nix-darwin> ];
-  home-manager.useUserPackages = true;
-  home-manager.users.sebastian = { pkgs, ... }: {
-    imports = [
-      ../common.nix
-    ];
-  };
+  nixpkgs.config.allowUnfree = true;
+  imports = [
+    <home-manager/nix-darwin>
+    ./home.nix
+  ];
 
   environment.systemPackages = with pkgs;
     [ 
