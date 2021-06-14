@@ -188,7 +188,8 @@
       ".pyre/"
       ".pytype/"
       "cython_debug/"
-      ".envrc"
+      ".env_vars"
+      ".direnv/"
     ];
   };
 }
