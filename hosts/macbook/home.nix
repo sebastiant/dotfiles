@@ -5,5 +5,8 @@
     imports = [
       ../common.nix
     ];
+    home.packages = with pkgs; [
+      vscode-with-extensions
+    ];
   };
 }
