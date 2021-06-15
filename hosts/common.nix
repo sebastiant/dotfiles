@@ -18,6 +18,7 @@
       stack
       ripgrep
       tree
+      zathura
     ];
   };
 
