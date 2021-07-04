@@ -170,14 +170,7 @@
 (winner-mode)
 (add-hook 'ediff-after-quit-hook-internal 'winner-undo)
 
-(use-package pyvenv
-  :init (setenv "WORKON_HOME" "~/.pyenv/versions")
-  :config (pyvenv-mode 1))
-(defun st/pyvenv-projectile-mode-hook ()
-  "Activate pyvenv for matching project name."
-  (let ((project (projectile-project-name)))
-    (when (member project (pyvenv-virtualenv-list t))
-      (pyvenv-workon project))))
+(use-package pyvenv)
 
 (use-package py-isort
   :config (add-hook 'before-save-hook 'py-isort-before-save))
@@ -185,7 +178,6 @@
 (use-package projectile
   :diminish projectile-mode
   :config (projectile-mode)
-  :hook (projectile-after-switch-project . st/pyvenv-projectile-mode-hook)
   :bind-keymap
   ("C-c p" . projectile-command-map)
   :init
