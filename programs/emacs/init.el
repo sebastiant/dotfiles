@@ -419,6 +419,8 @@
 (use-package editorconfig
   :config (editorconfig-mode 1))
 
+(use-package restclient)
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

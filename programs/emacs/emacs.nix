@@ -57,6 +57,7 @@
       vterm
       yaml-mode
       editorconfig
+      restclient
     ];
   };
 }
