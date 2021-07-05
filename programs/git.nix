@@ -190,6 +190,7 @@
       "cython_debug/"
       ".env_vars"
       ".direnv/"
+      ".dir-locals.el"
     ];
   };
 }
