@@ -58,6 +58,7 @@
       yaml-mode
       editorconfig
       restclient
+      jsonnet-mode
     ];
   };
 }
