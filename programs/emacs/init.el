@@ -309,6 +309,7 @@
   (setq lsp-headerline-breadcrumb-segments '(path-up-to-project file symbols))
   (lsp-headerline-breadcrumb-mode))
 (use-package flycheck
+  :config (setq-default flycheck-disabled-checkers '(python-pylint))
   :init (global-flycheck-mode))
 (use-package lsp-mode
   :after evil
