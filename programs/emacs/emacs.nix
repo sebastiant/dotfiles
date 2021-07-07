@@ -59,6 +59,7 @@
       editorconfig
       restclient
       jsonnet-mode
+      terraform-mode
     ];
   };
 }
