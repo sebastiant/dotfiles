@@ -224,11 +224,13 @@
 (use-package evil-nerd-commenter
   :bind ("M-/" . evilnc-comment-or-uncomment-lines))
 
-;; highlight trailing whitespace
+;; Trailing whitespace
 (defun my/buf-show-trailing-whitespace ()
   (interactive)
     (setq show-trailing-whitespace t))
 (add-hook 'prog-mode-hook 'my/buf-show-trailing-whitespace)
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
+
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
