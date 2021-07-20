@@ -28,6 +28,7 @@ in {
     picom
     espeak
     blink1-tool
+    flameshot
   ];
 
   home.file.".xmonad/xmonad.hs".source = ../../programs/xmonad.hs;
