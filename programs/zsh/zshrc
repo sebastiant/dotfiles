@@ -8,7 +8,6 @@ COMPLETION_WAITING_DOTS="true"
 
 # User configuration
 alias ls="ls -lF"
-alias bat="batcat"
 
 export EDITOR='vim'
 export TERM="xterm-256color"

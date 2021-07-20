@@ -19,6 +19,7 @@ in {
   home.homeDirectory = "/home/sebastian";
 
   programs.emacs.package = unstable.emacsGcc;
+  programs.zsh.shellAliases.bat = "batcat";
 
   home.packages = with pkgs; [
     zlib
