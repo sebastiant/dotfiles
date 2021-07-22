@@ -22,10 +22,6 @@ if [ -n "${commands[fzf-share]}" ]; then
   bindkey '^B' fzf-history-widget
 fi
 
-# GHC (Haskell)
-[ -f "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env" ] && source "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env"
-
-
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PATH:$PYENV_ROOT/bin:/usr/local/bin:/bin:/usr/sbin:/sbin:/usr/bin:$HOME/.local/bin:$HOME/.cargo/bin"
 
