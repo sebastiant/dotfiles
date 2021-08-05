@@ -41,6 +41,7 @@
       nix-mode
       no-littering
       org
+      org-roam
       perspective
       persp-projectile
       projectile

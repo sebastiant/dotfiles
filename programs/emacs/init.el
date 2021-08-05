@@ -396,6 +396,13 @@
               (setq my-flycheck-local-cache '((next-checkers . (sh-shellcheck)))))))
 
 (use-package org)
+(use-package org-roam
+  :init (setq org-roam-v2-ack t)
+  :custom (org-roam-directory "~/roam-notes")
+  :bind (("C-c n l" . org-roam-buffer-toggle)
+         ("C-c n f" . org-roam-node-find)
+         ("C-c n i" . org-roam-node-insert))
+   :config (org-roam-setup))
 
 (use-package perspective
   :config

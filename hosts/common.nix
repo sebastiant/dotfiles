@@ -20,6 +20,7 @@
       tree
       zathura
       nyxt
+      sqlite
       byzanz
       xrectsel
     ];
