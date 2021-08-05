@@ -40,7 +40,6 @@
   };
   environment.systemPackages = with pkgs; [ alsa-firmware] ;
   services = {
-    tlp.enable = lib.mkDefault true;
     xserver.libinput.enable = true;
   };
 

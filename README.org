@@ -56,7 +56,8 @@ All hosts are configured from their respective [[/hosts][/hosts]] directory, [[h
 - Create the first generation
   - NixOS
     #+begin_src shell
-    $ nixos-rebuild switch
+    $ sudo nixos-rebuild switch
+    $ home-manager switch
     #+end_src 
   - Linux
     #+begin_src shell

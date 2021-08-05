@@ -68,26 +68,11 @@
   ];
 
   environment.systemPackages = with pkgs; [
-    zsh
-    oh-my-zsh
-    vim
-    ((emacsPackagesNgGen emacs).emacsWithPackages (epkgs: [
-      epkgs.vterm
-    ]))
     alacritty
-    arandr
     autorandr
     feh
-    picom
-    dmenu
-    python3Full
-    python38Packages.pip
-    postgresql
-    git
     wget
     pciutils
-    tree
-    ripgrep
     killall
     firefox
     jetbrains.pycharm-community
@@ -107,21 +92,11 @@
     gcc
     gnumake
     libtool
-    ghc
   ];
 
   virtualisation.docker.enable = true;
 
   nixpkgs.config.allowUnfree = true;
-  programs.zsh = {
-    enable = true;
-    ohMyZsh = {
-      enable = true;
-      plugins = [ "git" "python" "man"];
-      theme = "af-no-magic";
-      custom = "$HOME/.oh-my-zsh-custom";
-    };
-  };
 
   system.stateVersion = "20.09";
 }
