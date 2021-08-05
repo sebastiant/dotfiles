@@ -19,6 +19,9 @@
       ripgrep
       tree
       zathura
+      nyxt
+      byzanz
+      xrectsel
     ];
   };
 
