@@ -16,6 +16,7 @@
       ghc
       haskell-language-server
       stack
+      pyright
       ripgrep
       tree
       zathura
