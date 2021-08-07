@@ -156,8 +156,6 @@
 (use-package dired-single
   :commands (dired dired-jump))
 
-(use-package vterm)
-
 (use-package magit
   :init (global-set-key (kbd "C-x g") 'magit-status))
 (use-package forge
@@ -244,14 +242,6 @@
 (setq show-paren-delay 0.0)
 (show-paren-mode t)
 
-;; Packages without configuration
-(dolist (package '(nix-mode
-		   nginx-mode
-		   markdown-mode
-		   yaml-mode
-		   dockerfile-mode))
-  (use-package package))
-
 (use-package doom-themes
   :config
   (setq doom-themes-enable-bold t
@@ -282,9 +272,7 @@
 (use-package elixir-mode
   :hook (elixir-mode . lsp-deferred)
   :init (add-to-list 'exec-path "~/language-servers/elixir"))
-(use-package alchemist)
 
-(use-package lsp-haskell)
 (use-package haskell-mode
   :hook
   (haskell-literate-mode . lsp-deferred)
@@ -334,7 +322,6 @@
 (use-package lsp-treemacs
   :after lsp
   :commands lsp-treemacs-errors-list)
-(use-package dap-mode)
 
 (use-package web-mode
   :config
@@ -396,7 +383,6 @@
             (when (derived-mode-p 'sh-mode)
               (setq my-flycheck-local-cache '((next-checkers . (sh-shellcheck)))))))
 
-(use-package org)
 (use-package org-roam
   :hook (org-roam-find-file . (lambda () (persp-switch "roam")))
   :init (setq org-roam-v2-ack t)
@@ -410,7 +396,6 @@
   :config
   (unless persp-mode
     (persp-mode 1)))
-(use-package persp-projectile)
 
 (use-package nix-mode
   :mode "\\.nix\\'")
@@ -420,8 +405,6 @@
 (use-package envrc
   :init (envrc-global-mode))
 
-(use-package yaml-mode)
-
 (use-package minions
   :config (minions-mode 1))
 
@@ -430,10 +413,6 @@
 
 (use-package editorconfig
   :config (editorconfig-mode 1))
-
-(use-package restclient)
-
-(use-package terraform-mode)
 
 (provide 'init)
 ;;; init.el ends here
