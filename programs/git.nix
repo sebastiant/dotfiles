@@ -191,6 +191,7 @@
       ".env_vars"
       ".direnv/"
       ".dir-locals.el"
+      ".projectile"
     ];
   };
 }
