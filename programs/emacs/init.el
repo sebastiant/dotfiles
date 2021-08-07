@@ -170,7 +170,8 @@
 (winner-mode)
 (add-hook 'ediff-after-quit-hook-internal 'winner-undo)
 
-(use-package pyvenv)
+(use-package pyvenv
+  :init (setenv "WORKON_HOME" "~/.pyenv/versions"))
 
 (use-package py-isort
   :config (add-hook 'before-save-hook 'py-isort-before-save))
