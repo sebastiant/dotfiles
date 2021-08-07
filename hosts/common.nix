@@ -23,6 +23,7 @@
       sqlite
       byzanz
       xrectsel
+      mypy
     ];
   };
 
