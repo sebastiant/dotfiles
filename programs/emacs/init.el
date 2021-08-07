@@ -290,7 +290,6 @@
 
 ;; Python
 (use-package python-mode
-  :hook (python-mode . lsp-deferred)
   :custom
   (python-shell-interpreter "python3")
   (dap-python-executable "python3")
@@ -302,10 +301,11 @@
 (use-package flycheck
   :config (setq-default flycheck-disabled-checkers '(python-pylint))
   :init (global-flycheck-mode))
+
 (use-package lsp-mode
-  :after evil
   :commands (lsp lsp-deferred)
-  :hook (lsp-mode . st/lsp-mode-setup)
+  :hook ((lsp-mode . st/lsp-mode-setup)
+         (python-mode . lsp))
   :init
   (setq lsp-keymap-prefix "C-c l")
   (setq lsp-enable-file-watchers nil)
@@ -313,6 +313,7 @@
   (setq lsp-log-io nil)
   :config
   (lsp-enable-which-key-integration t))
+
 (use-package lsp-ui
   :hook (lsp-mode . lsp-ui-mode)
   :custom
