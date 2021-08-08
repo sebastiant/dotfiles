@@ -32,4 +32,10 @@
   };
 
   xdg.configFile."alacritty/alacritty.yml".source = ../programs/alacritty.yml;
+  xdg.configFile."oh-my-zsh/plugins/nix-shell".source = pkgs.fetchFromGitHub {
+    owner = "chisui";
+    repo = "zsh-nix-shell";
+    rev = "f8574f27e1d7772629c9509b2116d504798fe30a";
+    sha256 = "0svskd09vvbzqk2ziw6iaz1md25xrva6s6dhjfb471nqb13brmjq";
+  };
 }
