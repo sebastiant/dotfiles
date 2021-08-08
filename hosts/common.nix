@@ -20,10 +20,7 @@
       ripgrep
       tree
       zathura
-      nyxt
       sqlite
-      byzanz
-      xrectsel
       mypy
     ];
   };

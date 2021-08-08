@@ -29,6 +29,9 @@ in {
     espeak
     blink1-tool
     flameshot
+    nyxt
+    byzanz
+    xrectsel
   ];
 
   home.file.".xmonad/xmonad.hs".source = ../../programs/xmonad.hs;
