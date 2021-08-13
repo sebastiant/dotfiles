@@ -1,6 +1,7 @@
 { config, pkgs, ... }:
 {
   nixpkgs.config.allowUnfree = true;
+  nix.nixPath = [ "darwin=/Users/sebastian/.nix-defexpr/darwin" ];
   imports = [
     <home-manager/nix-darwin>
     ./home.nix
