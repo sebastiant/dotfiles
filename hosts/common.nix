@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, nixpkgs, lib, ... }:
 {
   imports =
     [
@@ -7,6 +7,11 @@
       ../programs/git.nix
       ../programs/emacs/emacs.nix
     ];
+
+  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
+    "vscode"
+    "vscode-with-extensions"
+  ];
 
   home = {
     stateVersion = "21.05";
