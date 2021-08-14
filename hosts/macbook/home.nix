@@ -7,6 +7,7 @@
     ];
     home.packages = with pkgs; [
       vscode-with-extensions
+      google-cloud-sdk
     ];
   };
 }
