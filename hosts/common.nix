@@ -16,6 +16,7 @@
   home = {
     stateVersion = "21.05";
     packages = with pkgs; [
+      lorri
       pandoc
       cabal-install
       ghc
@@ -28,6 +29,11 @@
       sqlite
       mypy
     ];
+  };
+
+  programs.direnv = {
+    enable = true;
+    nix-direnv.enable = true;
   };
 
   programs.fzf.enable = true;
