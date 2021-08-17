@@ -29,6 +29,7 @@
       zathura
       sqlite
       mypy
+      syncthing
     ];
   };
 
