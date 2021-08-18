@@ -61,6 +61,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     [ ((0, xF86XK_AudioLowerVolume   ), spawn "pactl set-sink-volume @DEFAULT_SINK@ -5%")
     , ((0, xF86XK_AudioRaiseVolume   ), spawn "pactl set-sink-volume @DEFAULT_SINK@ +5%")
     , ((0,        xF86XK_AudioMute   ), spawn "pactl set-sink-mute @DEFAULT_SINK@ toggle")
+    , ((0,        xF86XK_AudioMicMute   ), spawn "pactl set-source-mute @DEFAULT_SOURCE@ toggle")
     ]
 
 myMouseBindings (XConfig {XMonad.modMask = modm}) = M.fromList $
