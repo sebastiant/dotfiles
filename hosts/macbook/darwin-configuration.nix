@@ -31,6 +31,7 @@
       alacritty
       ghc
       cabal-install
+      syncthing
     ];
 
   fonts = {

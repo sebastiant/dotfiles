@@ -66,6 +66,7 @@ in {
       name = "Adwaita";
     };
   };
+  services.syncthing.enable = true;
 
   programs.zsh.shellAliases.bat = "batcat";
 
