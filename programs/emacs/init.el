@@ -393,6 +393,21 @@
          ("C-c n i" . org-roam-node-insert))
    :config (org-roam-setup))
 
+(use-package org-tree-slide
+  :hook ((org-tree-slide-play . (lambda () (hide-mode-line-mode 1)
+                                            (display-line-numbers-mode 0)
+                                            (org-display-inline-images)
+                                            (setq text-scale-mode-amount 2)
+                                            (text-scale-mode 1)))
+         (org-tree-slide-stop . (lambda () (text-scale-mode 0)
+                                            (display-line-numbers-mode 1)
+                                            (hide-mode-line-mode 0))))
+  :custom
+  (org-tree-slide-slide-in-effect t)
+  (org-tree-slide-header 1)
+  (org-tree-slide-breadcrumbs " > ")
+  (org-image-actual-width nil))
+
 (use-package perspective
   :config
   (unless persp-mode

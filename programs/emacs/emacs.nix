@@ -42,6 +42,8 @@
       no-littering
       org
       org-roam
+      org-tree-slide
+      hide-mode-line
       perspective
       persp-projectile
       projectile
