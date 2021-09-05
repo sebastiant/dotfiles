@@ -43,6 +43,7 @@
       org
       org-roam
       org-tree-slide
+      org-superstar
       hide-mode-line
       perspective
       persp-projectile

@@ -385,6 +385,8 @@
             (when (derived-mode-p 'sh-mode)
               (setq my-flycheck-local-cache '((next-checkers . (sh-shellcheck)))))))
 
+(use-package org-superstar
+  :hook (org-mode . (lambda () (org-superstar-mode 1))))
 (use-package org-roam
   :hook (org-roam-find-file . (lambda () (persp-switch "roam")))
   :init (setq org-roam-v2-ack t)
