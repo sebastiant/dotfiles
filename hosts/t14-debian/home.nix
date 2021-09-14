@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, nixpkgs, lib, ... }:
 let
   unstable = import (fetchTarball
   "https://github.com/NixOS/nixpkgs/archive/nixos-unstable.tar.gz") {
@@ -14,9 +14,6 @@ in {
   imports = [
     ../common.nix
     ../../programs/tmux/tmux.nix
-  ];
-  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
-    "1password"
   ];
   home.username = "sebastian";
   home.homeDirectory = "/home/sebastian";
@@ -91,4 +88,15 @@ in {
   home.file.".xmonad/xmonad.hs".source = ../../programs/xmonad.hs;
   xdg.configFile."polybar/config".source = ../../programs/polybar/config;
   xdg.configFile."polybar/launch.sh".source = ../../programs/polybar/launch.sh;
+
+  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
+    "1password"
+    "skypeforlinux"
+    "slack"
+    "spotify"
+    "spotify-unwrapped"
+    "vscode"
+    "vscode-with-extensions"
+    "zoom"
+  ];
 }

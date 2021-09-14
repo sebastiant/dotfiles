@@ -96,7 +96,15 @@
 
   virtualisation.docker.enable = true;
 
-  nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
+    "skypeforlinux"
+    "slack"
+    "spotify"
+    "spotify-unwrapped"
+    "vscode"
+    "vscode-with-extensions"
+    "zoom"
+  ];
 
   system.stateVersion = "20.09";
 }
