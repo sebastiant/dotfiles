@@ -75,15 +75,12 @@
     pciutils
     killall
     firefox
-    jetbrains.pycharm-community
     vscode-with-extensions
     skypeforlinux
     zoom-us
     slack
     spotify
     docker-compose
-    terraform
-    ansible
     direnv
     pavucontrol
     polybar
