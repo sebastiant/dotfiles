@@ -120,7 +120,6 @@
 		  git-rebase-mode
 		  term-mode
       vterm-mode
-      org-mode
       ))
     (add-to-list 'evil-emacs-state-modes mode)))
 (use-package evil
