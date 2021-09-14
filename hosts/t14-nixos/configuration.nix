@@ -59,9 +59,15 @@
     extraGroups = [ "wheel" "docker" ];
     shell = pkgs.zsh;
   };
-  nix.allowedUsers = [
-    "sebastian"
-  ];
+  nix = {
+    package = pkgs.nixUnstable;
+    extraOptions = ''
+      experimental-features = nix-command flakes
+    '';
+    allowedUsers = [
+      "sebastian"
+      ];
+  };
 
   fonts.fonts = with pkgs; [
       iosevka
