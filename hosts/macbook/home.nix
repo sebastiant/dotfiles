@@ -1,5 +1,9 @@
 { config, pkgs, nixpkgs, ... }:
-{
+let
+  nixFlakes = (pkgs.writeScriptBin "nixFlakes" ''
+      exec ${pkgs.nixUnstable}/bin/nix --experimental-features "nix-command flakes" "$@"
+    '');
+in {
   home-manager.useUserPackages = true;
   home-manager.users.sebastian = { pkgs, ... }: {
     imports = [
@@ -8,6 +12,7 @@
     home.packages = with pkgs; [
       vscode-with-extensions
       google-cloud-sdk
+      nixFlakes
     ];
   };
 

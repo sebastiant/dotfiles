@@ -8,7 +8,9 @@ let
       }))
     ];
   };
-
+  nixFlakes = (pkgs.writeScriptBin "nixFlakes" ''
+      exec ${pkgs.nixUnstable}/bin/nix --experimental-features "nix-command flakes" "$@"
+    '');
 in {
   programs.home-manager.enable = true;
   imports = [
@@ -83,6 +85,7 @@ in {
     libnotify
     gnome-icon-theme
     _1password
+    nixFlakes
   ];
 
   home.file.".xmonad/xmonad.hs".source = ../../programs/xmonad.hs;
