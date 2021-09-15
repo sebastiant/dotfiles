@@ -88,6 +88,7 @@ in {
   home.file.".xmonad/xmonad.hs".source = ../../programs/xmonad.hs;
   xdg.configFile."polybar/config".source = ../../programs/polybar/config;
   xdg.configFile."polybar/launch.sh".source = ../../programs/polybar/launch.sh;
+  home.file.".xsessionrc".source = ./xsessionrc;
 
   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
     "1password"
