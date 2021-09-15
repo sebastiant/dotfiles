@@ -51,6 +51,7 @@
       color.ui = true;
       fetch.prune = true;
       pull.rebase = true;
+      push.default = "upstream";
     };
     ignores = [
       "\#*\#"
