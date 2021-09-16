@@ -84,6 +84,7 @@ in {
     gnome-icon-theme
     _1password
     nixFlakes
+    xmonad-with-packages
   ];
 
   home.file.".xmonad/xmonad.hs".source = ../../programs/xmonad.hs;
