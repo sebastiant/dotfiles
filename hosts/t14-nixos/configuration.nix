@@ -85,7 +85,6 @@
     skypeforlinux
     zoom-us
     slack
-    spotify
     docker-compose
     direnv
     pavucontrol
