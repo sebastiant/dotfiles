@@ -17,8 +17,6 @@ in {
     ../common.nix
     ../../programs/tmux/tmux.nix
   ];
-  home.username = "sebastian";
-  home.homeDirectory = "/home/sebastian";
 
   services.dunst = {
     enable = true;
