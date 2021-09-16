@@ -10,7 +10,7 @@
   };
   outputs = { self, nixpkgs, homeManager}: {
     homeConfigurations = {
-      "sebastian@t14" = homeManager.lib.homeManagerConfiguration {
+      "sebastian@t14-debian" = homeManager.lib.homeManagerConfiguration {
         configuration = import ./home.nix;
         system = "x86_64-linux";
         homeDirectory = "/home/sebastian";
