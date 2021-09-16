@@ -11,7 +11,6 @@
   home = {
     stateVersion = "21.05";
     packages = with pkgs; [
-      nixops
       lorri
       pandoc
       cabal-install
