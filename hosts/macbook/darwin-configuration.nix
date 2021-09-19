@@ -1,9 +1,13 @@
-{ config, pkgs, ... }:
+{ pkgs, nixpkgs, config, lib, ... }:
 {
-  nix.nixPath = [ "darwin=/Users/sebastian/.nix-defexpr/darwin" ];
-  imports = [
-    <home-manager/nix-darwin>
-    ./home.nix
+  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
+    "skypeforlinux"
+    "slack"
+    "spotify"
+    "spotify-unwrapped"
+    "vscode"
+    "vscode-with-extensions"
+    "zoom"
   ];
 
   environment.systemPackages = with pkgs;
@@ -42,4 +46,9 @@
   programs.zsh.enable = true;
 
   system.stateVersion = 4;
+  users = {
+    users.sebastian = {
+      home = /Users/sebastian;
+    };
+  };
 }
