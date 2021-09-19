@@ -26,27 +26,27 @@ All hosts are configured from their respective [[/hosts][/hosts]] directory, [[h
 - Appearance-wise i use [[https://github.com/be5invis/Iosevka][Iosevka]] as my default font and [[https://ethanschoonover.com/solarized/][Solarized dark]] as color theme
 
 * Setup
-- [[https://nixos.org/manual/nix/stable/#sect-multi-user-installation][Install nix]]
+- [[https://nixos.org/manual/nix/stable/#sect-multi-user-installation][Install nix]] and set up flakes
 - [[https://github.com/nix-community/home-manager#installation][Set up home-manager]]
 - Clone this repository
   #+begin_src shell
   $ git clone git@github.com:sebastiant/dotfiles.git
   $ cd dotfiles
-  #+end_src 
+  #+end_src
 - Change name, username and email if you're not me
   #+begin_src shell
   $ grep sebastian -r .
   $ # edit away!
-  #+end_src 
+  #+end_src
 - Create the first generation
   - NixOS
     #+begin_src shell
     $ sudo nixos-rebuild switch --flake '.#'
-    #+end_src 
+    #+end_src
   - Linux
     #+begin_src shell
-    $ nixFlakes build '.#homeManagerConfigurations.t14-debian.activationPackage' && ./result/activate && rm ./result
-    #+end_src 
+    $ nix build '.#homeManagerConfigurations.t14-debian.activationPackage' && ./result/activate && rm ./result
+    #+end_src
   - macOS
     #+begin_src shell
     $ nix build '.#homeManagerConfigurations.macbook.system' && sudo ./result/activate && rm ./result
