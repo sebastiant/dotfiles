@@ -1,4 +1,4 @@
-{ pkgs, nixpkgs, config, lib, ... }:
+{ pkgs, nix, nixpkgs, config, lib, ... }:
 {
   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
     "skypeforlinux"
@@ -50,5 +50,12 @@
     users.sebastian = {
       home = /Users/sebastian;
     };
+  };
+
+  nix = {
+    package = pkgs.nixUnstable;
+    extraOptions = ''
+      experimental-features = nix-command flakes
+    '';
   };
 }
