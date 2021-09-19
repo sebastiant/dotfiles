@@ -108,7 +108,9 @@
     "wc"  'delete-window
     "wv"  'split-window-horizontally
     "ww"  'evil-window-next
-    "ws"  'split-window-vertically))
+    "ws"  'split-window-vertically
+
+    "SPC" 'org-agenda))
 
 (global-set-key (kbd "<escape>") 'keybaord-escape-quit)
 (use-package undo-tree
@@ -386,7 +388,10 @@
 
 
 (use-package org
+  :hook (org-mode . (lambda()
+                      (setq evil-auto-indent nil)))
   :config
+  (setq org-hide-leading-stars nil)
   (setq org-agenda-files
         '("~/roam-notes/")))
 (use-package org-superstar
