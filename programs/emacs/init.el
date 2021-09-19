@@ -384,6 +384,11 @@
             (when (derived-mode-p 'sh-mode)
               (setq my-flycheck-local-cache '((next-checkers . (sh-shellcheck)))))))
 
+
+(use-package org
+  :config
+  (setq org-agenda-files
+        '("~/roam-notes/")))
 (use-package org-superstar
   :hook (org-mode . (lambda () (org-superstar-mode 1))))
 (use-package org-roam
