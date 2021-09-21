@@ -64,6 +64,7 @@
       restclient
       jsonnet-mode
       terraform-mode
+      po-mode
     ];
   };
 }
