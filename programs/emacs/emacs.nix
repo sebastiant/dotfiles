@@ -44,6 +44,7 @@
       org-roam
       org-tree-slide
       org-superstar
+      visual-fill-column
       hide-mode-line
       perspective
       persp-projectile

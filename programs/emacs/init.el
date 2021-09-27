@@ -387,16 +387,25 @@
               (setq my-flycheck-local-cache '((next-checkers . (sh-shellcheck)))))))
 
 
+(defun st/org-mode-setup ()
+  (visual-line-mode 1)
+  (org-indent-mode)
+  (display-line-numbers-mode 0))
 (use-package org
-  :hook (org-mode . (lambda()
-                      (setq evil-auto-indent nil)))
-  :config
-  (setq org-hide-leading-stars nil)
+  :hook (org-mode . st/org-mode-setup)
   :custom
+  (org-ellipsis " ▾")
+  (org-hide-leading-stars nil)
   (org-agenda-files
    '("~/org/roam")))
 (use-package org-superstar
   :hook (org-mode . (lambda () (org-superstar-mode 1))))
+
+(use-package visual-fill-column
+  :hook (org-mode . (lambda ()
+                      (setq visual-fill-column-width 70
+                            visual-fill-column-center-text t)
+                      (visual-fill-column-mode 1))))
 (use-package org-roam
   :hook (org-roam-find-file . (lambda () (persp-switch "roam")))
   :init (setq org-roam-v2-ack t)
@@ -408,12 +417,10 @@
 
 (use-package org-tree-slide
   :hook ((org-tree-slide-play . (lambda () (hide-mode-line-mode 1)
-                                            (display-line-numbers-mode 0)
                                             (org-display-inline-images)
                                             (setq text-scale-mode-amount 2)
                                             (text-scale-mode 1)))
          (org-tree-slide-stop . (lambda () (text-scale-mode 0)
-                                            (display-line-numbers-mode 1)
                                             (hide-mode-line-mode 0))))
   :custom
   (org-tree-slide-slide-in-effect t)
