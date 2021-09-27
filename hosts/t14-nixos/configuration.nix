@@ -71,6 +71,7 @@
 
   fonts.fonts = with pkgs; [
       iosevka
+      aileron
   ];
 
   environment.systemPackages = with pkgs; [
@@ -110,4 +111,3 @@
 
   system.stateVersion = "20.09";
 }
-

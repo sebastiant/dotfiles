@@ -11,7 +11,7 @@
   ];
 
   environment.systemPackages = with pkgs;
-    [ 
+    [
       ( python38.withPackages (ps: with ps; [ pip flake8 black pynvim ipython python-language-server.override { pylint = null; } ]) )
       httpie
       ffmpeg
@@ -40,7 +40,11 @@
 
   fonts = {
     enableFontDir = true;
-    fonts = with pkgs; [ fira-code iosevka];
+    fonts = with pkgs; [
+      fira-code
+      iosevka
+      aileron
+    ];
   };
 
   programs.zsh.enable = true;
