@@ -392,8 +392,9 @@
                       (setq evil-auto-indent nil)))
   :config
   (setq org-hide-leading-stars nil)
-  (setq org-agenda-files
-        '("~/roam-notes/")))
+  :custom
+  (org-agenda-files
+   '("~/org/roam")))
 (use-package org-superstar
   :hook (org-mode . (lambda () (org-superstar-mode 1))))
 (use-package org-roam
