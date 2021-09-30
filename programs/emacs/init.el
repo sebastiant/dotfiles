@@ -392,6 +392,7 @@
   (org-indent-mode)
   (variable-pitch-mode 1)
   (display-line-numbers-mode 0))
+
 (defun st/org-font-setup ()
   ;; Set faces for heading levels
   (dolist (face '((org-level-1 . 1.2)
@@ -412,6 +413,16 @@
   (set-face-attribute 'org-special-keyword nil :inherit '(font-lock-comment-face fixed-pitch))
   (set-face-attribute 'org-meta-line nil :inherit '(font-lock-comment-face fixed-pitch))
   (set-face-attribute 'org-checkbox nil :inherit 'fixed-pitch))
+
+(defun st/org-skip-subtree-if-priority (priority)
+  "Skip an agenda subtree if it has a priority of A, B or C."
+  (let ((subtree-end (save-excursion (org-end-of-subtree t)))
+        (pri-value (* 1000 (- org-lowest-priority priority)))
+        (pri-current (org-get-priority (thing-at-point 'line t))))
+    (if (= pri-value pri-current)
+        subtree-end
+      nil)))
+
 (use-package org
   :hook (org-mode . st/org-mode-setup)
   :config (st/org-font-setup)
@@ -421,12 +432,20 @@
   (org-agenda-files '("~/org" "~/org/roam" "~/org/roam/daily"))
   (org-agenda-prefix-format "%t %s")
   (org-todo-keywords
-   '((sequence "TODO(t)" "NEXT(n)" "|" "DONE(d1)")))
+   '((sequence "TODO(t)" "NEXT(n)" "IN-PROGRESS(i)" "|" "DONE(d1)")))
   (org-agenda-custom-commands
    '(("d" "Agenda dashboard view"
       ((agenda "" ((org-deadline-warning-days 7)))
-       (alltodo "NEXT"
-             ((org-agenda-overriding-header "Next tasks"))))))))
+       (tags-todo "+PRIORITY=\"A\""
+                  ((org-agenda-overriding-header "High Priority")))
+       (todo "NEXT"
+             ((org-agenda-overriding-header "Next Actions")
+              (org-agenda-max-todos nil)))
+       (todo "TODO"
+             ((org-agenda-overriding-header "Backlog")
+              (org-agenda-skip-function
+                  '(or (st/org-skip-subtree-if-priority ?A)
+                       (org-agenda-skip-if nil '(scheduled deadline)))))))))))
 (use-package org-superstar
   :hook (org-mode . (lambda () (org-superstar-mode 1))))
 
