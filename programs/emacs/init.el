@@ -440,6 +440,13 @@
   :custom
   (org-roam-directory "~/org/roam")
   (org-roam-completion-everywhere t)
+  (org-roam-dailies-capture-templates
+   '(("d" "default" entry "* %<%T>:  %?"
+      :if-new (file+head "%<%Y-%m-%d>.org" "#+title: %<%Y-%m-%d>\n")
+      )
+     ("t" "todo" entry "* TODO  %?"
+      :if-new (file+head "%<%Y-%m-%d>.org" "#+title: %<%Y-%m-%d>\n")
+      )))
   :bind (("C-c n l" . org-roam-buffer-toggle)
          ("C-c n f" . org-roam-node-find)
          ("C-c n i" . org-roam-node-insert)
