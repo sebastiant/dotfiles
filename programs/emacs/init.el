@@ -420,6 +420,8 @@
   (org-hide-leading-stars nil)
   (org-agenda-files
    '("~/org/roam")))
+  (org-todo-keywords
+   '((sequence "TODO(t)" "NEXT(n)" "|" "DONE(d1)")))
 (use-package org-superstar
   :hook (org-mode . (lambda () (org-superstar-mode 1))))
 
