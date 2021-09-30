@@ -418,8 +418,7 @@
   :custom
   (org-ellipsis " ▾")
   (org-hide-leading-stars nil)
-  (org-agenda-files
-   '("~/org/roam")))
+  (org-agenda-files '("~/org" "~/org/roam" "~/org/roam/daily"))
   (org-todo-keywords
    '((sequence "TODO(t)" "NEXT(n)" "|" "DONE(d1)")))
   (org-agenda-custom-commands
@@ -446,7 +445,10 @@
          ("C-c n i" . org-roam-node-insert)
          :map org-mode-map
          ("C-M-i" . completion-at-point))
+  :bind-keymap
+  ("C-c n d" . org-roam-dailies-map)
   :config
+  (require 'org-roam-dailies)
   (org-roam-db-autosync-mode))
 
 (use-package org-tree-slide
