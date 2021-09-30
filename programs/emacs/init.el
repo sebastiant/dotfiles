@@ -431,11 +431,14 @@
 (use-package org-roam
   :hook (org-roam-find-file . (lambda () (persp-switch "roam")))
   :init (setq org-roam-v2-ack t)
-  :custom (org-roam-directory "~/org/roam")
+  :custom
+  (org-roam-directory "~/org/roam")
+  (org-roam-completion-everywhere t)
   :bind (("C-c n l" . org-roam-buffer-toggle)
          ("C-c n f" . org-roam-node-find)
-         ("C-c n i" . org-roam-node-insert))
-   :config (org-roam-setup))
+         ("C-c n i" . org-roam-node-insert)
+  :config
+  (org-roam-db-autosync-enable))
 
 (use-package org-tree-slide
   :hook ((org-tree-slide-play . (lambda () (hide-mode-line-mode 1)
