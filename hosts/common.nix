@@ -24,6 +24,7 @@
       sqlite
       mypy
       syncthing
+      gawk
     ];
   };
 
