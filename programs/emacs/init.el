@@ -422,6 +422,11 @@
    '("~/org/roam")))
   (org-todo-keywords
    '((sequence "TODO(t)" "NEXT(n)" "|" "DONE(d1)")))
+  (org-agenda-custom-commands
+   '(("d" "Agenda dashboard view"
+      ((agenda "" ((org-deadline-warning-days 7)))
+       (alltodo "NEXT"
+             ((org-agenda-overriding-header "Next tasks"))))))))
 (use-package org-superstar
   :hook (org-mode . (lambda () (org-superstar-mode 1))))
 
