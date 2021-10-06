@@ -10,8 +10,9 @@
       url = "github:lnl7/nix-darwin/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    emacs-overlay.url = "github:nix-community/emacs-overlay";
   };
-  outputs = { darwin, home-manager, nixpkgs, ... }: {
+  outputs = {emacs-overlay, darwin, home-manager, nixpkgs, ...}: {
     nixosConfigurations.t14 = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
@@ -27,7 +28,11 @@
     };
     homeManagerConfigurations = {
       t14-debian = home-manager.lib.homeManagerConfiguration {
-        configuration = import ./hosts/t14-debian/home.nix;
+        configuration = {config, pkgs, ...}:
+          {
+            nixpkgs.overlays = [ emacs-overlay.overlay ];
+            imports = [ ./hosts/t14-debian/home.nix ];
+          };
         system = "x86_64-linux";
         homeDirectory = "/home/sebastian";
         username = "sebastian";

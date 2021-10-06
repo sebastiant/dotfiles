@@ -1,13 +1,5 @@
 { config, pkgs, nixpkgs, lib, ... }:
 let
-  unstable = import (fetchTarball
-  "https://github.com/NixOS/nixpkgs/archive/nixos-unstable.tar.gz") {
-    overlays = [
-      (import (builtins.fetchTarball {
-        url = https://github.com/nix-community/emacs-overlay/archive/master.tar.gz;
-      }))
-    ];
-  };
   nixFlakes = (pkgs.writeScriptBin "nixFlakes" ''
       exec ${pkgs.nixUnstable}/bin/nix --experimental-features "nix-command flakes" "$@"
     '');
@@ -64,7 +56,7 @@ in {
     };
   };
   services.syncthing.enable = true;
-
+  programs.emacs.package = pkgs.emacsGcc;
   programs.zsh.shellAliases.bat = "batcat";
 
   home.packages = with pkgs; [
