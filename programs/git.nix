@@ -17,6 +17,7 @@
       dsp = "!git --no-pager diff --staged";
       main = "checkout main";
       master = "checkout master";
+      no-remotes = "!git branch --format '%(refname:short) %(upstream:short)' | awk '{if (!$2) print $1;}'";
       alias = "!git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\\t => \\2/' | sort";
     };
     extraConfig = {
