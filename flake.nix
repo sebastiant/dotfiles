@@ -43,8 +43,11 @@
         modules = [
           ./hosts/macbook/darwin-configuration.nix
           home-manager.darwinModules.home-manager {
-            home-manager.useGlobalPkgs = true;
-            home-manager.users.sebastian = ./hosts/macbook/home.nix;
+            home-manager.users.sebastian = { pkgs, ... }:
+              {
+                nixpkgs.overlays = [ emacs-overlay.overlay ];
+                imports = [ ./hosts/macbook/home.nix];
+              };
           }
         ];
       };
