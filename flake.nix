@@ -18,9 +18,9 @@
       modules = [
         ./hosts/t14-nixos/configuration.nix
         home-manager.nixosModules.home-manager {
-          home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
           home-manager.users.sebastian = { ... }: {
+            nixpkgs.overlays = [ emacs-overlay.overlay ];
             imports = [ ./hosts/t14-nixos/home.nix ];
           };
         }

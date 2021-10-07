@@ -2,6 +2,7 @@
 {
   imports = [ ../programs/tmux/tmux.nix ];
   programs.home-manager.enable = true;
+  programs.emacs.package = pkgs.emacsGcc;
   services.dunst = {
     enable = true;
     settings = {

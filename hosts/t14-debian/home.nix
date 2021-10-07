@@ -10,7 +10,6 @@ in {
   ];
 
   services.syncthing.enable = true;
-  programs.emacs.package = pkgs.emacsGcc;
   programs.zsh.shellAliases.bat = "batcat";
 
   home.packages = with pkgs; [
