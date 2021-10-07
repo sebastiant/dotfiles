@@ -12,27 +12,26 @@
     };
     emacs-overlay.url = "github:nix-community/emacs-overlay";
   };
-  outputs = {emacs-overlay, darwin, home-manager, nixpkgs, ...}: {
+  outputs = {emacs-overlay, darwin, home-manager, nixpkgs, ...}:
+    let
+      homeManagerConfFor = config: { ... }: {
+          nixpkgs.overlays = [ emacs-overlay.overlay ];
+          imports = [ config ];
+        };
+    in {
     nixosConfigurations.t14 = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
         ./hosts/t14-nixos/configuration.nix
         home-manager.nixosModules.home-manager {
           home-manager.useUserPackages = true;
-          home-manager.users.sebastian = { ... }: {
-            nixpkgs.overlays = [ emacs-overlay.overlay ];
-            imports = [ ./hosts/t14-nixos/home.nix ];
-          };
+          home-manager.users.sebastian = homeManagerConfFor ./hosts/t14-nixos/home.nix;
         }
       ];
     };
     homeManagerConfigurations = {
       t14-debian = home-manager.lib.homeManagerConfiguration {
-        configuration = {config, pkgs, ...}:
-          {
-            nixpkgs.overlays = [ emacs-overlay.overlay ];
-            imports = [ ./hosts/t14-debian/home.nix ];
-          };
+        home-manager.users.sebastian = homeManagerConfFor ./hosts/t14-nixos/home.nix;
         system = "x86_64-linux";
         homeDirectory = "/home/sebastian";
         username = "sebastian";
@@ -43,11 +42,7 @@
         modules = [
           ./hosts/macbook/darwin-configuration.nix
           home-manager.darwinModules.home-manager {
-            home-manager.users.sebastian = { pkgs, ... }:
-              {
-                nixpkgs.overlays = [ emacs-overlay.overlay ];
-                imports = [ ./hosts/macbook/home.nix];
-              };
+            home-manager.users.sebastian = homeManagerConfFor ./hosts/macbook/home.nix;
           }
         ];
       };
