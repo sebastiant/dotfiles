@@ -1,9 +1,8 @@
 { config, pkgs, ... }:
 {
-  programs.home-manager.enable = true;
   imports = [
     ../common.nix
-    ../../programs/tmux/tmux.nix
+    ../common-linux.nix
   ];
   home.username = "sebastian";
   home.homeDirectory = "/home/sebastian";
@@ -17,8 +16,4 @@
     blink1-tool
     flameshot
   ];
-
-  home.file.".xmonad/xmonad.hs".source = ../../programs/xmonad.hs;
-  xdg.configFile."polybar/config".source = ../../programs/polybar/config;
-  xdg.configFile."polybar/launch.sh".source = ../../programs/polybar/launch.sh;
 }
