@@ -13,6 +13,7 @@
       dap-mode
       dired-single
       doom-themes
+      editorconfig
       elfeed
       elixir-mode
       envrc
@@ -25,7 +26,9 @@
       git-gutter
       haskell-mode
       helpful
+      hide-mode-line
       js2-mode
+      jsonnet-mode
       lsp-haskell
       lsp-mode
       lsp-pyright
@@ -37,12 +40,11 @@
       no-littering
       org
       org-roam
-      org-tree-slide
       org-superstar
-      visual-fill-column
-      hide-mode-line
-      perspective
+      org-tree-slide
       persp-projectile
+      perspective
+      po-mode
       projectile
       py-isort
       python-mode
@@ -55,15 +57,11 @@
       undo-tree
       use-package
       use-package-ensure-system-package
+      visual-fill-column
+      vterm
       web-mode
       which-key
-      vterm
       yaml-mode
-      editorconfig
-      restclient
-      jsonnet-mode
-      terraform-mode
-      po-mode
     ];
   };
 }
