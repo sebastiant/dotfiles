@@ -16,6 +16,7 @@
       editorconfig
       elfeed
       elixir-mode
+      embark
       envrc
       evil
       evil-collection

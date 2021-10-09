@@ -161,6 +161,19 @@
 (use-package marginalia
   :init (marginalia-mode))
 
+(use-package embark
+  :bind
+  (("C-." . embark-act)
+   ("M-." . embark-dwim)
+   ("C-h B" . embark-bindings))
+  :init
+  (setq prefix-help-command #'embark-prefix-help-command)
+  :config
+  (add-to-list 'display-buffer-alist
+               '("\\`\\*Embark Collect \\(Live\\|Completions\\)\\*"
+                 nil
+                 (window-parameters (mode-line-format . none)))))
+
 ;; Utf-8
 (prefer-coding-system 'utf-8)
 (set-default-coding-systems 'utf-8)
