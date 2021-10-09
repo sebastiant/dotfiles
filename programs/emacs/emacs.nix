@@ -10,6 +10,7 @@
       beacon
       company
       company-box
+      consult
       dap-mode
       dired-single
       doom-themes
