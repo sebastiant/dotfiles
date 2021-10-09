@@ -26,38 +26,6 @@
 :init
 (add-hook 'prog-mode-hook #'rainbow-delimiters-mode))
 
-(use-package ivy
-  :diminish
-  :bind (("C-s" . swiper)
-         :map ivy-minibuffer-map
-         ("TAB" . ivy-alt-done)
-         ("C-l" . ivy-alt-done)
-         ("C-j" . ivy-next-line)
-         ("C-k" . ivy-previous-line)
-         :map ivy-switch-buffer-map
-         ("C-k" . ivy-previous-line)
-         ("C-l" . ivy-done)
-         ("C-d" . ivy-switch-buffer-kill)
-         :map ivy-reverse-i-search-map
-         ("C-k" . ivy-previous-line)
-         ("C-d" . ivy-reverse-i-search-kill))
-  :config
-  (ivy-mode 1))
-
-(use-package counsel
-  :bind (("M-x" . counsel-M-x)
-         ("C-x b" . counsel-ibuffer)
-         ("C-x C-f" . counsel-find-file)
-         :map minibuffer-local-map
-         ("C-r" . 'counsel-minibuffer-history)))
-
-(use-package ivy-prescient
-  :after counsel
-  :config
-  (prescient-persist-mode 1)
-  (ivy-prescient-mode 1))
-
-
 (use-package general
   :after evil
   :config
@@ -77,7 +45,7 @@
     ""    nil
 
     "b"   '(:ignore t :which-key "buffer")
-    "bb"  'persp-counsel-switch-buffer
+    "bb"  'persp-switch-to-buffer*
     "bd"  'persp-kill-buffer
     "bs"  'save-buffer
 
@@ -89,7 +57,7 @@
     "v"   'persp-switch
 
     "f"   '(:ignore t :which-key "files")
-    "ff"  'counsel-find-file
+    "ff"  'find-file
 
     "g"   '(:ignore t :which-key "magit")
     "gg"  'magit-status
@@ -97,11 +65,9 @@
 
     "p"   '(:ignore t :which-key "projectile")
     "pp"  'projectile-persp-switch-project
-    "pf"  'counsel-projectile-find-file
-    "ps"  'counsel-projectile-rg
+    "pf"  'projectile-find-file
+    "ps"  'projectile-ripgrep
     "pt"  'projectile-run-vterm
-
-    "s"   'swiper
 
     "w"   '(:ignore t :which-key "window")
     "ww"  'evil-window-next
@@ -185,8 +151,6 @@
   (when (file-directory-p "~/dev")
     (setq projectile-project-search-path '("~/dev")))
   (setq projectile-switch-project-action #'projectile-dired))
-(use-package counsel-projectile
-  :config (counsel-projectile-mode))
 
 ;; Utf-8
 (prefer-coding-system 'utf-8)
@@ -266,10 +230,9 @@
   :config (setq which-key-idle-delay 1))
 
 (use-package helpful
-  :after counsel
   :custom
-  (counsel-describe-function-function #'helpful-callable)
-  (counsel-describe-variable-function #'helpful-variable))
+  (describe-function-function #'helpful-callable)
+  (describe-variable-function #'helpful-variable))
 
 (use-package elixir-mode
   :hook (elixir-mode . lsp-deferred)
@@ -321,7 +284,6 @@
   :custom
   (lsp-ui-doc-position 'bottom)
   (lsp-ui-sideline-show-code-actions nil))
-(use-package lsp-ivy :commands lsp-ivy-workspace-symbol)
 (use-package lsp-treemacs
   :after lsp
   :commands lsp-treemacs-errors-list)

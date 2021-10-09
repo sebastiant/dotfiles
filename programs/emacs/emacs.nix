@@ -10,8 +10,6 @@
       beacon
       company
       company-box
-      counsel
-      counsel-projectile
       dap-mode
       dired-single
       doom-themes
@@ -27,11 +25,8 @@
       git-gutter
       haskell-mode
       helpful
-      ivy
-      ivy-prescient
       js2-mode
       lsp-haskell
-      lsp-ivy
       lsp-mode
       lsp-pyright
       lsp-treemacs
@@ -53,6 +48,9 @@
       python-mode
       pyvenv
       rainbow-delimiters
+      restclient
+      ripgrep
+      terraform-mode
       typescript-mode
       undo-tree
       use-package
