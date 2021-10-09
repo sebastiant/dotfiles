@@ -18,6 +18,7 @@
       elfeed
       elixir-mode
       embark
+      embark-consult
       envrc
       evil
       evil-collection

@@ -273,6 +273,12 @@
   (autoload 'projectile-project-root "projectile")
   (setq consult-project-root-function #'projectile-project-root))
 
+(use-package embark-consult
+  :after (embark consult)
+  :demand t
+  :hook
+  (embark-collect-mode . consult-preview-at-point-mode))
+
 ;; Utf-8
 (prefer-coding-system 'utf-8)
 (set-default-coding-systems 'utf-8)
