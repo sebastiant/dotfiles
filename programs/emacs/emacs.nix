@@ -38,6 +38,7 @@
       minions
       nix-mode
       no-littering
+      orderless
       org
       org-roam
       org-superstar

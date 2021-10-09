@@ -155,6 +155,9 @@
 (use-package vertico
   :init (vertico-mode))
 
+(use-package orderless
+  :custom (completion-styles '(orderless)))
+
 ;; Utf-8
 (prefer-coding-system 'utf-8)
 (set-default-coding-systems 'utf-8)
