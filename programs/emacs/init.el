@@ -158,6 +158,9 @@
 (use-package orderless
   :custom (completion-styles '(orderless)))
 
+(use-package marginalia
+  :init (marginalia-mode))
+
 ;; Utf-8
 (prefer-coding-system 'utf-8)
 (set-default-coding-systems 'utf-8)

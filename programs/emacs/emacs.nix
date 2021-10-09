@@ -35,6 +35,7 @@
       lsp-treemacs
       lsp-ui
       magit
+      marginalia
       minions
       nix-mode
       no-littering
