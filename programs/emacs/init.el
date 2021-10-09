@@ -152,6 +152,9 @@
     (setq projectile-project-search-path '("~/dev")))
   (setq projectile-switch-project-action #'projectile-dired))
 
+(use-package vertico
+  :init (vertico-mode))
+
 ;; Utf-8
 (prefer-coding-system 'utf-8)
 (set-default-coding-systems 'utf-8)
