@@ -18,4 +18,5 @@
     blink1-tool
     flameshot
   ];
+  home.file.".xsessionrc".source = ./xsessionrc;
 }
