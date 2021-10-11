@@ -8,6 +8,7 @@ in {
    ../common.nix
  ];
  home.packages = with pkgs; [
+   zlib
    vscode-with-extensions
    google-cloud-sdk
    nixFlakes
