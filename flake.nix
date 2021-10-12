@@ -20,7 +20,6 @@
       };
     in {
       nixosConfigurations.t14 = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
         modules = [
           ./hosts/t14-nixos/configuration.nix
           home-manager.nixosModules.home-manager {
@@ -31,7 +30,7 @@
       };
       homeManagerConfigurations = {
         t14-debian = home-manager.lib.homeManagerConfiguration {
-          home-manager.users.sebastian = homeManagerConfFor ./hosts/t14-nixos/home.nix;
+          configuration = homeManagerConfFor ./hosts/t14-debian/home.nix;
           system = "x86_64-linux";
           homeDirectory = "/home/sebastian";
           username = "sebastian";
