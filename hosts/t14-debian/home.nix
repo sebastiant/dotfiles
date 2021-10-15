@@ -9,6 +9,8 @@ in {
     ../common-linux.nix
   ];
 
+  services.emacs.enable = true;
+
   programs.zsh.shellAliases.bat = "batcat";
 
   home.packages = with pkgs; [

@@ -7,6 +7,8 @@
   home.username = "sebastian";
   home.homeDirectory = "/home/sebastian";
 
+  services.emacs.enable = true;
+
   home.packages = with pkgs; [
     zlib
     dmenu
