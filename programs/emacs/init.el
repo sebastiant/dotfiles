@@ -279,6 +279,9 @@
   :hook
   (embark-collect-mode . consult-preview-at-point-mode))
 
+(use-package savehist
+  :init (savehist-mode))
+
 ;; Utf-8
 (prefer-coding-system 'utf-8)
 (set-default-coding-systems 'utf-8)
