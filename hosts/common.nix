@@ -23,7 +23,6 @@
       zathura
       sqlite
       mypy
-      syncthing
       gawk
     ];
   };

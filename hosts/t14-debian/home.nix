@@ -9,7 +9,6 @@ in {
     ../common-linux.nix
   ];
 
-  services.syncthing.enable = true;
   programs.zsh.shellAliases.bat = "batcat";
 
   home.packages = with pkgs; [
