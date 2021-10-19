@@ -27,6 +27,13 @@
           }
         ];
       };
+      debianSystem = home-manager.lib.homeManagerConfiguration {
+        configuration = homeManagerConfFor ./hosts/t14-debian/home.nix;
+        system = "x86_64-linux";
+        homeDirectory = "/home/sebastian";
+        username = "sebastian";
+        stateVersion = "21.05";
+      };
     in {
       nixosConfigurations.t14 = nixpkgs.lib.nixosSystem {
         modules = [
@@ -37,15 +44,7 @@
           }
         ];
       };
-      homeManagerConfigurations = {
-        t14-debian = home-manager.lib.homeManagerConfiguration {
-          configuration = homeManagerConfFor ./hosts/t14-debian/home.nix;
-          system = "x86_64-linux";
-          homeDirectory = "/home/sebastian";
-          username = "sebastian";
-          stateVersion = "21.05";
-        };
-      };
+      debian = debianSystem.activationPackage;
       defaultPackage.x86_64-darwin = darwinSystem.system;
     };
 }

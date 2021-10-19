@@ -45,7 +45,7 @@ All hosts are configured from their respective [[/hosts][/hosts]] directory, [[h
     #+end_src
   - Linux
     #+begin_src shell
-    $ nix build '.#homeManagerConfigurations.t14-debian.activationPackage' && ./result/activate && rm ./result
+    $ nix build '.#debian' && ./result/activate && rm ./result
     #+end_src
   - macOS
     #+begin_src shell
