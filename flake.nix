@@ -18,6 +18,15 @@
         nixpkgs.overlays = [ emacs-overlay.overlay ];
         imports = [ config ];
       };
+      darwinSystem = darwin.lib.darwinSystem {
+        system = "x86_64-darwin";
+        modules = [
+          ./hosts/macbook/darwin-configuration.nix
+          home-manager.darwinModules.home-manager {
+            home-manager.users.sebastian = homeManagerConfFor ./hosts/macbook/home.nix;
+          }
+        ];
+      };
     in {
       nixosConfigurations.t14 = nixpkgs.lib.nixosSystem {
         modules = [
@@ -36,24 +45,7 @@
           username = "sebastian";
           stateVersion = "21.05";
         };
-        macbook = darwin.lib.darwinSystem {
-          system = "x86_64-darwin";
-          modules = [
-            ./hosts/macbook/darwin-configuration.nix
-            home-manager.darwinModules.home-manager {
-              home-manager.users.sebastian = homeManagerConfFor ./hosts/macbook/home.nix;
-            }
-          ];
-        };
-        packages.x86_64-darwin.defaultPackage = darwin.lib.darwinSystem {
-          system = "x86_64-darwin";
-          modules = [
-            ./hosts/macbook/darwin-configuration.nix
-            home-manager.darwinModules.home-manager {
-              home-manager.users.sebastian = homeManagerConfFor ./hosts/macbook/home.nix;
-            }
-          ];
-        };
       };
+      defaultPackage.x86_64-darwin = darwinSystem.system;
     };
 }

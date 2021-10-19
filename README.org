@@ -49,6 +49,6 @@ All hosts are configured from their respective [[/hosts][/hosts]] directory, [[h
     #+end_src
   - macOS
     #+begin_src shell
-    $ nix build '.#homeManagerConfigurations.macbook.system' && sudo ./result/activate && rm ./result
+    $ nix build && sudo ./result/activate && rm ./result
     #+end_src
 # End:
