@@ -606,5 +606,8 @@
 (use-package editorconfig
   :config (editorconfig-mode 1))
 
+(use-package terraform-mode
+  :hook (terraform-mode . terraform-format-on-save-mode))
+
 (provide 'init)
 ;;; init.el ends here
