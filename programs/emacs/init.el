@@ -441,11 +441,15 @@
 (use-package company
   :after lsp-mode
   :hook (lsp-mode . company-mode)
-;;  :config (global-set-key (kbd "TAB") #'company-indent-or-complete-common)
   :custom
   (company-minimum-prefix-length 1)
-  (company-idle-delay 0.0))
-(global-set-key (kbd "TAB") #'company-indent-or-complete-common)
+  (company-idle-delay 0.0)
+  :bind (:map company-active-map
+              ([return] . nil)
+              ("ret"    . nil)
+              ([tab]    . company-complete-selection)
+              ("tab"    . company-complete-selection)))
+
 (use-package company-box
  :hook (company-mode . company-box-mode))
 
