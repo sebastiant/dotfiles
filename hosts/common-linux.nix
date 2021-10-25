@@ -48,6 +48,9 @@
       name = "Adwaita";
     };
   };
+
+  services.blueman-applet.enable = true;
+
   home.file.".xmonad/xmonad.hs".source = ../programs/xmonad.hs;
   xdg.configFile."polybar/config".source = ../programs/polybar/config;
   xdg.configFile."polybar/launch.sh".source = ../programs/polybar/launch.sh;
