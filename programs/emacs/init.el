@@ -127,6 +127,7 @@
   :commands (dired dired-jump))
 
 (use-package magit
+  :custom (magit-blame-echo-style 'margin)
   :init (global-set-key (kbd "C-x g") 'magit-status))
 (use-package forge
   :after magit)
