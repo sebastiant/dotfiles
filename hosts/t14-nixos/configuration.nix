@@ -4,6 +4,7 @@
   imports =
     [
       ./hardware-configuration.nix
+      ../../programs/cachix/cachix.nix
     ];
   boot.loader.systemd-boot.enable = true;
 
