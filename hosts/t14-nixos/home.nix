@@ -18,5 +18,7 @@
     blink1-tool
     flameshot
   ];
-  home.file.".xsessionrc".source = ./xsessionrc;
+  home.file.".xsessionrc".text = ''
+    xset r rate 200 50
+    '';
 }

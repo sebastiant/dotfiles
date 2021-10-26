@@ -33,7 +33,10 @@ in {
     xmonad-with-packages
   ];
 
-  home.file.".xsessionrc".source = ./xsessionrc;
+  home.file.".xsessionrc".text = ''
+    export PATH=$HOME/.nix-profile/bin:/nix/var/nix/profiles/default/bin:$PATH
+    xset r rate 200 50
+    '';
 
   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
     "1password"
