@@ -35,9 +35,9 @@
         haskellPackages.xmonad
       ];
     };
-  displayManager.sessionCommands = with pkgs; lib.mkAfter
-    ''
-    xmodmap ~/.Xmodmap
+  displayManager.sessionCommands = lib.mkAfter ''
+    ${pkgs.xlibs.xset}/bin/xset r rate 200 50
+    ${pkgs.xlibs.xmodmap} ~/.Xmodmap
     '';
   };
   services.autorandr = {
