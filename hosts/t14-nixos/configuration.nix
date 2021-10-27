@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, nixpkgs, pkgs, ... }:
 
 {
   imports =
@@ -58,13 +58,14 @@
     shell = pkgs.zsh;
   };
   nix = {
-    package = pkgs.nixUnstable;
-    extraOptions = ''
-      experimental-features = nix-command flakes
-    '';
     allowedUsers = [
       "sebastian"
       ];
+    extraOptions = ''
+      experimental-features = nix-command flakes
+    '';
+    package = pkgs.nixUnstable;
+    registry.nixpkgs.flake = nixpkgs;
   };
 
   fonts.fonts = with pkgs; [
