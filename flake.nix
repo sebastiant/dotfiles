@@ -46,6 +46,7 @@
         ];
       };
       debian = debianSystem.activationPackage;
+      defaultPackage.x86_64-linux = debianSystem.activationPackage;
       defaultPackage.x86_64-darwin = darwinSystem.system;
     };
 }
