@@ -25,6 +25,7 @@
       sqlite
       mypy
       gawk
+      jsonnet
     ];
   };
 
