@@ -65,7 +65,6 @@
       experimental-features = nix-command flakes
     '';
     package = pkgs.nixUnstable;
-    registry.nixpkgs.flake = nixpkgs;
   };
 
   fonts.fonts = with pkgs; [
