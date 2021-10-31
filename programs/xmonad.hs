@@ -1,6 +1,7 @@
 import Graphics.X11.ExtraTypes.XF86
 import System.IO
 import XMonad
+import XMonad.Actions.SpawnOn
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.EwmhDesktops
 import XMonad.Hooks.ManageDocks
@@ -108,6 +109,9 @@ main = do
           spawn "sh .config/polybar/launch.sh"
           spawnOnce "autorandr --change" -- && feh --bg-scale ~/Pictures/wallpapers/active.jpg"
           setWMName "LG3D"
+          spawnOn "1" "emacs"
+          spawnOn "2" "firefox"
+          spawnOn "3" "slack"
       , handleEventHook = mempty
     }
 
