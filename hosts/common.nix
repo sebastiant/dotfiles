@@ -11,21 +11,21 @@
   home = {
     stateVersion = "21.05";
     packages = with pkgs; [
-      cachix
-      lorri
-      pandoc
       cabal-install
+      cachix
+      gawk
       ghc
       haskell-language-server
-      stack
+      jsonnet
+      lorri
+      mypy
+      pandoc
       pyright
       ripgrep
+      sqlite
+      stack
       tree
       zathura
-      sqlite
-      mypy
-      gawk
-      jsonnet
     ];
   };
 
