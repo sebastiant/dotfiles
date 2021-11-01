@@ -443,7 +443,7 @@
   :hook (lsp-mode . company-mode)
   :custom
   (company-minimum-prefix-length 1)
-  (company-idle-delay 0.0)
+  (company-idle-delay 0.3)
   :bind (:map company-active-map
               ([return] . nil)
               ("ret"    . nil)
