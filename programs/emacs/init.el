@@ -485,6 +485,9 @@
 
 
 (defun st/org-mode-setup ()
+  (org-babel-do-load-languages
+   'org-babel-load-languages
+   '((python . t) (emacs-lisp . t)))
   (visual-line-mode 1)
   (org-indent-mode)
   (variable-pitch-mode 1)
