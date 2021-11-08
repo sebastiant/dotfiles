@@ -8,6 +8,7 @@
     "vscode"
     "vscode-with-extensions"
     "zoom"
+    "1password"
   ];
 
   environment.systemPackages = with pkgs;

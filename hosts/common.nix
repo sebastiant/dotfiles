@@ -27,6 +27,7 @@
       stack
       tree
       zathura
+      _1password
     ];
   };
 

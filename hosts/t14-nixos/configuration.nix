@@ -112,6 +112,7 @@
     "vscode"
     "vscode-with-extensions"
     "zoom"
+    "1password"
   ];
 
   system.stateVersion = "20.09";

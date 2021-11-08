@@ -47,5 +47,6 @@ in {
     "vscode"
     "vscode-with-extensions"
     "zoom"
+    "1password"
   ];
 }
