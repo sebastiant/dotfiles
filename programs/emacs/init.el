@@ -536,16 +536,13 @@
   (org-agenda-custom-commands
    '(("d" "Agenda dashboard view"
       ((agenda "" ((org-deadline-warning-days 7)))
-       (tags-todo "+PRIORITY=\"A\""
-                  ((org-agenda-overriding-header "High Priority")))
+       (todo "IN-PROGRESS"
+             ((org-agenda-overriding-header "In-progress")
+              (org-agenda-max-todos nil)))
        (todo "NEXT"
              ((org-agenda-overriding-header "Next Actions")
-              (org-agenda-max-todos nil)))
-       (todo "TODO"
-             ((org-agenda-overriding-header "Backlog")
-              (org-agenda-skip-function
-                  '(or (st/org-skip-subtree-if-priority ?A)
-                       (org-agenda-skip-if nil '(scheduled deadline)))))))))))
+              (org-agenda-max-todos nil))))))))
+
 (use-package org-superstar
   :hook (org-mode . (lambda () (org-superstar-mode 1))))
 
