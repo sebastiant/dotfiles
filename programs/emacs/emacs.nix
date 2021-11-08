@@ -8,6 +8,7 @@
     extraPackages = epkgs: with epkgs; [
       alchemist
       beacon
+      python-black
       company
       company-box
       consult
