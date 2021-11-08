@@ -527,6 +527,7 @@
   :hook (org-mode . st/org-mode-setup)
   :config (st/org-font-setup)
   :custom
+  (org-confirm-babel-evaluate nil)
   (org-ellipsis " ▾")
   (org-hide-leading-stars nil)
   (org-agenda-files '("~/org" "~/org/roam" "~/org/roam/daily"))
