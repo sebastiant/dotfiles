@@ -146,9 +146,6 @@
   :after python-black
   :config (add-hook 'before-save-hook 'py-isort-before-save))
 
-(use-package python-black
-  :config (add-hook 'before-save-hook 'python-black-on-save-mode))
-
 (use-package projectile
   :diminish projectile-mode
   :config (projectile-mode)
