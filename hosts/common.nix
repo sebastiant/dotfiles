@@ -28,6 +28,7 @@
       tree
       zathura
       _1password
+      kubectx
     ];
   };
 
