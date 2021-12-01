@@ -29,6 +29,7 @@
       zathura
       _1password
       kubectx
+      watchexec
     ];
   };
 
