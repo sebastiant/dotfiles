@@ -19,7 +19,6 @@
       jsonnet
       lorri
       mypy
-      nixops
       pandoc
       pyright
       ripgrep
