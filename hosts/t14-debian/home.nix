@@ -31,6 +31,8 @@ in {
     _1password
     nixFlakes
     xmonad-with-packages
+    sass
+    esbuild
   ];
 
   home.file.".xsessionrc".text = ''
