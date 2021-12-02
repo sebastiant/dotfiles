@@ -33,6 +33,7 @@ in {
     xmonad-with-packages
     sass
     esbuild
+    pavucontrol
   ];
 
   home.file.".xsessionrc".text = ''
