@@ -29,6 +29,7 @@
       _1password
       kubectx
       watchexec
+      lazydocker
     ];
   };
 
