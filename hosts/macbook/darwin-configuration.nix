@@ -20,7 +20,6 @@
       openssl
       yarn
       coreutils
-      htop
       httpie
       ripgrep
       fzf

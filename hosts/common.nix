@@ -30,6 +30,7 @@
       kubectx
       watchexec
       lazydocker
+      htop
     ];
   };
 
