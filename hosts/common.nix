@@ -14,8 +14,6 @@
       cabal-install
       cachix
       gawk
-      ghc
-      haskell-language-server
       jsonnet
       lorri
       mypy
