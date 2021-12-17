@@ -31,6 +31,8 @@
       watchexec
       lazydocker
       htop
+      httpie
+      k9s
     ];
   };
 
