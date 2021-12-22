@@ -24,7 +24,6 @@
       stack
       tree
       zathura
-      _1password
       kubectx
       watchexec
       lazydocker
