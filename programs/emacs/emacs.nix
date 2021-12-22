@@ -19,6 +19,7 @@
       editorconfig
       elfeed
       elixir-mode
+      elm-mode
       embark
       embark-consult
       envrc
