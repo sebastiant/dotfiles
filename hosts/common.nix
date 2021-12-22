@@ -33,6 +33,7 @@
       htop
       httpie
       k9s
+      elmPackages.elm
     ];
   };
 
