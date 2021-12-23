@@ -32,6 +32,7 @@
       k9s
       elmPackages.elm
       elmPackages.elm-format
+      whois
     ];
   };
 
