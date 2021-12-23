@@ -33,6 +33,7 @@
       elmPackages.elm
       elmPackages.elm-format
       whois
+      jq
     ];
   };
 
