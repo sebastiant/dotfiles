@@ -423,7 +423,9 @@
 
 (use-package yasnippet
   :custom (yas-snippet-dirs '("~/.snippets/"))
-  :init (yas-global-mode))
+  :init
+  (yas-global-mode)
+  (global-set-key (kbd "C-c y") 'company-yasnippet))
 
 (use-package web-mode
   :config
