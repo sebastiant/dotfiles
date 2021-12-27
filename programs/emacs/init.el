@@ -101,7 +101,6 @@
   (setq evil-vsplit-window-right t)
   (setq evil-split-window-below t)
   (setq evil-shift-round nil)
-  (setq evil-want-C-u-scroll t)
   (setq evil-want-fine-undo t)
   (setq evil-undo-system 'undo-tree)
   :config
