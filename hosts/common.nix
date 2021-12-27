@@ -57,4 +57,9 @@
     rev = "f8574f27e1d7772629c9509b2116d504798fe30a";
     sha256 = "0svskd09vvbzqk2ziw6iaz1md25xrva6s6dhjfb471nqb13brmjq";
   };
+
+  home.file.".ipython/profile_default/ipython_config.py".text = ''
+    c.InteractiveShellApp.extensions = ["autoreload"]
+    c.InteractiveShellApp.exec_lines = ["%autoreload 2"]
+    '';
 }
