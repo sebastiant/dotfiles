@@ -421,6 +421,10 @@
   :after lsp
   :commands lsp-treemacs-errors-list)
 
+(use-package yasnippet
+  :custom (yas-snippet-dirs '("~/.snippets/"))
+  :init (yas-global-mode))
+
 (use-package web-mode
   :config
   (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))

@@ -71,6 +71,7 @@
       web-mode
       which-key
       yaml-mode
+      yasnippet
     ];
   };
 }
