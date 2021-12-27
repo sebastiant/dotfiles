@@ -34,6 +34,7 @@
       elmPackages.elm-format
       whois
       jq
+      caddy
     ];
   };
 
