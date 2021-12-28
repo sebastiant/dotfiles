@@ -59,10 +59,6 @@
     "f"   '(:ignore t :which-key "files")
     "ff"  'find-file
 
-    "g"   '(:ignore t :which-key "magit")
-    "gg"  'magit-status
-    "gb"  'magit-blame
-
     "p"   '(:ignore t :which-key "projectile")
     "pp"  'projectile-persp-switch-project
     "pf"  'projectile-find-file
@@ -127,7 +123,7 @@
 
 (use-package magit
   :custom (magit-blame-echo-style 'margin)
-  :init (global-set-key (kbd "C-x g") 'magit-status))
+  :init (global-set-key (kbd "C-c g") 'magit-status))
 (use-package forge
   :after magit)
 (use-package git-gutter
