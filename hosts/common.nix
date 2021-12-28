@@ -35,6 +35,7 @@
       whois
       jq
       caddy
+      nodePackages.javascript-typescript-langserver
     ];
   };
 
