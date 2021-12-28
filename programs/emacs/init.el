@@ -362,8 +362,7 @@
   (describe-variable-function #'helpful-variable))
 
 (use-package elixir-mode
-  :hook (elixir-mode . lsp-deferred)
-  :init (add-to-list 'exec-path "~/language-servers/elixir"))
+  :hook (elixir-mode . lsp-deferred))
 
 (use-package haskell-mode
   :hook

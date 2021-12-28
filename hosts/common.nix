@@ -35,6 +35,7 @@
       whois
       jq
       caddy
+      elixir_ls
       nodePackages.javascript-typescript-langserver
     ];
   };
