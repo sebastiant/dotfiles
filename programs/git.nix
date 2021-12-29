@@ -194,6 +194,8 @@
       ".direnv/"
       ".dir-locals.el"
       ".projectile"
+      "elm-stuff"
+      "repl-temp-*"
     ];
   };
 }
