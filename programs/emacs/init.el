@@ -364,6 +364,9 @@
 (use-package elixir-mode
   :hook (elixir-mode . lsp-deferred))
 
+(use-package elm-mode
+  :hook (elm-mode . lsp-deferred))
+
 (use-package haskell-mode
   :hook
   (haskell-literate-mode . lsp-deferred)
