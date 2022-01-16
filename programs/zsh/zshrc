@@ -38,7 +38,6 @@ vterm_printf(){
 }
 
 # For stuff not suppose to be version controlled
-if [ -e ~/.env ]; then
-  source ~/.env
+if [ -e ~/.env_custom ]; then
+  source ~/.env_custom
 fi
-
