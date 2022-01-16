@@ -30,9 +30,6 @@
       htop
       httpie
       k9s
-      elmPackages.elm
-      elmPackages.elm-format
-      elmPackages.elm-language-server
       whois
       jq
       caddy
