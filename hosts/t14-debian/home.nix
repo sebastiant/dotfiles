@@ -34,6 +34,8 @@ in {
     sass
     esbuild
     pavucontrol
+    mysql
+    vscode
   ];
 
   home.file.".xsessionrc".text = ''
