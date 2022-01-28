@@ -53,6 +53,7 @@
       persp-projectile
       perspective
       po-mode
+      popper
       projectile
       py-isort
       python-mode
