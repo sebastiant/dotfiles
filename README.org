@@ -28,6 +28,7 @@ All hosts are configured from their respective [[/hosts][/hosts]] directory, [[h
 * Setup
 - [[https://nixos.org/manual/nix/stable/#sect-multi-user-installation][Install nix]] and set up flakes
 - [[https://github.com/nix-community/home-manager#installation][Set up home-manager]]
+- Install cachix and [[https://nixos.wiki/wiki/Binary_Cache#Using_a_binary_cache][add the nix-community binary cache]]
 - Clone this repository
   #+begin_src shell
   $ git clone git@github.com:sebastiant/dotfiles.git
