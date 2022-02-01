@@ -14,25 +14,25 @@
   environment.systemPackages = with pkgs;
     [
       ( python38.withPackages (ps: with ps; [ pip flake8 black pynvim ipython python-language-server.override { pylint = null; } ]) )
-      ffmpeg
-      gnupg
-      openssl
-      yarn
+      alacritty
+      cabal-install
       coreutils
-      ripgrep
+      docker
+      ffmpeg
+      fswatch
       fzf
+      ghc
+      gnupg
       irssi
+      nodejs
+      openssl
+      reattach-to-user-namespace
+      ripgrep
+      sqlite
       tig
       tree
       wget
-      fswatch
-      sqlite
-      nodejs
-      docker
-      reattach-to-user-namespace
-      alacritty
-      ghc
-      cabal-install
+      yarn
     ];
 
   fonts = {
