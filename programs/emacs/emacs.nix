@@ -61,6 +61,7 @@
       rainbow-delimiters
       restclient
       ripgrep
+      smartparens
       terraform-mode
       typescript-mode
       undo-tree

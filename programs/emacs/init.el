@@ -631,5 +631,15 @@
   (popper-mode +1)
   (popper-echo-mode +1))
 
+(use-package smartparens
+  :config (progn (show-smartparens-global-mode t))
+  :hook ((elm-mode . turn-on-smartparens-strict-mode)
+         (emacs-lisp-mode . turn-on-smartparens-strict-mode)
+         (haskell-mode . turn-on-smartparens-strict-mode)
+         (js2-mode . turn-on-smartparens-strict-mode)
+         (typescript-mode . turn-on-smartparens-strict-mode)
+         (nix-mode . turn-on-smartparens-strict-mode)
+         (python-mode . turn-on-smartparens-strict-mode)))
+
 (provide 'init)
 ;;; init.el ends here
