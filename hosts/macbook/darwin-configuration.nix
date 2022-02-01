@@ -23,6 +23,7 @@
       fzf
       ghc
       gnupg
+      home-manager
       irssi
       nodejs
       openssl

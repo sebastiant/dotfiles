@@ -36,7 +36,6 @@
       elixir_ls
       nodePackages.javascript-typescript-langserver
       nodePackages.uglify-js
-      home-manager
     ];
   };
 
