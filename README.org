@@ -43,8 +43,12 @@ All hosts are configured from their respective [[/hosts][/hosts]] directory, [[h
     #+begin_src shell
     $ sudo nixos-rebuild switch --flake '.#'
     #+end_src
-  - Linux and macOS
+  - Linux
     #+begin_src shell
-    $ nix build && sudo ./result/activate && rm ./result
+    $ nix build && ./result/activate
+    #+end_src
+  - macOS
+    #+begin_src shell
+    $ nix build && sudo ./result/activate
     #+end_src
 # End:
