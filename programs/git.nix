@@ -196,6 +196,7 @@
       ".projectile"
       "elm-stuff"
       "repl-temp-*"
+      "result"
     ];
   };
 }
