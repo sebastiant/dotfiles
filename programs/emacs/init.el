@@ -555,7 +555,6 @@
                             visual-fill-column-center-text t)
                       (visual-fill-column-mode 1))))
 (use-package org-roam
-  :hook (org-roam-find-file . (lambda () (persp-switch "roam")))
   :init (setq org-roam-v2-ack t)
   :custom
   (org-roam-directory "~/org/roam")
