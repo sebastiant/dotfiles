@@ -64,4 +64,14 @@
     c.InteractiveShellApp.extensions = ["autoreload"]
     c.InteractiveShellApp.exec_lines = ["%autoreload 2"]
     '';
+
+  home.file.".ghc/ghci.conf".text = ''
+    :set prompt "\x03BB> "
+    :set prompt-cont " > "
+
+    :set +t
+
+    :def hoogle \x -> return $ ":!hoogle \"" ++ x ++ "\""
+    :def doc \x -> return $ ":!hoogle --info \"" ++ x ++ "\""
+    '';
 }
