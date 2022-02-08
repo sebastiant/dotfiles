@@ -50,6 +50,7 @@
       org-roam
       org-superstar
       org-tree-slide
+      ormolu
       persp-projectile
       perspective
       po-mode
