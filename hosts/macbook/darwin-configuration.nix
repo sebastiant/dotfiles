@@ -21,7 +21,6 @@
       ffmpeg
       fswatch
       fzf
-      ghc
       gnupg
       home-manager
       irssi
