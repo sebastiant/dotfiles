@@ -14,28 +14,28 @@ in {
   programs.zsh.shellAliases.bat = "batcat";
 
   home.packages = with pkgs; [
-    zlib
-    dmenu
-    autorandr
-    arandr
-    picom
-    espeak
-    blink1-tool
-    flameshot
-    nyxt
-    byzanz
-    xrectsel
-    dunst
-    libnotify
-    gnome-icon-theme
     _1password
-    nixFlakes
-    xmonad-with-packages
-    sass
+    arandr
+    autorandr
+    blink1-tool
+    byzanz
+    dmenu
+    dunst
     esbuild
-    pavucontrol
+    espeak
+    flameshot
+    gnome-icon-theme
+    libnotify
     mysql
+    nixFlakes
+    nyxt
+    pavucontrol
+    picom
+    sass
     vscode
+    xmonad-with-packages
+    xrectsel
+    zlib
   ];
 
   home.file.".xsessionrc".text = ''
