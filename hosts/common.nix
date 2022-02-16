@@ -17,6 +17,7 @@
       jsonnet
       lorri
       mypy
+      p7zip
       pandoc
       pyright
       ripgrep
