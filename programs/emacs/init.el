@@ -380,7 +380,7 @@
    haskell-interactive-popup-errors nil
    haskell-process-log t)
   :config
-  (add-to-list 'auto-mode-alist '("\\.cabal?\\'" . haskell-mode)))
+  (add-to-list 'auto-mode-alist '("\\.cabal?\\'" . haskell-cabal-mode)))
 
 (use-package lsp-haskell
   :custom (lsp-haskell-server-path "haskell-language-server"))
