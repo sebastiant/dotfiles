@@ -442,11 +442,11 @@
   (web-mode-code-indent-offset 2))
 
 (use-package js2-mode
-  :mode "\\.js\\'"
+  :mode "\\.js[x]*$"
   :hook (js2-mode . lsp-deferred))
 
 (use-package typescript-mode
-  :mode "\\.ts\\'"
+  :mode ("\\.ts[x]*$")
   :hook (typescript-mode . lsp-deferred)
   :config
   (setq typescript-indent-level 2))
