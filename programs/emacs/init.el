@@ -375,6 +375,7 @@
   (haskell.mode . haskell-interactive-mode)
   :init
   (setq
+   haskell-stylish-on-save t
    haskell-indentation-electric-flag t
    haskell-process-type 'cabal-repl
    haskell-interactive-popup-errors nil
@@ -385,13 +386,6 @@
 (use-package lsp-haskell
   :custom (lsp-haskell-server-path "haskell-language-server"))
 
-(use-package ormolu
- :hook (haskell-mode . ormolu-format-on-save-mode)
- :bind
- (:map haskell-mode-map
-   ("C-c r" . ormolu-format-buffer)))
-
-;; Python
 (use-package python-mode
   :custom
   (python-shell-interpreter "python3")
