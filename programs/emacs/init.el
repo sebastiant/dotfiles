@@ -384,7 +384,7 @@
   (add-to-list 'auto-mode-alist '("\\.cabal?\\'" . haskell-cabal-mode)))
 
 (use-package lsp-haskell
-  :custom (lsp-haskell-server-path "haskell-language-server"))
+  :custom (lsp-haskell-server-path "haskell-language-server-wrapper"))
 
 (use-package python-mode
   :custom
