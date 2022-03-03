@@ -17,6 +17,7 @@
       jsonnet
       lorri
       mypy
+      nixfmt
       p7zip
       pandoc
       pyright
