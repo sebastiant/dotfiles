@@ -67,13 +67,6 @@
 
     "s"   'consult-line
 
-    "w"   '(:ignore t :which-key "window")
-    "ww"  'evil-window-next
-    "wc"  'delete-window
-    "wv"  'split-window-horizontally
-    "ww"  'evil-window-next
-    "ws"  'split-window-vertically
-
     "SPC" 'org-agenda))
 
 (global-set-key (kbd "<escape>") 'keybaord-escape-quit)
@@ -102,8 +95,7 @@
   :config
   (add-hook 'evil-mode-hook 'st/evil-hook)
   (evil-mode 1)
-  (define-key evil-insert-state-map (kbd "C-g") 'evil-normal-state)
-  (define-key evil-normal-state-map (kbd ", w") 'evil-window-vsplit))
+  (define-key evil-insert-state-map (kbd "C-g") 'evil-normal-state))
 
 (use-package evil-collection
   :after evil
