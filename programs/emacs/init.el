@@ -380,6 +380,7 @@
    haskell-process-type 'cabal-repl
    haskell-interactive-popup-errors nil
    haskell-process-log t)
+  :bind ("C-c l" . haskell-process-load-file)
   :config
   (add-to-list 'auto-mode-alist '("\\.cabal?\\'" . haskell-cabal-mode)))
 
