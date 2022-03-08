@@ -13,11 +13,21 @@
     packages = with pkgs; [
       cabal-install
       cachix
+      caddy
+      elixir_ls
       gawk
+      htop
+      httpie
+      jq
       jsonnet
+      k9s
+      kubectx
+      lazydocker
       lorri
       mypy
       nixfmt
+      nodePackages.javascript-typescript-langserver
+      nodePackages.uglify-js
       p7zip
       pandoc
       pyright
@@ -25,19 +35,9 @@
       sqlite
       stack
       tree
-      zathura
-      kubectx
       watchexec
-      lazydocker
-      htop
-      httpie
-      k9s
       whois
-      jq
-      caddy
-      elixir_ls
-      nodePackages.javascript-typescript-langserver
-      nodePackages.uglify-js
+      zathura
     ];
   };
 
