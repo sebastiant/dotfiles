@@ -24,6 +24,7 @@
       kubectx
       lazydocker
       lorri
+      mob
       mypy
       nixfmt
       nodePackages.javascript-typescript-langserver
