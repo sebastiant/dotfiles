@@ -26,6 +26,7 @@
       lorri
       mob
       mypy
+      nix-index
       nixfmt
       nodePackages.javascript-typescript-langserver
       nodePackages.uglify-js
