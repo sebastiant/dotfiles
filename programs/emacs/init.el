@@ -126,10 +126,6 @@
 (winner-mode)
 (add-hook 'ediff-after-quit-hook-internal 'winner-undo)
 
-(use-package py-isort
-  :after python-black
-  :config (add-hook 'before-save-hook 'py-isort-before-save))
-
 (use-package projectile
   :diminish projectile-mode
   :config (projectile-mode)
@@ -382,12 +378,21 @@
   (dap-python-executable "python3")
   :config
   (require 'dap-python))
-(defun st/lsp-mode-setup ()
-  (setq lsp-headerline-breadcrumb-segments '(path-up-to-project file symbols))
-  (lsp-headerline-breadcrumb-mode))
+
+(use-package python-black
+  :config (add-hook 'before-save-hook 'python-black-on-save-mode))
+
+(use-package py-isort
+  :after python-black
+  :config (add-hook 'before-save-hook 'py-isort-before-save))
+
 (use-package flycheck
   :config (setq-default flycheck-disabled-checkers '(python-pylint))
   :init (global-flycheck-mode))
+
+(defun st/lsp-mode-setup ()
+  (setq lsp-headerline-breadcrumb-segments '(path-up-to-project file symbols))
+  (lsp-headerline-breadcrumb-mode))
 
 (use-package lsp-mode
   :commands (lsp lsp-deferred)
