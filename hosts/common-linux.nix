@@ -53,6 +53,7 @@
 
   home.packages = with pkgs; [
     feh
+    networkmanager
     polybar
     spotify
   ];
