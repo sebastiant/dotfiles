@@ -14,8 +14,7 @@ export TERM="xterm-256color"
 
 setopt interactivecomments
 
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PATH:$PYENV_ROOT/bin:/usr/local/bin:/bin:/usr/sbin:/sbin:/usr/bin:$HOME/.local/bin:$HOME/.cargo/bin"
+export PATH="$PATH:/usr/local/bin:/bin:/usr/sbin:/sbin:/usr/bin:$HOME/.local/bin:$HOME/.cargo/bin"
 
 vterm_printf(){
     if [ -n "$TMUX" ] && ([ "${TERM%%-*}" = "tmux" ] || [ "${TERM%%-*}" = "screen" ] ); then

@@ -32,7 +32,6 @@
       nodePackages.uglify-js
       p7zip
       pandoc
-      pyright
       ripgrep
       sqlite
       stack

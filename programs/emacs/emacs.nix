@@ -57,7 +57,6 @@
       projectile
       py-isort
       python-mode
-      pyvenv
       rainbow-delimiters
       restclient
       ripgrep
