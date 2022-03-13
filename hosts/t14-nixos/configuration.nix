@@ -36,8 +36,8 @@
       ];
     };
   displayManager.sessionCommands = lib.mkAfter ''
-    ${pkgs.xlibs.xset}/bin/xset r rate 200 50
-    ${pkgs.xlibs.xmodmap} ~/.Xmodmap
+    ${pkgs.xorg.xset}/bin/xset r rate 200 50
+    ${pkgs.xorg.xmodmap} ~/.Xmodmap
     '';
   };
   services.autorandr = {
@@ -62,9 +62,6 @@
     shell = pkgs.zsh;
   };
   nix = {
-    allowedUsers = [
-      "sebastian"
-      ];
     extraOptions = ''
       experimental-features = nix-command flakes
     '';
@@ -115,5 +112,5 @@
     "1password"
   ];
 
-  system.stateVersion = "20.09";
+  system.stateVersion = "22.05";
 }
