@@ -96,6 +96,7 @@
     killall
     firefox
     vscode-with-extensions
+    spotify
     skypeforlinux
     zoom-us
     slack

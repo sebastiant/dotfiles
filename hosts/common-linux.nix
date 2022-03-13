@@ -55,7 +55,6 @@
     feh
     networkmanager
     polybar
-    spotify
   ];
 
   home.file.".xmonad/xmonad.hs".source = ../programs/xmonad.hs;
