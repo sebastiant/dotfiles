@@ -98,7 +98,6 @@
     wget
     pciutils
     killall
-    firefox
     vscode-with-extensions
     spotify
     skypeforlinux

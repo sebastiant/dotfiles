@@ -56,6 +56,24 @@
     networkmanager
     polybar
   ];
+  programs.firefox = {
+    enable = true;
+    profiles.default = {
+      id = 0;
+      name = "Default";
+      isDefault = true;
+      settings = {
+        "app.update.auto" = false;
+        "signon.rememberSignons" = false;
+        "browser.urlbar.placeholderName" = "DuckDuckGo";
+        "browser.startup.homepage" = "about:blank";
+      };
+    };
+    extensions = with pkgs.nur.repos.rycee.firefox-addons; [
+      ublock-origin
+      onepassword-password-manager
+    ];
+  };
 
   home.file.".xmonad/xmonad.hs".source = ../programs/xmonad.hs;
   xdg.configFile."polybar/config".source = ../programs/polybar/config;

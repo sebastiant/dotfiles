@@ -46,6 +46,7 @@ in {
 
   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
     "1password"
+    "onepassword-password-manager"
     "skypeforlinux"
     "slack"
     "spotify"
