@@ -7,6 +7,13 @@
       ../../programs/cachix/cachix.nix
     ];
   boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
+  boot.initrd.luks.devices = {
+    root = {
+      device = "/dev/nvme0n1p2";
+      preLVM = true;
+    };
+  };
 
   services.xserver.libinput.enable = lib.mkDefault true;
 
