@@ -3,6 +3,7 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixos-hardware.url = github:nixos/nixos-hardware/master;
+    nur.url = github:nix-community/nur;
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -13,10 +14,10 @@
     };
     emacs-overlay.url = "github:nix-community/emacs-overlay";
   };
-  outputs = {emacs-overlay, darwin, home-manager, nixos-hardware, nixpkgs, ...}:
+  outputs = {emacs-overlay, darwin, home-manager, nur, nixos-hardware, nixpkgs, ...}:
     let
       homeManagerConfFor = config: { ... }: {
-        nixpkgs.overlays = [ emacs-overlay.overlay ];
+        nixpkgs.overlays = [ emacs-overlay.overlay nur.overlay ];
         imports = [ config ];
       };
       darwinSystem = darwin.lib.darwinSystem {
