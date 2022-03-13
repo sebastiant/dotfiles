@@ -2,6 +2,7 @@
   description = "NixOS configuration and home-manager configurations for mac and debian gnu/linux";
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixos-hardware.url = github:nixos/nixos-hardware/master;
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -12,7 +13,7 @@
     };
     emacs-overlay.url = "github:nix-community/emacs-overlay";
   };
-  outputs = {emacs-overlay, darwin, home-manager, nixpkgs, ...}:
+  outputs = {emacs-overlay, darwin, home-manager, nixos-hardware, nixpkgs, ...}:
     let
       homeManagerConfFor = config: { ... }: {
         nixpkgs.overlays = [ emacs-overlay.overlay ];
@@ -36,8 +37,9 @@
       };
     in {
       nixosConfigurations.t14 = nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
+        system = "x86_64-linux";
         modules = [
+          nixos-hardware.nixosModules.lenovo-thinkpad-t14
           ./hosts/t14-nixos/configuration.nix
           home-manager.nixosModules.home-manager {
             home-manager.useUserPackages = true;

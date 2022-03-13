@@ -15,8 +15,6 @@
     };
   };
 
-  services.xserver.libinput.enable = lib.mkDefault true;
-
   time.timeZone = "Europe/Stockholm";
 
   networking = {
