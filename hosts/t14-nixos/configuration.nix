@@ -61,11 +61,18 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.sebastian = {
     isNormalUser = true;
+    createHome = true;
     extraGroups = [
       "wheel"
       "docker"
       "vboxusers"
+      "video"
+      "audio"
+      "disk"
+      "networkmanager"
     ];
+    home = "/home/sebastian";
+    uid = 1000;
     shell = pkgs.zsh;
   };
   nix = {
