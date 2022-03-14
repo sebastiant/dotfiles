@@ -27,6 +27,7 @@
     hostName = "t14";
     networkmanager.enable = true;
   };
+  programs.nm-applet.enable = true;
 
   hardware.bluetooth.enable = true;
   services.blueman.enable = true;
