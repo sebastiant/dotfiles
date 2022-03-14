@@ -55,6 +55,7 @@
     feh
     networkmanager
     polybar
+    volctl
   ];
   programs.firefox = {
     enable = true;
