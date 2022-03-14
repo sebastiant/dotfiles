@@ -39,6 +39,7 @@
 
   services.xserver = {
     enable = true;
+    videoDrivers = [ "nvidia" ];
     windowManager.xmonad = {
       enable = true;
       enableContribAndExtras = true;
@@ -52,6 +53,11 @@
     ${pkgs.xorg.xset}/bin/xset r rate 200 50
     ${pkgs.xorg.xmodmap} ~/.Xmodmap
     '';
+  };
+  hardware.nvidia.prime = {
+    sync.enable = true;
+    intelBusId = "PCI:0:2:0";
+    nvidiaBusId = "PCI:45:0:0";
   };
   services.autorandr = {
     enable = true;
@@ -146,6 +152,8 @@
 
   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
     "dropbox"
+    "nvidia-settings"
+    "nvidia-x11"
     "skypeforlinux"
     "slack"
     "spotify"
