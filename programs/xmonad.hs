@@ -107,6 +107,7 @@ main = do
       , startupHook = do
           spawn "sh .config/polybar/launch.sh"
           spawnOnce "nm-applet"
+          spawnOnce "picom --experimental-backends"
           spawnOnce "volctl"
           spawnOnce "autorandr --change && feh --bg-scale ~/Pictures/wallpapers/active.jpg"
           setWMName "LG3D"
