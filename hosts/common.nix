@@ -15,6 +15,7 @@
       cachix
       caddy
       elixir_ls
+      file
       gawk
       htop
       httpie
