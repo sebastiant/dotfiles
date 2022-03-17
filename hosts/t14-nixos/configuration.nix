@@ -40,6 +40,16 @@
   services.xserver = {
     enable = true;
     videoDrivers = [ "nvidia" ];
+    displayManager.lightdm.greeters.mini = {
+      enable = true;
+      user = "sebastian";
+      extraConfig = ''
+        [greeter]
+        show-password-label = false
+        [greeter-theme]
+        window-color = "#A0A0A0"
+      '';
+    };
     windowManager.xmonad = {
       enable = true;
       enableContribAndExtras = true;
