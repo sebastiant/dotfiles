@@ -58,5 +58,14 @@
     extraOptions = ''
       experimental-features = nix-command flakes
     '';
+    distributedBuilds = true;
+    buildMachines = [ {
+      hostName = "nix-docker";
+      sshUser = "root";
+      sshKey = "/etc/nix/docker_rsa";
+      systems = [ "x86_64-linux" ];
+      maxJobs = 2;
+    } ];
   };
+  services.nix-daemon.enable = true;
 }
