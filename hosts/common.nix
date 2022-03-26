@@ -25,7 +25,6 @@
       kubectx
       lazydocker
       lorri
-      mob
       mypy
       nix-index
       nixfmt

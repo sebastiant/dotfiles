@@ -53,6 +53,7 @@
 
   home.packages = with pkgs; [
     feh
+    mob
     networkmanager
     polybar
     volctl
