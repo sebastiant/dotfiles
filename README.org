@@ -41,6 +41,10 @@ All hosts are configured from their respective [[/hosts][/hosts]] directory, [[h
 - Create the first generation
   - NixOS
     #+begin_src shell
+    $ sudo nixos-rebuild switch --flake '.#t14'
+    #+end_src
+    Or if system hostname is set to nixosConfigurations.<hostname> in flake.nix outputs:
+    #+begin_src shell
     $ sudo nixos-rebuild switch --flake '.#'
     #+end_src
   - Linux
