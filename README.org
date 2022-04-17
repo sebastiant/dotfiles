@@ -17,6 +17,8 @@ I use [[https://nixos.org/][nix]] as package manager for all hosts.
 I use [[https://github.com/nix-community/home-manager][Home Manager]] to declare nix packages and configuration to use.
 For the macbook I additionally use [[https://github.com/LnL7/nix-darwin][nix-darwin]] to set up system packages and fonts.
 All hosts are configured from their respective [[/hosts][/hosts]] directory, [[hosts/common.nix][hosts/common.nix]] contain shared configuration and program-specific configuration live under [[/programs/][/programs/]]
+* Questions or assistance
+I am happy to answer any questions about the contents of this repository or get newcomers started in the world of nix! Send me a message on Discord: sebastiant#6342
 * My toolbox
 - [[https://www.gnu.org/software/emacs/][GNU Emacs]] with plugins such as evil-mode, ivy, projectile, magit, org-mode, lsp-mode and more
 - [[https://neovim.io/][neovim]] for basic text editing
