@@ -245,7 +245,7 @@
    :preview-key '(:debounce 0.2 any)
    consult-ripgrep consult-git-grep consult-grep
    consult-bookmark consult-recent-file consult-xref
-   consult--source-file consult--source-project-file consult--source-bookmark
+   consult--source-project-file consult--source-bookmark
    :preview-key (kbd "M-."))
 
   ;; Optionally configure the narrowing key.
