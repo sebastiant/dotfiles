@@ -7,6 +7,7 @@ in {
   imports = [
     ../common.nix
     ../common-linux.nix
+    ../../programs/non-free.nix
   ];
 
   services.emacs.enable = true;
@@ -43,16 +44,4 @@ in {
     export PATH=$HOME/.nix-profile/bin:/nix/var/nix/profiles/default/bin:$HOME/.local/bin:$PATH
     xset r rate 200 50
     '';
-
-  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
-    "1password"
-    "onepassword-password-manager"
-    "skypeforlinux"
-    "slack"
-    "spotify"
-    "spotify-unwrapped"
-    "vscode"
-    "vscode-with-extensions"
-    "zoom"
-  ];
 }

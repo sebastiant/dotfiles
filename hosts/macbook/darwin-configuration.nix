@@ -1,16 +1,8 @@
 { pkgs, nix, nixpkgs, config, lib, ... }:
 {
-  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
-    "skypeforlinux"
-    "slack"
-    "spotify"
-    "spotify-unwrapped"
-    "vscode"
-    "vscode-with-extensions"
-    "zoom"
-    "1password"
+  imports = [
+    ../../programs/non-free.nix
   ];
-
   environment.systemPackages = with pkgs;
     [
       ( python38.withPackages (ps: with ps; [ pip flake8 black pynvim ipython python-language-server.override { pylint = null; } ]) )

@@ -5,6 +5,7 @@
     [
       ./hardware-configuration.nix
       ../../programs/cachix/cachix.nix
+      ../../programs/non-free.nix
     ];
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -159,20 +160,6 @@
       Nice = 10;
     };
   };
-
-  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
-    "dropbox"
-    "nvidia-settings"
-    "nvidia-x11"
-    "skypeforlinux"
-    "slack"
-    "spotify"
-    "spotify-unwrapped"
-    "vscode"
-    "vscode-with-extensions"
-    "zoom"
-    "1password"
-  ];
 
   system.stateVersion = "22.05";
 }

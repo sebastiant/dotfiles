@@ -6,6 +6,7 @@ let
 in {
   imports = [
    ../common.nix
+   ../../programs/non-free.nix
  ];
  home.packages = with pkgs; [
    zlib
@@ -14,9 +15,4 @@ in {
    nixFlakes
  ];
  programs.emacs.package = pkgs.emacsGcc;
-
- nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
-   "vscode"
-   "vscode-with-extensions"
- ];
 }

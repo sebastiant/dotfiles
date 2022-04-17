@@ -3,6 +3,7 @@
   imports = [
     ../common.nix
     ../common-linux.nix
+    ../../programs/non-free.nix
   ];
   home.username = "sebastian";
   home.homeDirectory = "/home/sebastian";
@@ -24,8 +25,4 @@
     xset r rate 200 50
     '';
   home.file.".background-image/nixos-wallpaper.png".source = ./nixos-wallpaper.png;
-
-  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
-    "onepassword-password-manager"
-  ];
 }
