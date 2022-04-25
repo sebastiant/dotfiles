@@ -32,6 +32,7 @@
       nodePackages.uglify-js
       p7zip
       pandoc
+      patchelf
       pstree
       ripgrep
       sqlite
