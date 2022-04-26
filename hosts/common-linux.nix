@@ -57,6 +57,7 @@
     networkmanager
     polybar
     volctl
+    zeal
   ];
   programs.firefox = {
     enable = true;
