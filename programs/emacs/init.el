@@ -636,5 +636,8 @@
          (nix-mode . turn-on-smartparens-strict-mode)
          (python-mode . turn-on-smartparens-strict-mode)))
 
+(use-package zeal-at-point
+  :bind ("C-c z" . zeal-at-point))
+
 (provide 'init)
 ;;; init.el ends here
