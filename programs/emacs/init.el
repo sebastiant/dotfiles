@@ -431,6 +431,7 @@
 
 (use-package js2-mode
   :mode "\\.js[x]*$"
+  :custom (js2-basic-offset 2)
   :hook (js2-mode . lsp-deferred))
 
 (use-package typescript-mode
