@@ -73,6 +73,7 @@
       which-key
       yaml-mode
       yasnippet
+      zeal-at-point
     ];
   };
 }
