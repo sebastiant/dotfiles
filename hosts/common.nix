@@ -19,6 +19,7 @@
       file
       gawk
       haskell-language-server
+      haskellPackages.implicit-hie
       htop
       httpie
       jq
