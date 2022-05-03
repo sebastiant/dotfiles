@@ -356,7 +356,7 @@
   (haskell-literate-mode . lsp-deferred)
   (haskell-mode . lsp-deferred)
   (haskell-mode . haskell-indentation-mode)
-  (haskell.mode . haskell-interactive-mode)
+  (haskell-mode . interactive-haskell-mode)
   :init
   (setq
    haskell-stylish-on-save t
