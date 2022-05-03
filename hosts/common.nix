@@ -11,6 +11,7 @@
   home = {
     stateVersion = "21.05";
     packages = with pkgs; [
+      ( python39.withPackages (ps: with ps; [ pip flake8 black ipython ]) )
       cabal-install
       cachix
       caddy
