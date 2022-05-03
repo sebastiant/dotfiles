@@ -18,6 +18,7 @@
       elixir_ls
       file
       gawk
+      haskell-language-server
       htop
       httpie
       jq
@@ -30,6 +31,7 @@
       nix-index
       nixfmt
       nodePackages.javascript-typescript-langserver
+      nodePackages.pyright
       nodePackages.uglify-js
       p7zip
       pandoc
