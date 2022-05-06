@@ -14,5 +14,4 @@ in {
    google-cloud-sdk
    nixFlakes
  ];
- programs.emacs.package = pkgs.emacsGcc;
 }

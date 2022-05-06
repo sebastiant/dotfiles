@@ -54,7 +54,7 @@
       enable = true;
     };
   };
-
+  programs.emacs.package = pkgs.emacsNativeComp;
   programs.fzf.enable = true;
   programs.bat = {
     enable = true;
