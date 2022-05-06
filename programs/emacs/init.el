@@ -277,7 +277,6 @@
 
 ;; Line numbers
 (global-display-line-numbers-mode)
-(setq display-line-numbers-type 'relative)
 
 ;; Scroll
 (setq scroll-margin 0)
