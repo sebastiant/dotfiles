@@ -72,6 +72,8 @@
   services.autorandr = {
     enable = true;
   };
+  services.udev.extraRules = "ATTRS{idVendor}==\"27b8\", ATTRS{idProduct}==\"01ed\", MODE:=\"666\", GROUP=\"plugdev\"\n";
+
 
   # Configure keymap in X11
   # services.xserver.layout = "us";
