@@ -15,6 +15,7 @@
       cabal-install
       cachix
       caddy
+      discord
       elixir_ls
       file
       gawk
