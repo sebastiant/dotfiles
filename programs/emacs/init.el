@@ -44,23 +44,15 @@
   (tyrant-def
     ""    nil
 
-    "b"   '(:ignore t :which-key "buffer")
-    "bb"  'persp-switch-to-buffer*
-    "bd"  'persp-kill-buffer
-    "bs"  'save-buffer
-
     "l"   '(:ignore t :which-key "lsp")
     "ll"  (general-simulate-key "C-c l")
     "ld"  'lsp-ui-peek-find-definitions
     "lr"  'lsp-ui-peek-find-references
 
-    "v"   'persp-switch
-
     "f"   '(:ignore t :which-key "files")
     "ff"  'find-file
 
     "p"   '(:ignore t :which-key "projectile")
-    "pp"  'projectile-persp-switch-project
     "pf"  'projectile-find-file
     "ps"  'projectile-ripgrep
     "pt"  'projectile-run-vterm
@@ -586,6 +578,10 @@
   (org-image-actual-width nil))
 
 (use-package perspective
+  :bind (("C-c v" . persp-switch-to-buffer*)
+         ("C-c V" . persp-switch)
+         ("C-c s" . projectile-persp-switch-project))
+  :custom (persp-mode-prefix-key (kbd "C-c C-v"))
   :config
   (unless persp-mode
     (persp-mode 1)))
