@@ -106,8 +106,10 @@
   :commands (dired dired-jump))
 
 (use-package magit
-  :custom (magit-blame-echo-style 'margin)
+  :custom ((magit-blame-echo-style 'margin)
+           (magit-save-repository-buffers 'dontask))
   :init (global-set-key (kbd "C-c g") 'magit-status))
+
 (use-package forge
   :after magit)
 (use-package git-gutter
