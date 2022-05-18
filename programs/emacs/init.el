@@ -366,8 +366,10 @@
   :custom (lsp-haskell-server-path "haskell-language-server-wrapper"))
 
 (use-package python-mode
+  :bind (:map python-mode-map ("C-c l" . run-python))
   :custom
-  (python-shell-interpreter "python3")
+  (python-shell-interpreter "ipython")
+  (python-shell-interpreter-args "--pylab")
   (dap-python-executable "python3")
   :config
   (require 'dap-python))
