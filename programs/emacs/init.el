@@ -539,6 +539,13 @@
              ((org-agenda-overriding-header "Next Actions")
               (org-agenda-max-todos nil))))))))
 
+(use-package org-capture
+  :bind ("C-c c" . org-capture)
+  :custom
+  (org-capture-templates '(("t" "Task" entry
+                            (file+headline "~/org/tasks.org" "Task list")
+                            "* %^{Select status|TODO|NEXT|IN-PROGRESS}  %?"))))
+
 (use-package org-superstar
   :hook (org-mode . (lambda () (org-superstar-mode 1))))
 
@@ -554,11 +561,7 @@
   (org-roam-completion-everywhere t)
   (org-roam-dailies-capture-templates
    '(("d" "default" entry "* %<%T>:  %?"
-      :if-new (file+head "%<%Y-%m-%d>.org" "#+title: %<%Y-%m-%d>\n")
-      )
-     ("t" "todo" entry "* TODO  %?"
-      :if-new (file+head "%<%Y-%m-%d>.org" "#+title: %<%Y-%m-%d>\n")
-      )))
+      :if-new (file+head "%<%Y-%m-%d>.org" "#+title: %<%Y-%m-%d>\n"))))
   :bind (("C-c n l" . org-roam-buffer-toggle)
          ("C-c n f" . org-roam-node-find)
          ("C-c n i" . org-roam-node-insert)
