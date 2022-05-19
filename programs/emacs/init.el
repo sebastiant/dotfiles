@@ -525,7 +525,7 @@
   (org-confirm-babel-evaluate nil)
   (org-ellipsis " ▾")
   (org-hide-leading-stars nil)
-  (org-agenda-files '("~/org" "~/org/roam" "~/org/roam/daily"))
+  (org-agenda-files '("~/org/tasks.org" "~/org/calendar.org"))
   (org-agenda-prefix-format "%t %s")
   (org-todo-keywords
    '((sequence "TODO(t)" "NEXT(n)" "IN-PROGRESS(i)" "|" "DONE(d1)")))
