@@ -43,11 +43,11 @@ I am happy to answer any questions about the contents of this repository or get 
 - Create the first generation
   - NixOS
     #+begin_src shell
-    $ sudo nixos-rebuild switch --flake '.#t14'
+      $ nixos-rebuild switch --upgrade --flake '.#t14' --use-remote-sudo
     #+end_src
     Or if system hostname is set to nixosConfigurations.<hostname> in flake.nix outputs:
     #+begin_src shell
-    $ sudo nixos-rebuild switch --flake '.#'
+      $ nixos-rebuild switch --upgrade --flake '.#' --use-remote-sudo
     #+end_src
   - Linux
     #+begin_src shell
