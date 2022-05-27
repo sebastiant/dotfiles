@@ -100,9 +100,8 @@ myManageHook = composeAll
 windowSpacing = spacingRaw True (Border 5 5 5 5) True (Border 15 15 15 15) True
 
 main = do
-    xmonad $ docks $ ewmh defaults {
-        logHook = ewmhDesktopsLogHook
-      , manageHook = myManageHook <+> manageDocks
+    xmonad $ docks $ ewmhFullscreen . ewmh $ defaults
+      { manageHook = myManageHook <+> manageDocks
       , layoutHook = windowSpacing $ avoidStruts myLayout
       , startupHook = do
           spawn "sh .config/polybar/launch.sh"
