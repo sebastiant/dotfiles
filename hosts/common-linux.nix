@@ -56,6 +56,7 @@
     networkmanager
     polybar
     volctl
+    haskellPackages.yeganesh
     zeal
   ];
   programs.firefox = {
