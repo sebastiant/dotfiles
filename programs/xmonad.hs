@@ -108,7 +108,7 @@ main = do
           spawnOnce "nm-applet"
           spawnOnce "picom --experimental-backends"
           spawnOnce "volctl"
-          spawnOnce "autorandr --change && feh --bg-scale ~/Pictures/wallpapers/active.jpg"
+          spawnOnce "autorandr --change && feh --bg-scale ~/dev/dotfiles/hosts/t14-nixos/nixos-wallpaper.png"
           setWMName "LG3D"
           spawnOn "1" "emacs"
           spawnOn "2" "firefox"
