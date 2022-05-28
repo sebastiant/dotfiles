@@ -5,8 +5,6 @@
     "1password-cli"
     "discord"
     "dropbox"
-    "nvidia-settings"
-    "nvidia-x11"
     "onepassword-password-manager"
     "skypeforlinux"
     "slack"

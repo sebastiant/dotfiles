@@ -38,7 +38,7 @@
 
   services.xserver = {
     enable = true;
-    videoDrivers = [ "nvidia" ];
+    videoDrivers = [ "intel" ];
     displayManager.lightdm.greeters.mini = {
       enable = true;
       user = "sebastian";
@@ -63,11 +63,9 @@
     ${pkgs.xorg.xmodmap} ~/.Xmodmap
     '';
   };
-  hardware.nvidia.prime = {
-    offload.enable = true;
-    intelBusId = "PCI:0:2:0";
-    nvidiaBusId = "PCI:45:0:0";
-  };
+
+  boot.blacklistedKernelModules = [ "nouveau" "nvidia" ];
+
   services.autorandr = {
     enable = true;
   };
@@ -75,7 +73,25 @@
 
   services.xserver.layout = "us";
 
+  boot.initrd.kernelModules = [ "i915" ];
 
+  nixpkgs.config.packageOverrides = pkgs: {
+    vaapiIntel = pkgs.vaapiIntel.override { enableHybridCodec = true; };
+  };
+
+  hardware.opengl = {
+    enable = true;
+    extraPackages = with pkgs; [
+      intel-media-driver
+      vaapiIntel
+      vaapiVdpau
+      libvdpau-va-gl
+    ];
+  };
+
+  environment.variables = {
+    VDPAU_DRIVER = "va_gl";
+  };
   sound.enable = true;
   hardware.pulseaudio.enable = true;
 
@@ -108,22 +124,15 @@
   ];
 
   environment.systemPackages =
-    let
-      nvidia-offload = pkgs.writeShellScriptBin "nvidia-offload" ''
-        export __NV_PRIME_RENDER_OFFLOAD=1
-        export __NV_PRIME_RENDER_OFFLOAD_PROVIDER=NVIDIA-G0
-        export __GLX_VENDOR_LIBRARY_NAME=nvidia
-        export __VK_LAYER_NV_optimus=NVIDIA_only
-        exec -a "$0" "$@"
-      '';
-    in
     with pkgs; [
     alacritty
     autorandr
     feh
     wget
     pciutils
+    intel-gpu-tools
     killall
+    libva-utils
     vscode-with-extensions
     spotify
     skypeforlinux
@@ -138,7 +147,7 @@
     gcc
     gnumake
     libtool
-    nvidia-offload
+    vdpauinfo
     ];
 
   virtualisation = {
