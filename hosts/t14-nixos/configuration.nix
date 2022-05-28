@@ -127,6 +127,7 @@
     with pkgs; [
     alacritty
     autorandr
+    binutils
     feh
     wget
     pciutils
