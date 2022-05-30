@@ -106,7 +106,7 @@ main = do
       , startupHook = do
           spawn "sh .config/polybar/launch.sh"
           spawnOnce "nm-applet"
-          spawnOnce "picom --experimental-backends"
+          spawnOnce "picom"
           spawnOnce "volctl"
           spawnOnce "autorandr --change && feh --bg-scale ~/dev/dotfiles/hosts/t14-nixos/nixos-wallpaper.png"
           setWMName "LG3D"
