@@ -67,9 +67,15 @@
       isDefault = true;
       settings = {
         "app.update.auto" = false;
-        "signon.rememberSignons" = false;
-        "browser.urlbar.placeholderName" = "DuckDuckGo";
         "browser.startup.homepage" = "about:blank";
+        "browser.urlbar.placeholderName" = "DuckDuckGo";
+        "gfx.webrender.all" = true;
+        "gfx.webrender.enabled" = true;
+        "media.av1.enabled" = false;
+        "media.ffmpeg.vaapi.enabled" = true;
+        "media.hardware-video-decoding.force-enabled" = true;
+        "media.navigator.mediadatadecoder_vpx_enabled" = true;
+        "signon.rememberSignons" = false;
       };
     };
     extensions = with pkgs.nur.repos.rycee.firefox-addons; [

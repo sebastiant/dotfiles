@@ -91,6 +91,7 @@
   environment.variables = {
     VDPAU_DRIVER = "va_gl";
     LIBVA_DRIVER_NAME = "iHD";
+    MOZ_DISABLE_RDD_SANDBOX = "1";
   };
   sound.enable = true;
   hardware.pulseaudio.enable = true;
