@@ -71,6 +71,10 @@
   };
   services.udev.extraRules = "ATTRS{idVendor}==\"27b8\", ATTRS{idProduct}==\"01ed\", MODE:=\"666\", GROUP=\"plugdev\"\n";
 
+  nix.nixPath = [
+      "nixpkgs=${nixpkgs}"
+    ];
+
   services.xserver.layout = "us";
 
   boot.initrd.kernelModules = [ "i915" ];

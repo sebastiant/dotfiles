@@ -47,6 +47,7 @@
             home-manager.users.sebastian = homeManagerConfFor ./hosts/t14-nixos/home.nix;
           }
         ];
+        specialArgs = { inherit nixpkgs; };
       };
       debian = debianSystem.activationPackage;
       defaultPackage.x86_64-linux = debianSystem.activationPackage;
