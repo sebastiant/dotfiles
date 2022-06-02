@@ -34,6 +34,7 @@
       nodePackages.javascript-typescript-langserver
       nodePackages.pyright
       nodePackages.uglify-js
+      openssl
       p7zip
       pandoc
       patchelf
