@@ -79,15 +79,10 @@
 
   boot.initrd.kernelModules = [ "i915" ];
 
-  nixpkgs.config.packageOverrides = pkgs: {
-    vaapiIntel = pkgs.vaapiIntel.override { enableHybridCodec = true; };
-  };
-
   hardware.opengl = {
     enable = true;
     extraPackages = with pkgs; [
       intel-media-driver
-      vaapiIntel
       vaapiVdpau
       libvdpau-va-gl
     ];
@@ -95,6 +90,7 @@
 
   environment.variables = {
     VDPAU_DRIVER = "va_gl";
+    LIBVA_DRIVER_NAME = "iHD";
   };
   sound.enable = true;
   hardware.pulseaudio.enable = true;
