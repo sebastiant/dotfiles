@@ -26,6 +26,10 @@
     networkmanager.enable = true;
   };
   programs.nm-applet.enable = true;
+  programs.gnupg.agent = {
+    enable = true;
+    enableSSHSupport = true;
+  };
 
   hardware.bluetooth.enable = true;
   services.blueman.enable = true;
@@ -71,9 +75,6 @@
   };
   services.udev.extraRules = "ATTRS{idVendor}==\"27b8\", ATTRS{idProduct}==\"01ed\", MODE:=\"666\", GROUP=\"plugdev\"\n";
 
-  nix.nixPath = [
-      "nixpkgs=${nixpkgs}"
-    ];
 
   services.xserver.layout = "us";
 
@@ -113,6 +114,9 @@
     shell = pkgs.zsh;
   };
   nix = {
+    nixPath = [
+        "nixpkgs=${nixpkgs}"
+    ];
     extraOptions = ''
       experimental-features = nix-command flakes
     '';
