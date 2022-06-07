@@ -52,11 +52,12 @@
 
   home.packages = with pkgs; [
     feh
+    haskellPackages.yeganesh
     mob
     networkmanager
     polybar
+    powertop
     volctl
-    haskellPackages.yeganesh
     zeal
   ];
   programs.firefox = {
