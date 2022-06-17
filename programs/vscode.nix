@@ -8,5 +8,10 @@
       ms-python.vscode-pylance
       eamodio.gitlens
     ];
+    userSettings = {
+      "editor.fontFamily" = "Iosevka";
+      "editor.fontLigatures" = true;
+      "editor.fontSize" = 13;
+    };
   };
  }
