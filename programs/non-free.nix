@@ -11,7 +11,8 @@
     "spotify"
     "spotify-unwrapped"
     "vscode"
-    "vscode-with-extensions"
+    "vscode-extension-ms-vsliveshare-vsliveshare"
+    "vscode-extension-MS-python-vscode-pylance"
     "zoom"
   ];
 }

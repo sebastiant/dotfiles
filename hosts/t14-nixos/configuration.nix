@@ -139,7 +139,6 @@
     intel-gpu-tools
     killall
     libva-utils
-    vscode-with-extensions
     spotify
     skypeforlinux
     zoom-us

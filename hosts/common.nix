@@ -6,6 +6,7 @@
       ../programs/neovim/neovim.nix
       ../programs/git.nix
       ../programs/emacs/emacs.nix
+      ../programs/vscode.nix
     ];
 
   home = {

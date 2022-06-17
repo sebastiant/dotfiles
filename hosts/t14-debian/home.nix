@@ -34,7 +34,6 @@ in {
     picom
     sass
     spotify
-    vscode
     xmonad-with-packages
     xrectsel
     zlib

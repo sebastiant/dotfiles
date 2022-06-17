@@ -10,7 +10,6 @@ in {
  ];
  home.packages = with pkgs; [
    zlib
-   vscode-with-extensions
    google-cloud-sdk
    nixFlakes
  ];

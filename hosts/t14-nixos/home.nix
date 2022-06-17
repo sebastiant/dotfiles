@@ -20,7 +20,6 @@
     flameshot
   ];
 
-
   home.file.".xsessionrc".text = ''
     xset r rate 200 50
     '';
