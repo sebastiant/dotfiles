@@ -3,10 +3,9 @@
   programs.vscode = {
     enable = true;
     extensions = with pkgs.vscode-extensions; [
-      ms-vsliveshare.vsliveshare
+      eamodio.gitlens
       ms-python.python
       ms-python.vscode-pylance
-      eamodio.gitlens
     ];
     userSettings = {
       "editor.fontFamily" = "Iosevka";
