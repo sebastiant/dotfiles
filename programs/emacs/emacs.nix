@@ -15,7 +15,6 @@
       dap-mode
       dired-single
       dockerfile-mode
-      doom-themes
       editorconfig
       elfeed
       elixir-mode

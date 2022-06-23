@@ -312,12 +312,8 @@
 (setq show-paren-delay 0.0)
 (show-paren-mode t)
 
-(use-package doom-themes
-  :config
-  (setq doom-themes-enable-bold t
-	doom-themes-enable-italic t)
-  (load-theme 'doom-solarized-dark t)
-  (doom-themes-visual-bell-config))
+(load-theme 'modus-vivendi)
+(define-key global-map (kbd "<f5>") #'modus-themes-toggle)
 
 ;; transparency
 (set-frame-parameter (selected-frame) 'alpha '(96 . 80))
