@@ -114,12 +114,13 @@
     shell = pkgs.zsh;
   };
   nix = {
-    nixPath = [
-        "nixpkgs=${nixpkgs}"
-    ];
     extraOptions = ''
       experimental-features = nix-command flakes
     '';
+    nixPath = [
+        "nixpkgs=${nixpkgs}"
+    ];
+    registry.nixpkgs.flake = nixpkgs;
     package = pkgs.nixUnstable;
   };
 
