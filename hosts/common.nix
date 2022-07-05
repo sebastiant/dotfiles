@@ -30,6 +30,7 @@
       lazydocker
       lorri
       mypy
+      ngrok
       nix-index
       nixfmt
       nodePackages.javascript-typescript-langserver
