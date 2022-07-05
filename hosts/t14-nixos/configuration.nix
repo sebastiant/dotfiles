@@ -157,7 +157,10 @@
     ];
 
   virtualisation = {
-    docker.enable = true;
+    docker = {
+      enable = true;
+      rootless.enable = true;
+    };
     virtualbox.host.enable = true;
   };
 
