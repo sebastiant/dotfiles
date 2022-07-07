@@ -47,11 +47,12 @@
       name = "Adwaita";
     };
   };
+  services.blueman-applet.enable = true;
+  services.picom.enable = true;
   programs.vscode.extensions = [
     pkgs.vscode-extensions.ms-vsliveshare.vsliveshare
   ];
 
-  services.blueman-applet.enable = true;
 
   home.packages = with pkgs; [
     feh
