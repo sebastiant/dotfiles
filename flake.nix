@@ -28,6 +28,7 @@
             home-manager.users.sebastian = homeManagerConfFor ./hosts/macbook/home.nix;
           }
         ];
+        specialArgs = { inherit nixpkgs; };
       };
       debianSystem = home-manager.lib.homeManagerConfiguration {
         configuration = homeManagerConfFor ./hosts/t14-debian/home.nix;
