@@ -14,7 +14,6 @@
       fzf
       gnupg
       home-manager
-      irssi
       nodejs
       openssl
       reattach-to-user-namespace
