@@ -16,6 +16,7 @@
       cabal-install
       cachix
       caddy
+      dig
       discord
       elixir_ls
       file
