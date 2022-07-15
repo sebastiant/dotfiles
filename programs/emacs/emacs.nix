@@ -65,6 +65,8 @@
       ripgrep
       smartparens
       terraform-mode
+      tree-sitter
+      tree-sitter-langs
       typescript-mode
       undo-tree
       use-package

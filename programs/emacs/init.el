@@ -333,6 +333,13 @@
   :custom
   (describe-function-function #'helpful-callable)
   (describe-variable-function #'helpful-variable))
+(use-package tree-sitter
+  :hook ('tree-sitter-after-on-hook . #'tree-sitter-hl-mode)
+  :config
+  (global-tree-sitter-mode)
+  (add-hook 'tree-sitter-after-on-hook #'tree-sitter-hl-mode))
+(use-package tree-sitter-langs
+  :after tree-sitter)
 
 (use-package elixir-mode
   :hook (elixir-mode . lsp-deferred))
