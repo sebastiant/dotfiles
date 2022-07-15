@@ -445,8 +445,9 @@
 
 (use-package company
   :after lsp-mode
-  :hook (lsp-mode . company-mode)
-;;  :config (global-set-key (kbd "TAB") #'company-indent-or-complete-common)
+  :hook
+  (lsp-mode . company-mode)
+  (emacs-lisp-mode . company-mode)
   :custom
   (company-minimum-prefix-length 1)
   (company-idle-delay 0.3))
