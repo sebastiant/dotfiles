@@ -3,6 +3,10 @@
   home.file.".emacs.d/init.el".source = ./init.el;
   home.file.".emacs.d/early-init.el".source = ./early-init.el;
 
+  home.packages = with pkgs; [
+    rnix-lsp
+  ];
+
   programs.emacs = {
     enable = true;
     extraPackages = epkgs: with epkgs; [

@@ -592,6 +592,7 @@
     (persp-mode 1)))
 
 (use-package nix-mode
+  :hook (nix-mode . lsp-deferred)
   :mode "\\.nix\\'")
 (use-package sh-mode
   :mode "zshrc\\'")
