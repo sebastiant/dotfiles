@@ -435,10 +435,13 @@
   :hook (js2-mode . lsp-deferred))
 
 (use-package typescript-mode
-  :mode ("\\.ts[x]*$")
   :hook (typescript-mode . lsp-deferred)
+  :after tree-sitter
   :config
-  (setq typescript-indent-level 2))
+  (setq typescript-indent-level 2)
+  (define-derived-mode typescriptjsx-mode typescript-mode "Typescript jsx")
+  (add-to-list 'auto-mode-alist '("\\.tsx?\\'" . typescriptjsx-mode))
+  (add-to-list 'tree-sitter-major-mode-language-alist '(typescriptjsx-mode . tsx)))
 
 (use-package company
   :after lsp-mode
