@@ -456,9 +456,7 @@
  :hook (company-mode . company-box-mode))
 
 (use-package lsp-pyright
-  :hook (python-mode . (lambda ()
-                          (require 'lsp-pyright)
-                          (lsp-deferred))))
+  :hook (python-mode . lsp-deferred))
 
 ;; Add buffer local Flycheck checkers after LSP for different major modes.
 ;; credits: https://github.com/flycheck/flycheck/issues/1762#issuecomment-749789589
