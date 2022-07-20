@@ -315,10 +315,6 @@
 (load-theme 'modus-vivendi)
 (define-key global-map (kbd "<f5>") #'modus-themes-toggle)
 
-;; transparency
-(set-frame-parameter (selected-frame) 'alpha '(96 . 80))
-(add-to-list 'default-frame-alist '(alpha . (96 . 80)))
-
 (require 'ansi-color)
 (defun st/colorize-compilation-buffer ()
  (ansi-color-apply-on-region (point-min) (point-max)))
