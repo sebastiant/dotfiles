@@ -5,6 +5,7 @@
 
   home.packages = with pkgs; [
     elixir_ls
+    nodePackages.pyright
     rnix-lsp
   ];
 
