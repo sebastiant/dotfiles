@@ -45,6 +45,7 @@
       sqlite
       stack
       tree
+      unzip
       watchexec
       whois
       zathura
