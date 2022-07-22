@@ -6,6 +6,8 @@
   home.packages = with pkgs; [
     elixir_ls
     nodePackages.pyright
+    nodePackages.typescript
+    nodePackages.typescript-language-server
     rnix-lsp
   ];
 

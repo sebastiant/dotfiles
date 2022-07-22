@@ -33,7 +33,6 @@
       ngrok
       nix-index
       nixfmt
-      nodePackages.javascript-typescript-langserver
       nodePackages.uglify-js
       openssl
       p7zip
