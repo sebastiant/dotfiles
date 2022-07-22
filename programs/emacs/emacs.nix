@@ -4,6 +4,7 @@
   home.file.".emacs.d/early-init.el".source = ./early-init.el;
 
   home.packages = with pkgs; [
+    elixir_ls
     rnix-lsp
   ];
 

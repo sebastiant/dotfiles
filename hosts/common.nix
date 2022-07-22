@@ -18,7 +18,6 @@
       caddy
       dig
       discord
-      elixir_ls
       file
       gawk
       haskellPackages.implicit-hie

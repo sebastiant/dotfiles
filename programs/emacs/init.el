@@ -338,6 +338,7 @@
   :after tree-sitter)
 
 (use-package elixir-mode
+  :custom (lsp-elixir-server-command '("elixir-ls"))
   :hook (elixir-mode . lsp-deferred))
 
 (use-package elm-mode
