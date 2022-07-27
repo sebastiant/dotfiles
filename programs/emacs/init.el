@@ -339,7 +339,9 @@
 
 (use-package elixir-mode
   :custom (lsp-elixir-server-command '("elixir-ls"))
-  :hook (elixir-mode . lsp-deferred))
+  :hook
+  (elixir-mode . lsp-deferred)
+  (elixir-mode . alchemist-mode))
 
 (use-package elm-mode
   :hook (elm-mode . lsp-deferred))
