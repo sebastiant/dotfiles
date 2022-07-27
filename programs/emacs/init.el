@@ -44,11 +44,6 @@
   (tyrant-def
     ""    nil
 
-    "l"   '(:ignore t :which-key "lsp")
-    "ll"  (general-simulate-key "C-c l")
-    "ld"  'lsp-ui-peek-find-definitions
-    "lr"  'lsp-ui-peek-find-references
-
     "f"   '(:ignore t :which-key "files")
     "ff"  'find-file
 
@@ -396,6 +391,9 @@
   :commands (lsp lsp-deferred)
   :hook ((lsp-mode . st/lsp-mode-setup)
          (python-mode . lsp))
+  :bind (:map lsp-mode-map
+              ("C-c d" . lsp-ui-peek-find-definitions)
+              ("C-c r" . lsp-ui-peek-find-references))
   :init
   (setq lsp-keymap-prefix "C-c l")
   (setq lsp-enable-file-watchers nil)
