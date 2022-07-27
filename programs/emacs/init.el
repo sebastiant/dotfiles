@@ -649,5 +649,7 @@
 (use-package zeal-at-point
   :bind ("C-c z" . zeal-at-point))
 
+(use-package emacs
+  :custom (compilation-scroll-output t))
 (provide 'init)
 ;;; init.el ends here
