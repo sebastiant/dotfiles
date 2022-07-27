@@ -9,6 +9,7 @@
     nodePackages.typescript
     nodePackages.typescript-language-server
     rnix-lsp
+    sqls
   ];
 
   programs.emacs = {
