@@ -406,6 +406,9 @@
 
 (use-package lsp-ui
   :hook (lsp-mode . lsp-ui-mode)
+  :bind (:map lsp-ui-mode-map
+              ("C-c i" . lsp-ui-imenu))
+
   :custom
   (lsp-ui-doc-position 'bottom)
   (lsp-ui-sideline-show-code-actions nil))
