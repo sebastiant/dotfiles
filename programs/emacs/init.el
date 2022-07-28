@@ -383,8 +383,7 @@
 
 (use-package lsp-mode
   :commands (lsp lsp-deferred)
-  :hook ((lsp-mode . st/lsp-mode-setup)
-         (python-mode . lsp))
+  :hook (lsp-mode . st/lsp-mode-setup)
   :bind (:map lsp-mode-map
               ("C-c d" . lsp-ui-peek-find-definitions)
               ("C-c r" . lsp-ui-peek-find-references))
