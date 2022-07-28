@@ -21,7 +21,6 @@
       alias = "!git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\\t => \\2/' | sort";
     };
     extraConfig = {
-      core.editor = "vim";
       init.defaultBranch = "main";
       diff.tool = "vimdiff";
       diff.colorMoved = "zebra";

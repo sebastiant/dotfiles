@@ -9,7 +9,9 @@ COMPLETION_WAITING_DOTS="true"
 # User configuration
 alias ls="ls -lF"
 
-export EDITOR='vim'
+export EDITOR="emacsclient -nw"
+export VISUAL=$EDITOR
+
 export TERM="xterm-256color"
 
 setopt interactivecomments
