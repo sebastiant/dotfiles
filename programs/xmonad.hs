@@ -109,7 +109,7 @@ main = do
           spawnOnce "volctl"
           spawnOnce "autorandr --change && feh --bg-scale ~/dev/dotfiles/hosts/t14-nixos/nixos-wallpaper.png"
           setWMName "LG3D"
-          spawnOn "1" "emacs"
+          spawnOn "1" "emacsclient -c"
           spawnOn "2" "firefox"
           spawnOn "3" "slack"
       , handleEventHook = mempty
