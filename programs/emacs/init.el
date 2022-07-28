@@ -271,6 +271,15 @@
 
 ;; Font and ligatures
 (set-frame-font "Iosevka 13" t)
+(defun st/set-font-faces()
+  (set-face-attribute 'default nil :font "Iosevka" :height 130)
+  (set-face-attribute 'fixed-pitch nil :font "Iosevka" :height 130)
+  (set-face-attribute 'variable-pitch nil :font "Aileron Light" :height 130 :weight 'regular))
+(if (daemonp)
+    (add-hook 'after-make-frame-functions
+              (lambda (frame)
+                (with-selected-frame frame
+                  (st/set-font-faces)))))
 (if (fboundp 'mac-auto-operator-composition-mode)
     (mac-auto-operator-composition-mode t))
 
