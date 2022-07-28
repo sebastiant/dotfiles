@@ -422,6 +422,11 @@
   (web-mode-css-indent-offset 2)
   (web-mode-code-indent-offset 2))
 
+(use-package css-mode
+  :hook
+  (css-mode . lsp)
+  (scss-mode . lsp))
+
 (use-package js2-mode
   :mode "\\.js[x]*$"
   :custom (js2-basic-offset 2)
