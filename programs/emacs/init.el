@@ -44,17 +44,10 @@
   (tyrant-def
     ""    nil
 
-    "f"   '(:ignore t :which-key "files")
-    "ff"  'find-file
-
     "p"   '(:ignore t :which-key "projectile")
     "pf"  'projectile-find-file
     "ps"  'projectile-ripgrep
-    "pt"  'projectile-run-vterm
-
-    "s"   'consult-line
-
-    "SPC" 'org-agenda))
+    "pt"  'projectile-run-vterm))
 
 (global-set-key (kbd "<escape>") 'keybaord-escape-quit)
 (use-package undo-tree
@@ -188,6 +181,7 @@
          ("M-s u" . consult-focus-lines)
          ;; Isearch integration
          ("M-s e" . consult-isearch)
+         ("C-c w" . consult-line)
          :map isearch-mode-map
          ("M-e" . consult-isearch)                 ;; orig. isearch-edit-string
          ("M-s e" . consult-isearch)               ;; orig. isearch-edit-string
@@ -525,6 +519,7 @@
 
 (use-package org
   :hook (org-mode . st/org-mode-setup)
+  :bind ("C-c a" . org-agenda)
   :config (st/org-font-setup)
   :custom
   (org-confirm-babel-evaluate nil)
