@@ -448,7 +448,7 @@
   (emacs-lisp-mode . company-mode)
   :custom
   (company-minimum-prefix-length 1)
-  (company-idle-delay 0.3))
+  (company-idle-delay 0.2))
 (global-set-key (kbd "TAB") #'company-indent-or-complete-common)
 (use-package company-box
  :hook (company-mode . company-box-mode))
