@@ -118,6 +118,9 @@
     (setq projectile-project-search-path '("~/dev")))
   (setq projectile-switch-project-action #'projectile-dired))
 
+(use-package swiper
+  :bind ("C-c w" . swiper-isearch))
+
 (use-package vertico
   :init (vertico-mode))
 
@@ -181,7 +184,6 @@
          ("M-s u" . consult-focus-lines)
          ;; Isearch integration
          ("M-s e" . consult-isearch)
-         ("C-c w" . consult-line)
          :map isearch-mode-map
          ("M-e" . consult-isearch)                 ;; orig. isearch-edit-string
          ("M-s e" . consult-isearch)               ;; orig. isearch-edit-string

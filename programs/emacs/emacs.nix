@@ -69,6 +69,7 @@
       restclient
       ripgrep
       smartparens
+      swiper
       terraform-mode
       tree-sitter
       tree-sitter-langs
