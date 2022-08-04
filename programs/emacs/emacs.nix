@@ -15,6 +15,7 @@
   programs.emacs = {
     enable = true;
     extraPackages = epkgs: with epkgs; [
+      ace-window
       alchemist
       beacon
       python-black

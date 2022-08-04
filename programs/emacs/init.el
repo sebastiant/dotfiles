@@ -668,5 +668,7 @@
               ("C-c e" . lsp-sql-execute-query)
               ("C-c s" . lsp-sql-switch-connection))
   :custom (lsp-sqls-workspace-config-path nil))
+(use-package ace-window
+  :bind ("C-x o" . ace-window))
 (provide 'init)
 ;;; init.el ends here
