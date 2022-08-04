@@ -260,9 +260,6 @@
 ;; Always follow symlinks
 (setq vc-follow-symlinks t)
 
-;; Line numbers
-(global-display-line-numbers-mode)
-
 ;; Scroll
 (setq scroll-margin 0)
 (setq scroll-conservatively 10000)
