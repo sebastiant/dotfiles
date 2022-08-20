@@ -46,7 +46,6 @@
       unzip
       watchexec
       whois
-      zathura
     ];
   };
 
