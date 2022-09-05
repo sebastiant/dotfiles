@@ -11,6 +11,7 @@ in {
   ];
 
   services.emacs.enable = true;
+  services.picom.enable = true;
 
   programs.zsh.shellAliases.bat = "batcat";
 
