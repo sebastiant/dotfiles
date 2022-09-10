@@ -4,7 +4,7 @@ set $down j
 set $up k
 set $right l
 set $term alacritty
-set $menu dmenu_path | dmenu | xargs swaymsg exec --
+set $menu dmenu_path | yeganesh | xargs swaymsg exec --
 
 ### Output configuration
 #
