@@ -6,7 +6,7 @@ set $right l
 set $term alacritty
 set $menu dmenu_path | yeganesh | xargs swaymsg exec --
 
-output * bg /home/sebastian/dev/dotfiles/hosts/t14-nixos/nixos-wallpaper.png fill
+output * bg /home/sebastian/.background-image/nixos-wallpaper.png fill
 
 ### Output configuration
 #
