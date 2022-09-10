@@ -46,14 +46,30 @@
   #   keyMap = "us";
   # };
 
-  services.xserver = {
+  services.dbus.enable = true;
+  services.pipewire = {
     enable = true;
-    videoDrivers = [ "intel" ];
-    displayManager.gdm.enable = true;
-    desktopManager.gnome.enable = true;
-    displayManager.sessionCommands = lib.mkAfter ''
-    ${pkgs.xorg.xset}/bin/xset r rate 200 50
-    ${pkgs.xorg.xmodmap} ~/.Xmodmap
+    alsa.enable = true;
+    pulse.enable = true;
+  };
+  xdg.portal = {
+    enable = true;
+    wlr.enable = true;
+    extraPortals = with pkgs; [
+      xdg-desktop-portal-gtk
+      xdg-desktop-portal-wlr
+    ];
+  };
+  programs.sway = {
+    enable = true;
+    wrapperFeatures.gtk = true;
+    extraSessionCommands = ''
+      export SDL_VIDEODRIVER=wayland
+      export QT_QPA_PLATFORM=wayland-egl
+      export QT_WAYLAND_DISABLE_WINDOWDECORATION="1"
+      export _JAVA_AWT_WM_NONREPARENTING=1
+      export MOZ_ENABLE_WAYLAND = "1";
+      export XDG_CURRENT_DESKTOP = "sway";
     '';
   };
 
@@ -66,6 +82,17 @@
 
 
   services.xserver.layout = "us";
+
+  services.picom = {
+    enable = true;
+    backend = "glx";
+    vSync = true;
+    settings = {
+      paint-on-overlay = true;
+      glx-no-stencil = true;
+      glx-no-rebind-pixmap = true;
+    };
+  };
 
   boot.initrd.kernelModules = [ "i915" ];
 
@@ -84,7 +111,6 @@
     MOZ_DISABLE_RDD_SANDBOX = "1";
   };
   sound.enable = true;
-  hardware.pulseaudio.enable = true;
 
   users.users.sebastian = {
     isNormalUser = true;
@@ -143,6 +169,12 @@
     gnumake
     libtool
     vdpauinfo
+    sway
+    wayland
+    glib
+    swaylock
+    swayidle
+    wl-clipboard
     ];
 
   services.cron.enable = true;

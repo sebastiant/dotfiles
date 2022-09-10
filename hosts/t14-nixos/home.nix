@@ -22,9 +22,16 @@
     blink1-tool
     flameshot
   ];
+  programs.firefox.package = pkgs.wrapFirefox pkgs.firefox-unwrapped {
+    forceWayland = true;
+    extraPolicies = {
+      ExtensionSettings = {};
+    };
+  };
 
   home.file.".xsessionrc".text = ''
     xset r rate 200 50
     '';
   home.file.".background-image/nixos-wallpaper.png".source = ./nixos-wallpaper.png;
+  xdg.configFile."sway/config".source = ../../programs/sway/config;
 }
