@@ -35,4 +35,5 @@
     '';
   home.file.".background-image/nixos-wallpaper.png".source = ./nixos-wallpaper.png;
   xdg.configFile."sway/config".source = ../../programs/sway/config;
+  xdg.configFile."waybar/config".source = ../../programs/waybar/config;
 }

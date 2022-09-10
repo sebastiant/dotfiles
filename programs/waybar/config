@@ -1,0 +1,26 @@
+{
+    "layer": "top",
+    "modules-left": ["sway/workspaces", "sway/mode"],
+    "modules-center": ["sway/window"],
+    "modules-right": ["wlr/taskbar", "battery", "clock"],
+    "sway/window": {
+        "max-length": 50
+    },
+    "wlr/taskbar": {
+        "format": "{icon}",
+        "icon-size": 14,
+        "icon-theme": "Numix-Circle",
+        "tooltip-format": "{title}",
+        "on-click": "activate",
+        "on-click-middle": "close",
+        "ignore-list": [
+           "Alacritty"
+        ]
+    },
+    "battery": {
+        "format": "bat {capacity}%",
+    },
+    "clock": {
+        "format": "{:%Y-%m-%d %H:%M}"
+    }
+}

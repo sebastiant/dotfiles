@@ -169,12 +169,15 @@
     gnumake
     libtool
     vdpauinfo
-    sway
-    wayland
-    glib
-    swaylock
-    swayidle
-    wl-clipboard
+    ] ++
+    [
+      sway
+      wayland
+      glib
+      swaylock
+      swayidle
+      wl-clipboard
+      waybar
     ];
 
   services.cron.enable = true;
