@@ -165,6 +165,7 @@
     direnv
     pavucontrol
     polybar
+    pulseaudio
     dunst
     cmake
     gcc
