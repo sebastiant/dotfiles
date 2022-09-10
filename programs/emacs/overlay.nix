@@ -70,4 +70,5 @@ let
 in
 prev: final: {
   emacsSebastiant = (final.emacsPackagesFor final.emacs28Packages.emacs).emacsWithPackages packages;
+  emacsPgtkSebastiant = (final.emacsPackagesFor final.emacs-gtk).emacsWithPackages packages;
 }

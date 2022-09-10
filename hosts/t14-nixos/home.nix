@@ -28,6 +28,7 @@
       ExtensionSettings = {};
     };
   };
+  programs.emacs.package = pkgs.emacsPgtkSebastiant;
 
   home.file.".xsessionrc".text = ''
     xset r rate 200 50

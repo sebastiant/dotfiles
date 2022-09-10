@@ -14,4 +14,5 @@ in {
    nixFlakes
  ];
   home.file.".config/syncorate/config.yaml".source = ../../programs/syncorate/config.macos.yaml;
+  programs.emacs.package = pkgs.emacsSebastiant;
 }

@@ -9,6 +9,8 @@
 (setq inhibit-startup-screen t)
 (setq initial-scratch-message nil)
 
+;; Fix file uncrompression problems experienced when using Pgtk. credits: https://github.com/syl20bnr/spacemacs/issues/11585#issuecomment-1233440194
+(auto-compression-mode 1)
 ;; Move betweeen windows using M-<left/right/up/down>
 (windmove-default-keybindings 'meta)
 

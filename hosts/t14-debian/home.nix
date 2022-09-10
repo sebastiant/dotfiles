@@ -14,6 +14,7 @@ in {
   services.picom.enable = true;
 
   programs.zsh.shellAliases.bat = "batcat";
+  programs.emacs.package = pkgs.emacsSebastiant;
 
   home.packages = with pkgs; [
     _1password

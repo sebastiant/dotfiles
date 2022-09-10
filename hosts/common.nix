@@ -55,10 +55,7 @@
       enable = true;
     };
   };
-  programs.emacs = {
-    enable = true;
-    package = pkgs.emacsSebastiant;
-  };
+  programs.emacs.enable = true;
   programs.fzf.enable = true;
   programs.bat = {
     enable = true;
