@@ -6,10 +6,9 @@ set $right l
 set $term alacritty
 set $menu dmenu_path | yeganesh | xargs swaymsg exec --
 
+output * bg /home/sebastian/dev/dotfiles/hosts/t14-nixos/nixos-wallpaper.png fill
+
 ### Output configuration
-#
-# Default wallpaper (more resolutions are available in /run/current-system/sw/share/backgrounds/sway/)
-output * bg /run/current-system/sw/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 #
 # Example configuration:
 #
