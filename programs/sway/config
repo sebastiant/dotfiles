@@ -180,6 +180,13 @@ default_floating_border pixel
 input type:touchpad {
     tap enabled
 }
+input * {
+    xkb_layout "us,se"
+    xkb_options "grp:win_space_toggle"
+}
+
+input <identifier> xkb_model "pc101"
+
 # Brightness
 bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
 bindsym XF86MonBrightnessUp exec brightnessctl set 5%+
