@@ -151,6 +151,7 @@
     alacritty
     autorandr
     binutils
+    brightnessctl
     feh
     wget
     pciutils
