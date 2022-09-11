@@ -177,6 +177,9 @@ bindsym $mod+r mode "resize"
 default_border pixel
 default_floating_border pixel
 
+input type:touchpad {
+    tap enabled
+}
 # Brightness
 bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
 bindsym XF86MonBrightnessUp exec brightnessctl set 5%+
