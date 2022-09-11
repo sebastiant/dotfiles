@@ -181,6 +181,7 @@
       swayidle
       wl-clipboard
       waybar
+      wdisplays
     ];
 
   services.cron.enable = true;
