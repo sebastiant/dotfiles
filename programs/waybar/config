@@ -2,7 +2,7 @@
     "layer": "top",
     "modules-left": ["sway/workspaces", "sway/mode"],
     "modules-center": ["sway/window"],
-    "modules-right": ["wlr/taskbar", "battery", "clock"],
+    "modules-right": ["wlr/taskbar", "sway/language", "battery", "pulseaudio", "clock"],
     "sway/window": {
         "max-length": 50
     },
@@ -17,8 +17,28 @@
            "Alacritty"
         ]
     },
+    "sway/language": {
+        "format": "{}",
+        "on-click": "swaymsg input type:keyboard xkb_switch_layout next",
+    },
     "battery": {
         "format": "bat {capacity}%",
+    },
+    "pulseaudio": {
+        "format": "{volume}% {icon}",
+        "format-bluetooth": "{volume}% {icon}",
+        "format-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", ""]
+        },
+        "scroll-step": 1,
+        "on-click": "pavucontrol"
     },
     "clock": {
         "format": "{:%Y-%m-%d %H:%M}"
