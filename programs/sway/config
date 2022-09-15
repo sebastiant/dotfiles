@@ -176,6 +176,7 @@ bindsym $mod+r mode "resize"
 
 default_border pixel
 default_floating_border pixel
+gaps inner 5
 
 input type:touchpad {
     tap enabled
