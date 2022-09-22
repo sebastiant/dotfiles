@@ -22,7 +22,7 @@ I am happy to answer any questions about the contents of this repository or get 
 * My toolbox
 - [[https://www.gnu.org/software/emacs/][GNU Emacs]] with plugins such as evil-mode, ivy, projectile, magit, org-mode, lsp-mode and more
 - [[https://neovim.io/][neovim]] for basic text editing
-- [[https://xmonad.org/][xmonad]] as window-manager, with [[https://dunst-project.org/][Dunst]] for notifications and [[https://polybar.github.io/][polybar]] as status bar
+- [[https://gnome.org/][Gnome]] as desktop environment. I used [[https://xmonad.org/][xmonad]] with [[https://dunst-project.org/][dunst]] and [[https://polybar.github.io/][polybar]] until commit #c599745 and I have a branch `nixos-sway` with sway in NixOS. Due to screensharing needs I use Gnome for now.
 - [[https://www.zsh.org/][Zsh]] with [[https://ohmyz.sh/][Oh My Zsh]] as shell
 - [[https://github.com/alacritty/alacritty][Alacritty]] as terminal emulator
 - Appearance-wise i use [[https://github.com/be5invis/Iosevka][Iosevka]] as my default font and [[https://ethanschoonover.com/solarized/][Solarized dark]] as color theme

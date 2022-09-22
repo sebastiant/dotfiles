@@ -43,26 +43,9 @@
   services.xserver = {
     enable = true;
     videoDrivers = [ "intel" ];
-    displayManager.lightdm.greeters.mini = {
-      enable = true;
-      user = "sebastian";
-      extraConfig = ''
-        [greeter]
-        show-password-label = false
-        [greeter-theme]
-        window-color = "#A0A0A0"
-      '';
-    };
-    windowManager.xmonad = {
-      enable = true;
-      enableContribAndExtras = true;
-      extraPackages = haskellPackages: [
-        haskellPackages.xmonad-contrib
-        haskellPackages.xmonad-extras
-        haskellPackages.xmonad
-      ];
-    };
-  displayManager.sessionCommands = lib.mkAfter ''
+    displayManager.gdm.enable = true;
+    desktopManager.gnome.enable = true;
+    displayManager.sessionCommands = lib.mkAfter ''
     ${pkgs.xorg.xset}/bin/xset r rate 200 50
     ${pkgs.xorg.xmodmap} ~/.Xmodmap
     '';
