@@ -54,6 +54,7 @@
 
 
   home.packages = with pkgs; [
+    comma
     feh
     haskellPackages.yeganesh
     mob
