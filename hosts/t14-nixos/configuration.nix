@@ -61,11 +61,6 @@
 
   services.xserver.layout = "us";
 
-  services.picom = {
-    enable = true;
-    backend = "glx";
-  };
-
   boot.initrd.kernelModules = [ "i915" ];
 
   hardware.opengl = {
