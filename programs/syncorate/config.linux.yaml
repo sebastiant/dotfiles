@@ -1,0 +1,31 @@
+save_duration_seconds: 60
+break_duration_minutes: 30
+plugins:
+  espeak:
+    enable: True
+    voice: us-mbrola-1
+    speed: 130
+    amplitude: 50
+    focus_message: "Focus"
+    save_message: "Save"
+    break_message: "Break"
+  gnome-dnd:
+    enable: True
+  blink1:
+    enable: True
+    focus:
+      - rgb: "255,30,40"
+        transition_ms: 1500
+    save:
+      - rgb: "255,130,15"
+        transition_ms: 3000
+        delay_ms: 3000
+        blink: 2
+      - rgb: "255,130,15"
+        transition_ms: 3000
+    break:
+      - rgb: "20,255,40"
+        transition_ms: 3000
+    standby:
+      - rgb: "0,0,0"
+        transition_ms: 3000

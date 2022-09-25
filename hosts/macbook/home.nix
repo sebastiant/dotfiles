@@ -13,4 +13,5 @@ in {
    google-cloud-sdk
    nixFlakes
  ];
+  home.file.".config/syncorate/config.yaml".source = ../../programs/syncorate/config.macos.yaml;
 }

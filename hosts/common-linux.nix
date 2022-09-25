@@ -90,6 +90,7 @@
     ];
   };
 
+  home.file.".config/syncorate/config.yaml".source = ../programs/syncorate/config.linux.yaml;
   home.file.".xmonad/xmonad.hs".source = ../programs/xmonad.hs;
   xdg.configFile."polybar/config".source = ../programs/polybar/config;
   xdg.configFile."polybar/launch.sh".source = ../programs/polybar/launch.sh;
