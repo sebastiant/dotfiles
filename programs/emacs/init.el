@@ -357,7 +357,7 @@
    haskell-interactive-popup-errors nil
    haskell-process-log t)
   :bind (:map haskell-mode-map
-              ("C-c l" . haskell-process-load-file))
+              ("C-c e" . haskell-process-load-file))
   :config
   (add-to-list 'auto-mode-alist '("\\.cabal?\\'" . haskell-cabal-mode)))
 
@@ -365,7 +365,7 @@
   :custom (lsp-haskell-server-path "haskell-language-server-wrapper"))
 
 (use-package python-mode
-  :bind (:map python-mode-map ("C-c l" . run-python))
+  :bind (:map python-mode-map ("C-c e" . run-python))
   :custom
   (python-shell-interpreter "ipython")
   (python-shell-interpreter-args "--pylab")
@@ -393,8 +393,9 @@
   :commands (lsp lsp-deferred)
   :hook (lsp-mode . st/lsp-mode-setup)
   :bind (:map lsp-mode-map
-              ("C-c d" . lsp-ui-peek-find-definitions)
-              ("C-c r" . lsp-ui-peek-find-references))
+              ("C-c C-l a" . lsp-execute-code-action)
+              ("C-c C-l d" . lsp-ui-peek-find-definitions)
+              ("C-c C-l r" . lsp-ui-peek-find-references))
   :init
   (setq lsp-keymap-prefix "C-c l")
   (setq lsp-enable-file-watchers nil)
