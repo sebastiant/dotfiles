@@ -359,6 +359,7 @@
   :bind (:map haskell-mode-map
               ("C-c e" . haskell-process-load-file))
   :config
+  (define-key interactive-haskell-mode-map (kbd "C-c C-l") nil)
   (add-to-list 'auto-mode-alist '("\\.cabal?\\'" . haskell-cabal-mode)))
 
 (use-package lsp-haskell
