@@ -644,6 +644,7 @@
              "\\*Async Shell Command\\*"
              "^\\*eshell.*\\*$" eshell-mode
              "^\\*vterm.*\\*$"  vterm-mode
+             haskell-interactive-mode
              help-mode
              compilation-mode))
   (popper-mode +1)
