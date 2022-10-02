@@ -403,7 +403,6 @@
   (setq read-process-output-max (* 1024 1024)) ;; 1mb
   (setq lsp-log-io nil)
   :config
-  (advice-add 'lsp :before #'envrc-reload)
   (lsp-enable-which-key-integration t))
 
 (use-package lsp-ui
