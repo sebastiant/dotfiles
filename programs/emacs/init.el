@@ -641,6 +641,7 @@
   :custom (popper-reference-buffers
            '("\\*Messages\\*"
              "Output\\*$"
+             "^\\*Python\\*$" inferior-python-mode
              "\\*Async Shell Command\\*"
              "^\\*eshell.*\\*$" eshell-mode
              "^\\*vterm.*\\*$"  vterm-mode
