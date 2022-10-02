@@ -383,7 +383,7 @@
   :hook (python-mode . py-isort-enable-on-save))
 
 (use-package flycheck
-  :config (setq-default flycheck-disabled-checkers '(python-pylint))
+  :config (setq-default flycheck-disabled-checkers '(python-pylint python-mypy))
   :init (global-flycheck-mode))
 
 (defun st/lsp-mode-setup ()
