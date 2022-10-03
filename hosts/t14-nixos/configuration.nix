@@ -139,6 +139,8 @@
     vdpauinfo
     ];
 
+  services.cron.enable = true;
+
   virtualisation = {
     docker = {
       enable = true;
