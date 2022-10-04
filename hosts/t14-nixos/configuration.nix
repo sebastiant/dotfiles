@@ -15,6 +15,10 @@
     };
   };
 
+  powerManagement = {
+    powertop.enable = true;
+  };
+
   time.timeZone = "Europe/Stockholm";
 
   networking = {
