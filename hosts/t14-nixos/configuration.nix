@@ -20,6 +20,8 @@
     cpuFreqGovernor = "performance";
   };
 
+  services.throttled.enable = true;
+
   time.timeZone = "Europe/Stockholm";
 
   networking = {
