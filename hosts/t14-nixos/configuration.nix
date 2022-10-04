@@ -17,6 +17,7 @@
 
   powerManagement = {
     powertop.enable = true;
+    cpuFreqGovernor = "performance";
   };
 
   time.timeZone = "Europe/Stockholm";
