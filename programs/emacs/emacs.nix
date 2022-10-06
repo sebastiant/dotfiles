@@ -59,6 +59,7 @@
       org-roam
       org-superstar
       org-tree-slide
+      pdf-tools
       persp-projectile
       perspective
       po-mode
