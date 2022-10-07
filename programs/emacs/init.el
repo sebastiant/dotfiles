@@ -567,7 +567,7 @@
                       (visual-fill-column-mode 1))))
 (use-package org-roam
   :init (setq org-roam-v2-ack t)
-  :hook (org-mode . (lambda ()
+  :hook (org-roam-db-autosync-mode . (lambda ()
                      (and (org-roam-file-p)
                           (not (eq 'visible (org-roam-buffer--visibility)))
                           (org-roam-buffer-toggle))))
