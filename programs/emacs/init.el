@@ -372,12 +372,10 @@
   (require 'dap-python))
 
 (use-package python-black
-  :after python
   :hook (python-mode . python-black-on-save-mode-enable-dwim))
 
-(use-package py-isort
-  :after python-black
-  :hook (python-mode . py-isort-enable-on-save))
+(use-package python-isort
+  :hook (python-mode . python-isort-on-save-mode))
 
 (use-package flycheck
   :config (setq-default flycheck-disabled-checkers '(python-pylint python-mypy))

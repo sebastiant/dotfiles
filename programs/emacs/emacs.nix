@@ -65,7 +65,7 @@
       po-mode
       popper
       projectile
-      py-isort
+      python-isort
       python-mode
       rainbow-delimiters
       restclient
