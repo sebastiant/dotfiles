@@ -669,5 +669,10 @@
   :custom (lsp-sqls-workspace-config-path nil))
 (use-package ace-window
   :bind ("C-x o" . ace-window))
+(use-package avy
+  :bind
+  ("C-'" . avy-goto-char-2)
+  ("M-g w" . avy-goto-word-1))
+
 (provide 'init)
 ;;; init.el ends here
