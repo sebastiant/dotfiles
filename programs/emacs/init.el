@@ -26,30 +26,8 @@
 :init
 (add-hook 'prog-mode-hook #'rainbow-delimiters-mode))
 
-(use-package general
-  :after evil
-  :config
-  (general-override-mode)
-  (general-define-key "C-h f" #'helpful-callable)
-  (general-define-key "C-h v" #'helpful-variable)
-  (general-define-key "C-h k" #'helpful-key)
-  (general-define-key "C-h C-d" #'helpful-at-point)
-  (general-define-key "C-h F" #'helpful-function)
-  (general-define-key "C-h C" #'helpful-command)
-  (general-create-definer tyrant-def
-    :states '(normal visual insert motion emacs)
-    :keymaps 'override
-    :prefix "SPC"
-    :non-normal-prefix "C-SPC")
-  (tyrant-def
-    ""    nil
-
-    "p"   '(:ignore t :which-key "projectile")
-    "pf"  'projectile-find-file
-    "ps"  'projectile-ripgrep
-    "pt"  'projectile-run-vterm))
-
 (global-set-key (kbd "<escape>") 'keybaord-escape-quit)
+
 (use-package undo-tree
   :init (global-undo-tree-mode t))
 
@@ -320,6 +298,12 @@
   :config (setq which-key-idle-delay 1))
 
 (use-package helpful
+  :bind (("C-h f" . helpful-callable)
+         ("C-h v" . helpful-variable)
+         ("C-h k" . helpful-key)
+         ("C-h C-d" . helpful-at-point)
+         ("C-h F" . helpful-function)
+         ("C-h C" . helpful-command))
   :custom
   (describe-function-function #'helpful-callable)
   (describe-variable-function #'helpful-variable))

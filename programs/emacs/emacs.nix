@@ -37,7 +37,6 @@
       evil-nerd-commenter
       flycheck
       forge
-      general
       git-gutter
       haskell-mode
       helpful
