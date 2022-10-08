@@ -366,7 +366,7 @@
   :bind (:map python-mode-map ("C-c e" . run-python))
   :custom
   (python-shell-interpreter "ipython")
-  (python-shell-interpreter-args "--pylab")
+  (python-shell-interpreter-args "-i --simple-prompt")
   (dap-python-executable "python3")
   :config
   (require 'dap-python))
