@@ -55,7 +55,10 @@
       enable = true;
     };
   };
-  programs.emacs.package = pkgs.emacsNativeComp;
+  programs.emacs = {
+    enable = true;
+    package = pkgs.emacsNativeCompSebastiant;
+  };
   programs.fzf.enable = true;
   programs.bat = {
     enable = true;

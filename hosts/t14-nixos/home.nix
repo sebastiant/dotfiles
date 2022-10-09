@@ -8,7 +8,10 @@
   home.username = "sebastian";
   home.homeDirectory = "/home/sebastian";
 
-  services.emacs.enable = true;
+  services.emacs = {
+    enable = true;
+    package = pkgs.emacsNativeCompSebastiant;
+  };
 
   home.packages = with pkgs; [
     zlib

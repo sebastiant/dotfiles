@@ -16,8 +16,13 @@
   };
   outputs = {emacs-overlay, darwin, home-manager, nur, nixos-hardware, nixpkgs, ...}:
     let
+      sebastiant-emacs-overlay = import ./programs/emacs/overlay.nix;
       homeManagerConfFor = config: { ... }: {
-        nixpkgs.overlays = [ emacs-overlay.overlay nur.overlay ];
+        nixpkgs.overlays = [
+          nur.overlay
+          emacs-overlay.overlay
+          sebastiant-emacs-overlay
+        ];
         imports = [ config ];
       };
       darwinSystem = darwin.lib.darwinSystem {
