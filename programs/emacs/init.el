@@ -455,6 +455,8 @@
   (add-to-list 'auto-mode-alist '("\\.tsx?\\'" . typescriptjsx-mode))
   (add-to-list 'tree-sitter-major-mode-language-alist '(typescriptjsx-mode . tsx)))
 
+(use-package prettier-js
+  :hook (typescript-mode . prettier-js-mode))
 
 (use-package lsp-pyright
   :hook (python-mode . lsp-deferred))

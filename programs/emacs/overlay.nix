@@ -43,6 +43,7 @@ let
     perspective
     po-mode
     popper
+    prettier-js
     projectile
     python-black
     python-isort
