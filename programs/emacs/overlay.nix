@@ -74,5 +74,5 @@ let
   ]);
 in
 prev: final: {
-  emacsNativeCompSebastiant = (final.emacsPackagesFor final.emacsNativeComp).emacsWithPackages packages;
+  emacsSebastiant = (final.emacsPackagesFor final.emacs28Packages.emacs).emacsWithPackages packages;
 }

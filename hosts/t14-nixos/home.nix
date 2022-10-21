@@ -10,7 +10,7 @@
 
   services.emacs = {
     enable = true;
-    package = pkgs.emacsNativeCompSebastiant;
+    package = pkgs.emacsSebastiant;
   };
 
   home.packages = with pkgs; [

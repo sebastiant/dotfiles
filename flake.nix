@@ -12,15 +12,13 @@
       url = "github:lnl7/nix-darwin/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    emacs-overlay.url = "github:nix-community/emacs-overlay";
   };
-  outputs = {emacs-overlay, darwin, home-manager, nur, nixos-hardware, nixpkgs, ...}:
+  outputs = {darwin, home-manager, nur, nixos-hardware, nixpkgs, ...}:
     let
       sebastiant-emacs-overlay = import ./programs/emacs/overlay.nix;
       homeManagerConfFor = config: { ... }: {
         nixpkgs.overlays = [
           nur.overlay
-          emacs-overlay.overlay
           sebastiant-emacs-overlay
         ];
         imports = [ config ];
