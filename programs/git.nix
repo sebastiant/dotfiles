@@ -52,6 +52,7 @@
       fetch.prune = true;
       pull.rebase = true;
       push.default = "upstream";
+      push.autoSetupRemote = true;
     };
     ignores = [
       "\#*\#"
