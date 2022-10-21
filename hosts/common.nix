@@ -62,7 +62,7 @@
   programs.fzf.enable = true;
   programs.bat = {
     enable = true;
-    config.theme = "ansi-dark";
+    config.theme = "ansi";
   };
 
   xdg.configFile."alacritty/alacritty.yml".source = ../programs/alacritty.yml;
