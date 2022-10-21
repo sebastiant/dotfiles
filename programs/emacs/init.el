@@ -337,8 +337,8 @@
    haskell-process-type 'cabal-repl
    haskell-interactive-popup-errors nil
    haskell-process-log t)
-  :bind (:map haskell-mode-map
-              ("C-c e" . haskell-process-load-file))
+  :bind (:map interactive-haskell-mode-map
+              ("C-c C-c" . haskell-process-load-file))
   :config
   (define-key interactive-haskell-mode-map (kbd "C-c C-l") nil)
   (add-to-list 'auto-mode-alist '("\\.cabal?\\'" . haskell-cabal-mode)))
@@ -347,7 +347,7 @@
   :custom (lsp-haskell-server-path "haskell-language-server-wrapper"))
 
 (use-package python-mode
-  :bind (:map python-mode-map ("C-c e" . run-python))
+  :bind (:map python-mode-map ("C-c C-c" . run-python))
   :custom
   (python-shell-interpreter "ipython")
   (python-shell-interpreter-args "-i --simple-prompt")
@@ -526,8 +526,9 @@
 
 (use-package org
   :hook (org-mode . st/org-mode-setup)
-  :bind ("C-c a" . org-agenda)
-  :config (st/org-font-setup)
+  :bind ("C-c C-o a" . org-agenda)
+  :config
+  (st/org-font-setup)
   :custom
   (org-confirm-babel-evaluate nil)
   (org-ellipsis " ▾")
@@ -547,7 +548,7 @@
               (org-agenda-max-todos nil))))))))
 
 (use-package org-capture
-  :bind ("C-c c" . org-capture)
+  :bind ("C-c C-o c" . org-capture)
   :custom
   (org-capture-templates '(("t" "Task" entry
                             (file+headline "~/org/tasks.org" "Task list")
@@ -573,13 +574,13 @@
   (org-roam-dailies-capture-templates
    '(("d" "default" entry "* %<%T>:  %?"
       :if-new (file+head "%<%Y-%m-%d>.org" "#+title: %<%Y-%m-%d>\n"))))
-  :bind (("C-c n l" . org-roam-buffer-toggle)
-         ("C-c n f" . org-roam-node-find)
-         ("C-c n i" . org-roam-node-insert)
+  :bind (("C-c C-o n l" . org-roam-buffer-toggle)
+         ("C-c C-o n f" . org-roam-node-find)
+         ("C-c C-o n i" . org-roam-node-insert)
          :map org-mode-map
          ("C-M-i" . completion-at-point))
   :bind-keymap
-  ("C-c n d" . org-roam-dailies-map)
+  ("C-c C-o n d" . org-roam-dailies-map)
   :config
   (require 'org-roam-dailies)
   (org-roam-db-autosync-mode))
