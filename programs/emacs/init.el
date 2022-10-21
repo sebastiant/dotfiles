@@ -529,6 +529,7 @@
   :bind ("C-c C-o a" . org-agenda)
   :config
   (st/org-font-setup)
+  (define-key org-mode-map (kbd "C-'") nil)
   :custom
   (org-confirm-babel-evaluate nil)
   (org-ellipsis " ▾")
