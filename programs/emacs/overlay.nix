@@ -3,9 +3,8 @@ let
     ace-window
     alchemist
     beacon
-    company
-    company-box
     consult
+    corfu
     dap-mode
     dired-single
     dockerfile-mode

@@ -369,18 +369,43 @@
   (setq lsp-headerline-breadcrumb-segments '(path-up-to-project file symbols))
   (lsp-headerline-breadcrumb-mode))
 
+(use-package corfu
+  :custom
+  (corfu-cycle t)
+  (corfu-auto t)
+  (corfu-auto-prefix 2)
+  (corfu-auto-delay 0.0)
+  (corfu-quit-at-boundary 'separator)
+  (corfu-echo-documentation 0.25)
+  (corfu-preview-current 'insert)
+  (corfu-preselect-first t)
+  :bind (:map corfu-map
+              ("M-SPC" . corfu-insert-separator)
+              ("TAB" . corfu-insert)
+              ("RET"     . nil))
+  :init
+  (global-corfu-mode)
+  (corfu-history-mode))
+
 (use-package lsp-mode
+  :custom
+  (lsp-completion-provider :none)
   :commands (lsp lsp-deferred)
-  :hook (lsp-mode . st/lsp-mode-setup)
   :bind (:map lsp-mode-map
               ("C-c C-l a" . lsp-execute-code-action)
               ("C-c C-l d" . lsp-ui-peek-find-definitions)
               ("C-c C-l r" . lsp-ui-peek-find-references))
   :init
+  (defun st/lsp-mode-setup-completion ()
+    (setf (alist-get 'styles (alist-get 'lsp-capf completion-category-defaults))
+          '(flex)))
   (setq lsp-keymap-prefix "C-c l")
   (setq lsp-enable-file-watchers nil)
   (setq read-process-output-max (* 1024 1024)) ;; 1mb
   (setq lsp-log-io nil)
+  :hook
+  (lsp-completion-mode . st/lsp-mode-setup-completion)
+  (lsp-mode . st/lsp-mode-setup)
   :config
   (lsp-enable-which-key-integration t))
 
@@ -398,9 +423,9 @@
 
 (use-package yasnippet
   :custom (yas-snippet-dirs '("~/.snippets/"))
-  :init
-  (yas-global-mode)
-  (global-set-key (kbd "C-c y") 'company-yasnippet))
+  :bind ("C-c y" . yas-insert-snippet)
+  :init (yas-global-mode))
+
 
 (use-package web-mode
   :config
@@ -430,17 +455,6 @@
   (add-to-list 'auto-mode-alist '("\\.tsx?\\'" . typescriptjsx-mode))
   (add-to-list 'tree-sitter-major-mode-language-alist '(typescriptjsx-mode . tsx)))
 
-(use-package company
-  :after lsp-mode
-  :hook
-  (lsp-mode . company-mode)
-  (emacs-lisp-mode . company-mode)
-  :custom
-  (company-minimum-prefix-length 1)
-  (company-idle-delay 0.2))
-(global-set-key (kbd "TAB") #'company-indent-or-complete-common)
-(use-package company-box
- :hook (company-mode . company-box-mode))
 
 (use-package lsp-pyright
   :hook (python-mode . lsp-deferred))
