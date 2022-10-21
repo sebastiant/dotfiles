@@ -1,5 +1,5 @@
 let
-  packages = epkgs: with epkgs; [
+  packages = epkgs: (with epkgs; [
     ace-window
     alchemist
     beacon
@@ -15,9 +15,6 @@ let
     embark
     embark-consult
     envrc
-    evil
-    evil-collection
-    evil-nerd-commenter
     flycheck
     forge
     git-gutter
@@ -70,7 +67,11 @@ let
     yaml-mode
     yasnippet
     zeal-at-point
-  ];
+  ]) ++ (with epkgs.melpaStablePackages; [
+    evil
+    evil-collection
+    evil-nerd-commenter
+  ]);
 in
 prev: final: {
   emacsNativeCompSebastiant = (final.emacsPackagesFor final.emacsNativeComp).emacsWithPackages packages;
