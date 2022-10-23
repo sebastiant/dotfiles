@@ -324,12 +324,17 @@
 (use-package elm-mode
   :hook (elm-mode . lsp-deferred))
 
+(use-package interactive-haskell-mode
+  :hook (haskell-mode . interactive-haskell-mode)
+  :bind (:map interactive-haskell-mode-map
+              ("C-c C-c" . haskell-process-load-file)
+              ("C-c C-l" . nil)))
+
 (use-package haskell-mode
   :hook
   (haskell-literate-mode . lsp-deferred)
   (haskell-mode . lsp-deferred)
   (haskell-mode . haskell-indentation-mode)
-  (haskell-mode . interactive-haskell-mode)
   :init
   (setq
    haskell-stylish-on-save t
@@ -337,10 +342,7 @@
    haskell-process-type 'cabal-repl
    haskell-interactive-popup-errors nil
    haskell-process-log t)
-  :bind (:map interactive-haskell-mode-map
-              ("C-c C-c" . haskell-process-load-file))
   :config
-  (define-key interactive-haskell-mode-map (kbd "C-c C-l") nil)
   (add-to-list 'auto-mode-alist '("\\.cabal?\\'" . haskell-cabal-mode)))
 
 (use-package lsp-haskell
