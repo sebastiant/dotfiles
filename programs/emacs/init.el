@@ -31,43 +31,12 @@
 (use-package undo-tree
   :init (global-undo-tree-mode t))
 
-(defun st/evil-hook ()
-  (dolist (mode '(custom-mode
-		  eshell-mode
-		  git-rebase-mode
-		  term-mode
-      vterm-mode
-      ))
-    (add-to-list 'evil-emacs-state-modes mode)))
-(use-package evil
-  :init
-  (setq evil-want-integration t)
-  (setq evil-want-keybinding nil)
-  (setq evil-search-module 'evil-search)
-  (setq evil-ex-complete-emacs-commands nil)
-  (setq evil-vsplit-window-right t)
-  (setq evil-split-window-below t)
-  (setq evil-shift-round nil)
-  (setq evil-want-fine-undo t)
-  (setq evil-undo-system 'undo-tree)
-  :config
-  (add-hook 'evil-mode-hook 'st/evil-hook)
-  (evil-mode 1)
-  (define-key evil-insert-state-map (kbd "C-g") 'evil-normal-state))
-
-(use-package evil-collection
-  :after evil
-  :custom (evil-collection-outline-bind-tab-p nil)
-  :config (evil-collection-init))
 
 (use-package dired
   :commands (dired dired-jump)
   :bind (("C-x C-j" . dired-jump))
-  :custom ((dired-listing-switches "-agho --group-directories-first"))
-  :config
-  (evil-collection-define-key 'normal 'dired-mode-map
-    "h" 'dired-single-up-directory
-    "l" 'dired-single-buffer))
+  :custom ((dired-listing-switches "-agho --group-directories-first")))
+
 (use-package dired-single
   :commands (dired dired-jump))
 
@@ -164,10 +133,6 @@
 ;; Editing
 (setq-default indent-tabs-mode nil)
 (setq-default tab-width 2)
-(setq-default evil-shift-width tab-width)
-
-(use-package evil-nerd-commenter
-  :bind ("M-/" . evilnc-comment-or-uncomment-lines))
 
 ;; Trailing whitespace
 (defun my/buf-show-trailing-whitespace ()

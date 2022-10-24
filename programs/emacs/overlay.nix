@@ -66,10 +66,6 @@ let
     yaml-mode
     yasnippet
     zeal-at-point
-  ]) ++ (with epkgs.melpaStablePackages; [
-    evil
-    evil-collection
-    evil-nerd-commenter
   ]);
 in
 prev: final: {
