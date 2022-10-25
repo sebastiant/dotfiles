@@ -49,6 +49,8 @@ bindsym $mod+Shift+p exec swaylock -f -c 000000
     # Start your launcher
     bindsym $mod+p exec $menu
 
+    bindsym $mod+Shift+e exec emacsclient -c
+
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
     # Despite the name, also works for non-floating windows.
