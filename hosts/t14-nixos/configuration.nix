@@ -3,7 +3,6 @@
   imports =
     [
       ./hardware-configuration.nix
-      ../../programs/cachix/cachix.nix
       ../../programs/non-free.nix
     ];
   boot.loader.systemd-boot.enable = true;

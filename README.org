@@ -29,7 +29,6 @@ I am happy to answer any questions about the contents of this repository or get 
 
 * Setup
 - [[https://nixos.org/manual/nix/stable/#sect-multi-user-installation][Install nix]] and set up flakes
-- Install cachix and [[https://nixos.wiki/wiki/Binary_Cache#Using_a_binary_cache][add the nix-community binary cache]]
 - Clone this repository
   #+begin_src shell
   $ git clone git@github.com:sebastiant/dotfiles.git
