@@ -387,7 +387,7 @@
   :bind (:map corfu-map
               ("M-SPC" . corfu-insert-separator)
               ("TAB" . corfu-insert)
-              ("RET"     . nil))
+              ("RET" . corfu-insert))
   :init
   (global-corfu-mode)
   (corfu-history-mode))
