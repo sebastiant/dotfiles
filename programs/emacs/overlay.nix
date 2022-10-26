@@ -3,7 +3,6 @@ let
     ace-window
     alchemist
     beacon
-    consult
     corfu
     dap-mode
     dired-single
@@ -13,7 +12,6 @@ let
     elixir-mode
     elm-mode
     embark
-    embark-consult
     envrc
     flycheck
     forge
