@@ -327,13 +327,8 @@
 (use-package elm-mode
   :hook (elm-mode . lsp-deferred))
 
-(use-package interactive-haskell-mode
-  :hook (haskell-mode . interactive-haskell-mode)
-  :bind (:map interactive-haskell-mode-map
-              ("C-c C-c" . haskell-process-load-file)
-              ("C-c C-l" . nil)))
-
 (use-package haskell-mode
+  :bind ("C-c C-c" . haskell-process-load-file)
   :hook
   (haskell-literate-mode . lsp-deferred)
   (haskell-mode . lsp-deferred)
