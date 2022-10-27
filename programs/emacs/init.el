@@ -59,11 +59,11 @@
 (add-hook 'ediff-after-quit-hook-internal 'winner-undo)
 
 (use-package projectile
-  :diminish projectile-mode
   :config (projectile-mode)
   :bind-keymap
   ("C-c p" . projectile-command-map)
   :init
+  (projectile-mode +1)
   (when (file-directory-p "~/dev")
     (setq projectile-project-search-path '("~/dev")))
   (setq projectile-switch-project-action #'projectile-dired))
@@ -163,7 +163,6 @@
 
 (use-package which-key
   :init (which-key-mode)
-  :diminish which-key-mode
   :config (setq which-key-idle-delay 1))
 
 (use-package helpful
