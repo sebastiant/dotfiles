@@ -515,7 +515,10 @@
   (popper-echo-mode +1))
 
 (use-package smartparens
-  :config (progn (show-smartparens-global-mode t)))
+  :init
+  (require 'smartparens-config)
+  :config
+  (smartparens-global-mode t))
 
 (use-package zeal-at-point
   :bind ("C-c z" . zeal-at-point))
