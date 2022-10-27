@@ -535,5 +535,10 @@
   ("C-'" . avy-goto-char-2)
   ("M-g w" . avy-goto-word-1))
 
+(use-package pdf-tools
+  :config
+  (pdf-tools-install)
+  (setq-default pdf-view-display-size 'fit-page))
+
 (provide 'init)
 ;;; init.el ends here
