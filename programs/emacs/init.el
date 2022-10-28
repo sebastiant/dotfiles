@@ -193,7 +193,7 @@
   :hook (elm-mode . lsp-deferred))
 
 (use-package haskell-mode
-  :bind ("C-c C-c" . haskell-process-load-file)
+  :bind ("C-c c" . haskell-process-load-file)
   :hook
   (haskell-literate-mode . lsp-deferred)
   (haskell-mode . lsp-deferred)
@@ -212,7 +212,7 @@
   :custom (lsp-haskell-server-path "haskell-language-server-wrapper"))
 
 (use-package python-mode
-  :bind (:map python-mode-map ("C-c C-c" . run-python))
+  :bind (:map python-mode-map ("C-c c" . run-python))
   :custom
   (python-shell-interpreter "ipython")
   (python-shell-interpreter-args "-i --simple-prompt")
@@ -257,14 +257,14 @@
   (lsp-completion-provider :none)
   :commands (lsp lsp-deferred)
   :bind (:map lsp-mode-map
-              ("C-c C-l a" . lsp-execute-code-action)
-              ("C-c C-l d" . lsp-ui-peek-find-definitions)
-              ("C-c C-l r" . lsp-ui-peek-find-references))
+              ("C-c l a" . lsp-execute-code-action)
+              ("C-c l d" . lsp-ui-peek-find-definitions)
+              ("C-c l r" . lsp-ui-peek-find-references))
   :init
   (defun st/lsp-mode-setup-completion ()
     (setf (alist-get 'styles (alist-get 'lsp-capf completion-category-defaults))
           '(flex)))
-  (setq lsp-keymap-prefix "C-c l")
+  (setq lsp-keymap-prefix "C-c S-l")
   (setq lsp-enable-file-watchers nil)
   (setq read-process-output-max (* 1024 1024)) ;; 1mb
   (setq lsp-log-io nil)
@@ -393,7 +393,7 @@
 
 (use-package org
   :hook (org-mode . st/org-mode-setup)
-  :bind ("C-c C-o a" . org-agenda)
+  :bind ("C-c o a" . org-agenda)
   :config
   (st/org-font-setup)
   (define-key org-mode-map (kbd "C-'") nil)
@@ -416,7 +416,7 @@
               (org-agenda-max-todos nil))))))))
 
 (use-package org-capture
-  :bind ("C-c C-o c" . org-capture)
+  :bind ("C-c o c" . org-capture)
   :custom
   (org-capture-templates '(("t" "Task" entry
                             (file+headline "~/org/tasks.org" "Task list")
@@ -442,13 +442,13 @@
   (org-roam-dailies-capture-templates
    '(("d" "default" entry "* %<%T>:  %?"
       :if-new (file+head "%<%Y-%m-%d>.org" "#+title: %<%Y-%m-%d>\n"))))
-  :bind (("C-c C-o n l" . org-roam-buffer-toggle)
-         ("C-c C-o n f" . org-roam-node-find)
-         ("C-c C-o n i" . org-roam-node-insert)
+  :bind (("C-c o n l" . org-roam-buffer-toggle)
+         ("C-c o n f" . org-roam-node-find)
+         ("C-c o n i" . org-roam-node-insert)
          :map org-mode-map
          ("C-M-i" . completion-at-point))
   :bind-keymap
-  ("C-c C-o n d" . org-roam-dailies-map)
+  ("C-c o n d" . org-roam-dailies-map)
   :config
   (require 'org-roam-dailies)
   (org-roam-db-autosync-mode))
