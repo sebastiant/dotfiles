@@ -26,7 +26,7 @@
 :init
 (add-hook 'prog-mode-hook #'rainbow-delimiters-mode))
 
-(global-set-key (kbd "<escape>") 'keybaord-escape-quit)
+(global-set-key (kbd "<escape>") 'keyboard-escape-quit)
 
 (use-package undo-tree
   :init (global-undo-tree-mode t))
