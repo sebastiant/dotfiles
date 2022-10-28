@@ -60,13 +60,13 @@
 
 (use-package projectile
   :config (projectile-mode)
-  :bind-keymap
-  ("C-c p" . projectile-command-map)
+  :bind-keymap ("C-c p" . projectile-command-map)
+  :custom
+  (projectile-per-project-compilation-buffer t)
+  (projectile-switch-project-action #'projectile-dired)
   :init
-  (projectile-mode +1)
   (when (file-directory-p "~/dev")
-    (setq projectile-project-search-path '("~/dev")))
-  (setq projectile-switch-project-action #'projectile-dired))
+    (setq projectile-project-search-path '("~/dev"))))
 
 (use-package swiper
   :bind ("C-c w" . swiper-isearch))
