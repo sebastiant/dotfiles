@@ -541,4 +541,7 @@
   (setq-default pdf-view-display-size 'fit-page))
 
 (provide 'init)
+
+(custom-set-variables
+ '(safe-local-variable-values '((projectile-project-run-cmd . "make all"))))
 ;;; init.el ends here
