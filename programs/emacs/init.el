@@ -471,9 +471,7 @@
          ("C-c V" . persp-switch)
          ("C-c s" . projectile-persp-switch-project))
   :custom (persp-mode-prefix-key (kbd "C-c C-v"))
-  :config
-  (unless persp-mode
-    (persp-mode 1)))
+  :init (persp-mode))
 
 (use-package nix-mode
   :hook (nix-mode . lsp-deferred)
