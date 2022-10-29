@@ -37,7 +37,10 @@
 (use-package dired
   :commands (dired dired-jump)
   :bind (("C-x C-j" . dired-jump))
-  :custom ((dired-listing-switches "-agho --group-directories-first")))
+  :config
+    (if (string= system-type "darwin")
+        (setq dired-listing-switches "-aBhl")
+        (setq dired-listing-switches "-agho --group-directories-first")))
 
 (use-package dired-single
   :commands (dired dired-jump))
