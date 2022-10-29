@@ -11,7 +11,7 @@
 This repository contains my systems setup.
 I have three hosts set up by this repository:
 - A Lenovo laptop running [[https://nixos.org/][NixOS]]
-- The same Lenovo laptop running [[https://www.debian.org/][GNU/Linux debian]]
+- The same Lenovo laptop running [[https://www.debian.org/][GNU/Linux debian]]. This setup is kept as a reference - I don't use it myself any longer.
 - A Macbook running macOS
 I use [[https://nixos.org/][nix]] as package manager for all hosts.
 I use [[https://github.com/nix-community/home-manager][Home Manager]] to declare nix packages and configuration to use.
@@ -20,12 +20,12 @@ All hosts are configured from their respective [[/hosts][/hosts]] directory, [[h
 * Questions or assistance
 I am happy to answer any questions about the contents of this repository or get newcomers started in the world of nix! Send me a message on Discord: sebastiant#6342
 * My toolbox
-- [[https://www.gnu.org/software/emacs/][GNU Emacs]] with plugins such as evil-mode, ivy, projectile, magit, org-mode, lsp-mode and more
+- [[https://www.gnu.org/software/emacs/][GNU Emacs]] with plugins such as projectile, magit, org-mode, lsp-mode and more
 - [[https://neovim.io/][neovim]] for basic text editing
-- [[https://gnome.org/][Gnome]] as desktop environment. I used [[https://xmonad.org/][xmonad]] with [[https://dunst-project.org/][dunst]] and [[https://polybar.github.io/][polybar]] until commit #c599745 and I have a branch `nixos-sway` with sway in NixOS. Due to screensharing needs I use Gnome for now.
+- [[https://swaywm.org][Sway]] as compositor
 - [[https://www.zsh.org/][Zsh]] with [[https://ohmyz.sh/][Oh My Zsh]] as shell
 - [[https://github.com/alacritty/alacritty][Alacritty]] as terminal emulator
-- Appearance-wise i use [[https://github.com/be5invis/Iosevka][Iosevka]] as my default font and [[https://ethanschoonover.com/solarized/][Solarized dark]] as color theme
+- Appearance-wise i use [[https://github.com/be5invis/Iosevka][Iosevka]] as my default font. The great [[https://github.com/protesilaos/modus-themes][Modus themes]] for Emacs  and otherwise [[https://ethanschoonover.com/solarized/][Solarized dark]] theme
 
 * Setup
 - [[https://nixos.org/manual/nix/stable/#sect-multi-user-installation][Install nix]] and set up flakes
@@ -49,6 +49,7 @@ I am happy to answer any questions about the contents of this repository or get 
       $ nixos-rebuild switch --upgrade --flake '.#' --use-remote-sudo
     #+end_src
   - Linux
+    I don't use this any longer and it is only kept for reference.
     #+begin_src shell
     $ nix build && ./result/activate
     #+end_src
