@@ -59,6 +59,7 @@
     haskellPackages.yeganesh
     mob
     networkmanager
+    nyxt
     polybar
     powertop
     volctl

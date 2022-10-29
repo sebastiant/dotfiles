@@ -31,7 +31,6 @@ in {
     libnotify
     mysql
     nixFlakes
-    nyxt
     pavucontrol
     picom
     sass

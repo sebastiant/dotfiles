@@ -33,7 +33,6 @@
       nix-index
       nixfmt
       nodePackages.uglify-js
-      nyxt
       openssl
       p7zip
       pandoc
