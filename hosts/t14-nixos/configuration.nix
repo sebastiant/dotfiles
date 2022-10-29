@@ -143,10 +143,7 @@
     package = pkgs.nixUnstable;
   };
 
-  fonts.fonts = with pkgs; [
-      iosevka
-      aileron
-  ];
+  fonts.fonts = with pkgs; [ font-awesome iosevka aileron ];
 
   environment.systemPackages =
     with pkgs; [
