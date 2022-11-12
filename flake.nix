@@ -1,9 +1,10 @@
 {
-  description = "NixOS configuration and home-manager configurations for mac and debian gnu/linux";
+  description =
+    "NixOS configuration and home-manager configurations for mac and debian gnu/linux";
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    nixos-hardware.url = github:nixos/nixos-hardware/master;
-    nur.url = github:nix-community/nur;
+    nixos-hardware.url = "github:nixos/nixos-hardware/master";
+    nur.url = "github:nix-community/nur";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -13,22 +14,25 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
-  outputs = {darwin, home-manager, nur, nixos-hardware, nixpkgs, ...}:
+  outputs = { darwin, home-manager, nur, nixos-hardware, nixpkgs, ... }:
     let
       sebastiant-emacs-overlay = import ./programs/emacs/overlay.nix;
-      homeManagerConfFor = config: { ... }: {
-        nixpkgs.overlays = [
-          nur.overlay
-          sebastiant-emacs-overlay
-        ];
-        imports = [ config ];
-      };
+      homeManagerConfFor = config:
+        { ... }: {
+          nixpkgs.overlays = [
+            nur.overlay
+            sebastiant-emacs-overlay
+          ];
+          imports = [ config ];
+        };
       darwinSystem = darwin.lib.darwinSystem {
         system = "x86_64-darwin";
         modules = [
           ./hosts/macbook/darwin-configuration.nix
-          home-manager.darwinModules.home-manager {
-            home-manager.users.sebastian = homeManagerConfFor ./hosts/macbook/home.nix;
+          home-manager.darwinModules.home-manager
+          {
+            home-manager.users.sebastian =
+              homeManagerConfFor ./hosts/macbook/home.nix;
           }
         ];
         specialArgs = { inherit nixpkgs; };
@@ -46,9 +50,11 @@
         modules = [
           nixos-hardware.nixosModules.lenovo-thinkpad-t14
           ./hosts/t14-nixos/configuration.nix
-          home-manager.nixosModules.home-manager {
+          home-manager.nixosModules.home-manager
+          {
             home-manager.useUserPackages = true;
-            home-manager.users.sebastian = homeManagerConfFor ./hosts/t14-nixos/home.nix;
+            home-manager.users.sebastian =
+              homeManagerConfFor ./hosts/t14-nixos/home.nix;
           }
         ];
         specialArgs = { inherit nixpkgs; };
