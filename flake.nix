@@ -13,14 +13,17 @@
       url = "github:lnl7/nix-darwin/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    syncorate-el.url = "github:sebastiant/syncorate.el";
   };
-  outputs = { darwin, home-manager, nur, nixos-hardware, nixpkgs, ... }:
+
+  outputs = { syncorate-el, darwin, home-manager, nur, nixos-hardware, nixpkgs, ... }:
     let
       sebastiant-emacs-overlay = import ./programs/emacs/overlay.nix;
       homeManagerConfFor = config:
         { ... }: {
           nixpkgs.overlays = [
             nur.overlay
+            syncorate-el.overlays.emacs
             sebastiant-emacs-overlay
           ];
           imports = [ config ];

@@ -55,6 +55,7 @@ let
       ripgrep
       smartparens
       swiper
+      syncorate-el
       terraform-mode
       tree-sitter
       tree-sitter-langs

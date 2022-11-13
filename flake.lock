@@ -95,7 +95,23 @@
         "home-manager": "home-manager",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs",
-        "nur": "nur"
+        "nur": "nur",
+        "syncorate-el": "syncorate-el"
+      }
+    },
+    "syncorate-el": {
+      "locked": {
+        "lastModified": 1668339354,
+        "narHash": "sha256-IHzsEUKHHp6jLKYNr7SrlWZOHWLlS0+GiFTN+MWSPfQ=",
+        "owner": "sebastiant",
+        "repo": "syncorate.el",
+        "rev": "f180db2a89ba061dbd3b543a6dd336fe42962bf1",
+        "type": "github"
+      },
+      "original": {
+        "owner": "sebastiant",
+        "repo": "syncorate.el",
+        "type": "github"
       }
     },
     "utils": {

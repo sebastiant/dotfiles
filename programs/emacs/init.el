@@ -545,6 +545,9 @@
   (pdf-tools-install)
   (setq-default pdf-view-display-size 'fit-page))
 
+(use-package syncorate
+  :custom (syncorate-executable "~/.local/bin/syncorate"))
+
 (provide 'init)
 
 (custom-set-variables
