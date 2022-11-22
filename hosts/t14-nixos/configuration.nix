@@ -174,14 +174,16 @@
     vdpauinfo
     ] ++
     [
-      sway
-      wayland
       glib
-      swaylock
+      grim
+      slurp
+      sway
       swayidle
-      wl-clipboard
+      swaylock
       waybar
+      wayland
       wdisplays
+      wl-clipboard
     ];
 
   services.cron.enable = true;

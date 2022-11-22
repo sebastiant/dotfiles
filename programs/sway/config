@@ -200,6 +200,9 @@ bindsym XF86AudioLowerVolume exec 'pactl set-sink-volume @DEFAULT_SINK@ -5%'
 bindsym XF86AudioMute exec 'pactl set-sink-mute @DEFAULT_SINK@ toggle'
 bindsym XF86AudioMicMute exec 'pactl set-source-mute @DEFAULT_SOURCE@ toggle'
 
+# Print screen
+bindsym Print exec grim -t jpeg "/home/sebastian/Pictures/Screenshots/$(date +%Y-%m-%d_%H-%m-%s).jpg"
+bindsym $mod+Print exec grim -t jpeg -g "$(slurp)" "/home/sebastian/Pictures/Screenshots/$(date +%Y-%m-%d_%H-%m-%s).jpg"
 input type:keyboard {
     repeat_delay 200
     repeat_rate 70
