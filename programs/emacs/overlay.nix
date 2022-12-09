@@ -46,6 +46,7 @@ let
       po-mode
       popper
       prettier-js
+      prodigy
       projectile
       python-black
       python-isort
