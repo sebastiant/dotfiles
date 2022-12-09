@@ -23,8 +23,7 @@
     flameshot
   ];
   programs.firefox.package = pkgs.wrapFirefox pkgs.firefox-unwrapped {
-    forceWayland = true;
-    extraPolicies = {
+      extraPolicies = {
       ExtensionSettings = {};
     };
   };
