@@ -1,11 +1,6 @@
-{ config, lib, nixpkgs, pkgs, ... }:
-{
-  imports =
-    [
-      ./hardware-configuration.nix
-      ../../programs/non-free.nix
-    ];
-  nixpkgs.overlays = [(import ../../programs/wayland-overlay.nix)];
+{ config, lib, nixpkgs, pkgs, ... }: {
+  imports = [ ./hardware-configuration.nix ../../programs/non-free.nix ];
+  nixpkgs.overlays = [ (import ../../programs/wayland-overlay.nix) ];
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -27,9 +22,7 @@
 
   networking = {
     useDHCP = false;
-    interfaces = {
-      wlp0s20f3.useDHCP = true;
-    };
+    interfaces = { wlp0s20f3.useDHCP = true; };
     hostName = "t14";
     networkmanager.enable = true;
   };
@@ -43,10 +36,6 @@
   services.blueman.enable = true;
 
   i18n.defaultLocale = "en_US.UTF-8";
-  # console = {
-  #   font = "Lat2-Terminus16";
-  #   keyMap = "us";
-  # };
 
   services.dbus.enable = true;
   security.rtkit.enable = true;
@@ -79,11 +68,10 @@
 
   boot.blacklistedKernelModules = [ "nouveau" "nvidia" ];
 
-  services.autorandr = {
-    enable = true;
-  };
-  services.udev.extraRules = "ATTRS{idVendor}==\"27b8\", ATTRS{idProduct}==\"01ed\", MODE:=\"666\", GROUP=\"plugdev\"\n";
-
+  services.autorandr = { enable = true; };
+  services.udev.extraRules = ''
+    ATTRS{idVendor}=="27b8", ATTRS{idProduct}=="01ed", MODE:="666", GROUP="plugdev"
+  '';
 
   services.xserver.layout = "us";
 
@@ -102,11 +90,7 @@
 
   hardware.opengl = {
     enable = true;
-    extraPackages = with pkgs; [
-      intel-media-driver
-      vaapiVdpau
-      libvdpau-va-gl
-    ];
+    extraPackages = with pkgs; [ intel-media-driver vaapiVdpau libvdpau-va-gl ];
   };
 
   environment.variables = {
@@ -119,15 +103,8 @@
   users.users.sebastian = {
     isNormalUser = true;
     createHome = true;
-    extraGroups = [
-      "wheel"
-      "docker"
-      "vboxusers"
-      "video"
-      "audio"
-      "disk"
-      "networkmanager"
-    ];
+    extraGroups =
+      [ "wheel" "docker" "vboxusers" "video" "audio" "disk" "networkmanager" ];
     home = "/home/sebastian";
     uid = 1000;
     shell = pkgs.zsh;
@@ -136,44 +113,41 @@
     extraOptions = ''
       experimental-features = nix-command flakes
     '';
-    nixPath = [
-        "nixpkgs=${nixpkgs}"
-    ];
+    nixPath = [ "nixpkgs=${nixpkgs}" ];
     registry.nixpkgs.flake = nixpkgs;
     package = pkgs.nixUnstable;
   };
 
   fonts.fonts = with pkgs; [ font-awesome iosevka aileron ];
 
-  environment.systemPackages =
-    with pkgs; [
-    alacritty
-    autorandr
-    binutils
-    brightnessctl
-    feh
-    wget
-    pciutils
-    intel-gpu-tools
-    killall
-    libva-utils
-    spotify
-    skypeforlinux
-    zoom-us
-    slack
-    docker-compose
-    direnv
-    pavucontrol
-    polybar
-    pulseaudio
-    dunst
-    cmake
-    gcc
-    gnumake
-    libtool
-    vdpauinfo
-    ] ++
+  environment.systemPackages = with pkgs;
     [
+      alacritty
+      autorandr
+      binutils
+      brightnessctl
+      feh
+      wget
+      pciutils
+      intel-gpu-tools
+      killall
+      libva-utils
+      spotify
+      skypeforlinux
+      zoom-us
+      slack
+      docker-compose
+      direnv
+      pavucontrol
+      polybar
+      pulseaudio
+      dunst
+      cmake
+      gcc
+      gnumake
+      libtool
+      vdpauinfo
+    ] ++ [
       glib
       grim
       slurp
@@ -207,8 +181,10 @@
     description = "Dropbox";
     wantedBy = [ "default.target" ];
     environment = {
-      QT_PLUGIN_PATH = "/run/current-system/sw/" + pkgs.qt5.qtbase.qtPluginPrefix;
-      QML2_IMPORT_PATH = "/run/current-system/sw/" + pkgs.qt5.qtbase.qtQmlPrefix;
+      QT_PLUGIN_PATH = "/run/current-system/sw/"
+        + pkgs.qt5.qtbase.qtPluginPrefix;
+      QML2_IMPORT_PATH = "/run/current-system/sw/"
+        + pkgs.qt5.qtbase.qtQmlPrefix;
     };
     serviceConfig = {
       ExecStart = "${pkgs.dropbox.out}/bin/dropbox";
