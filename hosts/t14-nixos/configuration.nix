@@ -32,19 +32,10 @@
     enableSSHSupport = true;
   };
 
-  hardware.bluetooth.enable = true;
-  services.blueman.enable = true;
-
   i18n.defaultLocale = "en_US.UTF-8";
 
   services.dbus.enable = true;
   security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    pulse.enable = true;
-    jack.enable = true;
-  };
   xdg.portal = {
     enable = true;
     wlr.enable = true;
@@ -53,6 +44,10 @@
       xdg-desktop-portal-wlr
     ];
   };
+
+  hardware.pulseaudio.enable = true;
+  nixpkgs.config.pulseaudio = true;
+
   programs.sway = {
     enable = true;
     wrapperFeatures.gtk = true;
@@ -98,7 +93,6 @@
     LIBVA_DRIVER_NAME = "iHD";
     MOZ_DISABLE_RDD_SANDBOX = "1";
   };
-  sound.enable = true;
 
   users.users.sebastian = {
     isNormalUser = true;
