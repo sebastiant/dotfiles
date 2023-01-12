@@ -9,6 +9,7 @@ let
       beacon
       corfu
       dap-mode
+      dart-mode
       dired-single
       dockerfile-mode
       editorconfig
@@ -17,6 +18,7 @@ let
       elm-mode
       embark
       envrc
+      flutter
       flycheck
       forge
       git-gutter
@@ -25,6 +27,7 @@ let
       hide-mode-line
       js2-mode
       jsonnet-mode
+      lsp-dart
       lsp-haskell
       lsp-mode
       lsp-pyright

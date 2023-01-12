@@ -188,6 +188,9 @@
 (use-package tree-sitter-langs
   :after tree-sitter)
 
+(use-package dart-mode
+  :hook (dart-mode . lsp-deferred))
+
 (use-package elixir-mode
   :custom (lsp-elixir-server-command '("elixir-ls"))
   :hook
