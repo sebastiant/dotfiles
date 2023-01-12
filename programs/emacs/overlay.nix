@@ -48,6 +48,7 @@ let
       perspective
       po-mode
       popper
+      puni
       prettier-js
       prodigy
       projectile
@@ -57,7 +58,6 @@ let
       rainbow-delimiters
       restclient
       ripgrep
-      smartparens
       swiper
       syncorate-el
       terraform-mode

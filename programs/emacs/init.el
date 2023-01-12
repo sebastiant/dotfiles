@@ -519,12 +519,6 @@
   (popper-mode +1)
   (popper-echo-mode +1))
 
-(use-package smartparens
-  :init
-  (require 'smartparens-config)
-  :config
-  (smartparens-global-mode t))
-
 (use-package zeal-at-point
   :bind ("C-c z" . zeal-at-point))
 
@@ -550,6 +544,11 @@
 
 (use-package syncorate
   :custom (syncorate-executable "~/.local/bin/syncorate"))
+
+(use-package puni
+  :init
+  (puni-global-mode)
+  (add-hook 'vterm-mode-hook #'puni-disable-puni-mode))
 
 (provide 'init)
 
