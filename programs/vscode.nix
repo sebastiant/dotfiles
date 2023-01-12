@@ -4,6 +4,8 @@
     enable = true;
     extensions = with pkgs.vscode-extensions; [
       eamodio.gitlens
+      haskell.haskell
+      justusadam.language-haskell
       ms-python.python
       ms-python.vscode-pylance
     ];
