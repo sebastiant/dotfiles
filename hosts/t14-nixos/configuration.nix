@@ -125,7 +125,6 @@
     LIBVA_DRIVER_NAME = "iHD";
     MOZ_DISABLE_RDD_SANDBOX = "1";
   };
-  sound.enable = true;
 
   users.users.sebastian = {
     isNormalUser = true;
