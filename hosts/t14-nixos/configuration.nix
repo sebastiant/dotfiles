@@ -92,9 +92,13 @@
   boot.blacklistedKernelModules = [ "nouveau" "nvidia" ];
 
   services.autorandr = { enable = true; };
-  services.udev.extraRules = ''
-    ATTRS{idVendor}=="27b8", ATTRS{idProduct}=="01ed", MODE:="666", GROUP="plugdev"
-  '';
+
+  services.udev = {
+    packages = [ pkgs.android-udev-rules ];
+    extraRules = ''
+      ATTRS{idVendor}=="27b8", ATTRS{idProduct}=="01ed", MODE:="666", GROUP="plugdev"
+    '';
+  };
 
   services.xserver.layout = "us";
 
