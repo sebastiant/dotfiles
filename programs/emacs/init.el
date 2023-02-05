@@ -35,6 +35,7 @@
 
 
 (use-package dired
+  :custom (dired-kill-when-opening-new-dired-buffer t)
   :commands (dired dired-jump)
   :bind (("C-x C-j" . dired-jump))
   :config
