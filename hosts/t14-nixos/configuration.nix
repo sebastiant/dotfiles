@@ -61,6 +61,7 @@
   i18n.defaultLocale = "en_US.UTF-8";
 
   services.dbus.enable = true;
+  services.dbus.packages =  [ pkgs.pass-secret-service ];
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
