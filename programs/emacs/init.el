@@ -14,6 +14,9 @@
 ;; Move betweeen windows using M-<left/right/up/down>
 (windmove-default-keybindings 'meta)
 
+(use-package emacs
+  :init (electric-pair-mode 1))
+
 (use-package no-littering
 :config (setq auto-save-file-name-transforms
       `((".*" ,(no-littering-expand-var-file-name "auto-save/") t)))
