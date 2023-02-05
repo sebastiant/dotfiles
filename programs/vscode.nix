@@ -8,6 +8,8 @@
       justusadam.language-haskell
       ms-python.python
       ms-python.vscode-pylance
+      dart-code.flutter
+      dart-code.dart-code
     ];
     userSettings = {
       "editor.fontFamily" = "Iosevka";
