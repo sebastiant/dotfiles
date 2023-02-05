@@ -40,7 +40,11 @@
 (use-package dired
   :custom (dired-kill-when-opening-new-dired-buffer t)
   :commands (dired dired-jump)
-  :bind (("C-x C-j" . dired-jump))
+  :bind (:map dired-mode-map
+              ("C-x C-j" . dired-jump)
+              ("F" . dired-create-empty-file))
+
+
   :config
     (if (string= system-type "darwin")
         (setq dired-listing-switches "-aBhl")
