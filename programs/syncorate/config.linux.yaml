@@ -9,7 +9,7 @@ plugins:
     focus_message: "Focus"
     save_message: "Save"
     break_message: "Break"
-  gnome-dnd:
+  dunst:
     enable: True
   blink1:
     enable: True
