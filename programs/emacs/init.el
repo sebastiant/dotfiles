@@ -414,6 +414,7 @@
   (st/org-font-setup)
   (define-key org-mode-map (kbd "C-'") nil)
   :custom
+  (org-agenda-span 'day)
   (org-confirm-babel-evaluate nil)
   (org-ellipsis " ▾")
   (org-hide-leading-stars nil)
