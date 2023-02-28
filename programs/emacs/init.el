@@ -15,7 +15,9 @@
 (windmove-default-keybindings 'meta)
 
 (use-package emacs
-  :init (electric-pair-mode 1))
+  :init
+  (electric-pair-mode 1)
+  (advice-add 'pop-to-mark-command :after #'recenter))
 
 (use-package no-littering
 :config (setq auto-save-file-name-transforms
