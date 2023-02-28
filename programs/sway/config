@@ -210,6 +210,10 @@ input type:keyboard {
 
 exec waybar
 
+output eDP-1 pos 0 0 res 1920x1080
+output DP-3 pos 1920 0 res 2560x1440
+workspace 1 output DP-3
+
 # Import the most important environment variables into the D-Bus and systemd
 # user environments (e.g. required for screen sharing and Pinentry prompts):
 exec dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK XDG_CURRENT_DESKTOP
