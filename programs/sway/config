@@ -176,8 +176,8 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 
-default_border pixel 3
-default_floating_border pixel 3
+default_border pixel 5
+default_floating_border pixel 5
 gaps inner 5
 
 input type:touchpad {
