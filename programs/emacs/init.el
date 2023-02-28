@@ -538,8 +538,7 @@
 (use-package sql
   :hook (sql-mode . lsp-deferred)
   :bind (:map sql-mode-map
-              ("C-c e" . lsp-sql-execute-query)
-              ("C-c s" . lsp-sql-switch-connection))
+              ("C-x C-e" . lsp-sql-execute-query))
   :custom (lsp-sqls-workspace-config-path nil))
 (use-package ace-window
   :bind ("C-x o" . ace-window))
