@@ -530,8 +530,8 @@
   (popper-mode +1)
   (popper-echo-mode +1))
 
-(use-package zeal-at-point
-  :bind ("C-c z" . zeal-at-point))
+(use-package devdocs
+  :bind ("C-c z" . devdocs-lookup))
 
 (use-package emacs
   :custom (compilation-scroll-output t))

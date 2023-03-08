@@ -63,7 +63,6 @@
     polybar
     powertop
     volctl
-    zeal
   ];
   programs.firefox = {
     enable = true;

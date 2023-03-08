@@ -10,6 +10,7 @@ let
       corfu
       dap-mode
       dart-mode
+      devdocs
       dired-single
       dockerfile-mode
       editorconfig
@@ -74,7 +75,6 @@ let
       which-key
       yaml-mode
       yasnippet
-      zeal-at-point
     ]);
 in {
   emacsSebastiant = emacs.emacsWithPackages packages;
