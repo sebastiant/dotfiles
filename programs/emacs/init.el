@@ -495,6 +495,7 @@
 (use-package nix-mode
   :hook (nix-mode . lsp-deferred)
   :mode "\\.nix\\'")
+
 (use-package sh-mode
   :mode "zshrc\\'")
 
@@ -548,6 +549,10 @@
   :config
   (pdf-tools-install)
   (setq-default pdf-view-display-size 'fit-page))
+
+(use-package nov
+  :config
+    (add-to-list 'auto-mode-alist '("\\.epub?\\'" . nov-mode)))
 
 (use-package syncorate
   :custom (syncorate-executable "~/.local/bin/syncorate"))

@@ -37,6 +37,7 @@ let
       marginalia
       minions
       nix-mode
+      nov
       no-littering
       orderless
       org
