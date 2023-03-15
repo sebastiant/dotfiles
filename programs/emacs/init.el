@@ -193,6 +193,8 @@
 
 (use-package dart-mode
   :hook (dart-mode . lsp-deferred))
+(use-package treesit-auto
+  :config (global-treesit-auto-mode))
 
 (use-package elixir-mode
   :custom (lsp-elixir-server-command '("elixir-ls"))
