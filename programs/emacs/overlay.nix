@@ -62,8 +62,6 @@ let
       swiper
       syncorate-el
       terraform-mode
-      tree-sitter
-      tree-sitter-langs
       typescript-mode
       undo-tree
       use-package

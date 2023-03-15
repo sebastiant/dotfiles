@@ -190,13 +190,6 @@
   :custom
   (describe-function-function #'helpful-callable)
   (describe-variable-function #'helpful-variable))
-(use-package tree-sitter
-  :hook ('tree-sitter-after-on-hook . #'tree-sitter-hl-mode)
-  :config
-  (global-tree-sitter-mode)
-  (add-hook 'tree-sitter-after-on-hook #'tree-sitter-hl-mode))
-(use-package tree-sitter-langs
-  :after tree-sitter)
 
 (use-package dart-mode
   :hook (dart-mode . lsp-deferred))
@@ -331,7 +324,6 @@
 
 (use-package typescript-mode
   :hook (typescript-mode . lsp-deferred)
-  :after tree-sitter
   :config
   (setq typescript-indent-level 2)
   (define-derived-mode typescriptjsx-mode typescript-mode "Typescript jsx")
