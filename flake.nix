@@ -14,9 +14,16 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     syncorate-el.url = "github:sebastiant/syncorate.el";
+    emacs-overlay = {
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    emacs-src = {
+      url = "github:emacs-mirror/emacs/emacs-29";
+      flake = false;
+    };
   };
 
-  outputs = { syncorate-el, darwin, home-manager, nur, nixos-hardware, nixpkgs, ... }:
+  outputs = { emacs-src, emacs-overlay, syncorate-el, darwin, home-manager, nur, nixos-hardware, nixpkgs, ... }:
     let
       sebastiant-emacs-overlay = import ./programs/emacs/overlay.nix;
       homeManagerConfFor = config:
@@ -24,6 +31,20 @@
           nixpkgs.overlays = [
             nur.overlay
             syncorate-el.overlays.emacs
+            emacs-overlay.overlay
+            (final: prev: {
+              emacs29-pgtk = prev.emacsGit.overrideAttrs(old: {
+                name = "emacs-pgtk";
+                version = emacs-src.shortRev;
+                src = emacs-src;
+                withPgtk = true;
+              });
+              emacs29 = prev.emacsGit.overrideAttrs(old: {
+                name = "emacs";
+                version = emacs-src.shortRev;
+                src = emacs-src;
+              });
+            })
             sebastiant-emacs-overlay
           ];
           imports = [ config ];

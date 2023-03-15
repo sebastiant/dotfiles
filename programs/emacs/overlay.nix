@@ -1,7 +1,7 @@
 final: prev:
 let
-  emacs = prev.emacsPackagesFor prev.emacs;
-  emacs-gtk = prev.emacsPackagesFor prev.emacs-gtk;
+  emacs = prev.emacsPackagesFor prev.emacs29;
+  emacs-gtk = prev.emacsPackagesFor prev.emacs29-pgtk;
   packages = epkgs:
     (with epkgs; [
       ace-window

@@ -10,7 +10,7 @@
 
   services.emacs = {
     enable = true;
-    package = pkgs.emacsSebastiant;
+    package = pkgs.emacsPgtkSebastiant;
   };
 
   home.packages = with pkgs; [
