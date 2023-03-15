@@ -329,8 +329,7 @@
   :config
   (setq typescript-indent-level 2)
   (define-derived-mode typescriptjsx-mode typescript-mode "Typescript jsx")
-  (add-to-list 'auto-mode-alist '("\\.tsx?\\'" . typescriptjsx-mode))
-  (add-to-list 'tree-sitter-major-mode-language-alist '(typescriptjsx-mode . tsx)))
+  (add-to-list 'auto-mode-alist '("\\.tsx?\\'" . typescriptjsx-mode)))
 
 (use-package prettier-js
   :hook (typescript-mode . prettier-js-mode))
