@@ -504,9 +504,6 @@
 (use-package minions
   :config (minions-mode 1))
 
-(use-package elfeed
-  :config (setq elfeed-feeds '("https://hnrss.org/best")))
-
 (use-package editorconfig
   :config (editorconfig-mode 1))
 

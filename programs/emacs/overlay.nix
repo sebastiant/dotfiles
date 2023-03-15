@@ -14,7 +14,6 @@ let
       dired-single
       dockerfile-mode
       editorconfig
-      elfeed
       elixir-mode
       elm-mode
       embark
