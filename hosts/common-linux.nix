@@ -57,7 +57,6 @@
     comma
     feh
     haskellPackages.yeganesh
-    mob
     networkmanager
     nyxt
     polybar
