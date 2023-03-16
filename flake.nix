@@ -21,9 +21,13 @@
       url = "github:emacs-mirror/emacs/emacs-29";
       flake = false;
     };
+    git-mob = {
+      url = "github:frost/git-mob/main";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { emacs-src, emacs-overlay, syncorate-el, darwin, home-manager, nur, nixos-hardware, nixpkgs, ... }:
+  outputs = { git-mob, emacs-src, emacs-overlay, syncorate-el, darwin, home-manager, nur, nixos-hardware, nixpkgs, ... }:
     let
       sebastiant-emacs-overlay = import ./programs/emacs/overlay.nix;
       homeManagerConfFor = config:
@@ -46,6 +50,7 @@
               });
             })
             sebastiant-emacs-overlay
+            git-mob.overlays.default
           ];
           imports = [ config ];
         };

@@ -56,6 +56,7 @@
   home.packages = with pkgs; [
     comma
     feh
+    git-mob
     haskellPackages.yeganesh
     networkmanager
     nyxt
