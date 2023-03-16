@@ -25,7 +25,6 @@ let
       haskell-mode
       helpful
       hide-mode-line
-      js2-mode
       jsonnet-mode
       ligature
       lsp-dart

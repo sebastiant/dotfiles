@@ -319,11 +319,6 @@
   (css-mode . lsp)
   (scss-mode . lsp))
 
-(use-package js2-mode
-  :mode "\\.js[x]*$"
-  :custom (js2-basic-offset 2)
-  :hook (js2-mode . lsp-deferred))
-
 (use-package typescript-mode
   :mode "\\.ts[x]*$"
   :hook (typescript-ts-mode . lsp-deferred)
