@@ -325,11 +325,9 @@
   :hook (js2-mode . lsp-deferred))
 
 (use-package typescript-mode
-  :hook (typescript-mode . lsp-deferred)
-  :config
-  (setq typescript-indent-level 2)
-  (define-derived-mode typescriptjsx-mode typescript-mode "Typescript jsx")
-  (add-to-list 'auto-mode-alist '("\\.tsx?\\'" . typescriptjsx-mode)))
+  :mode "\\.ts[x]*$"
+  :hook (typescript-ts-mode . lsp-deferred)
+  :custom (typescript-indent-level 2))
 
 (use-package prettier-js
   :hook (typescript-mode . prettier-js-mode))
