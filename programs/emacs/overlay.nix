@@ -27,6 +27,7 @@ let
       hide-mode-line
       js2-mode
       jsonnet-mode
+      ligature
       lsp-dart
       lsp-haskell
       lsp-mode
