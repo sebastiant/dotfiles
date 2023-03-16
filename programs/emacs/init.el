@@ -211,6 +211,8 @@
   (haskell-literate-mode . lsp-deferred)
   (haskell-mode . lsp-deferred)
   (haskell-mode . haskell-indentation-mode)
+  (haskell-mode . tree-sitter-mode)
+  (haskell-mode . tree-sitter-hl-mode)
   :init
   (setq
    haskell-stylish-on-save t
