@@ -328,7 +328,7 @@
   :hook (typescript-mode . prettier-js-mode))
 
 (use-package lsp-pyright
-  :hook (python-mode . lsp-deferred))
+  :hook (python-ts-mode . lsp-deferred))
 
 ;; Add buffer local Flycheck checkers after LSP for different major modes.
 ;; credits: https://github.com/flycheck/flycheck/issues/1762#issuecomment-749789589
