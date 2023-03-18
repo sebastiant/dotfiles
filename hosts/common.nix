@@ -20,6 +20,7 @@
       file
       gawk
       haskellPackages.implicit-hie
+      haskellPackages.swarm
       htop
       httpie
       jq
