@@ -59,6 +59,7 @@ let
       rainbow-delimiters
       restclient
       ripgrep
+      swarm-mode
       swiper
       syncorate-el
       terraform-mode

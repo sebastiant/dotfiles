@@ -567,6 +567,7 @@
                                        "?=" "?." "??" ";;" "/*" "/=" "/>" "//" "__" "~~" "(*" "*)"
                                        "\\\\" "://")))
 
+(use-package swarm-mode)
 (provide 'init)
 
 (custom-set-variables

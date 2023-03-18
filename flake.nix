@@ -25,11 +25,16 @@
       url = "github:frost/git-mob/main";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    swarm = {
+      url = "github:swarm-game/swarm";
+      flake = false;
+    };
   };
 
-  outputs = { git-mob, emacs-src, emacs-overlay, syncorate-el, darwin, home-manager, nur, nixos-hardware, nixpkgs, ... }:
+  outputs = { swarm, git-mob, emacs-src, emacs-overlay, syncorate-el, darwin, home-manager, nur, nixos-hardware, nixpkgs, ... }:
     let
       sebastiant-emacs-overlay = import ./programs/emacs/overlay.nix;
+      swarm-overlay = import ./programs/emacs/swarm.nix;
       homeManagerConfFor = config:
         { ... }: {
           nixpkgs.overlays = [
@@ -49,6 +54,7 @@
                 src = emacs-src;
               });
             })
+            (swarm-overlay swarm)
             sebastiant-emacs-overlay
             git-mob.overlays.default
           ];

@@ -220,7 +220,24 @@
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs_2",
         "nur": "nur",
+        "swarm": "swarm",
         "syncorate-el": "syncorate-el"
+      }
+    },
+    "swarm": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1679165072,
+        "narHash": "sha256-7X08Df//48JkjNUXzgaXyJAHp2wtZiF/7wSU6LryEu0=",
+        "owner": "swarm-game",
+        "repo": "swarm",
+        "rev": "c4cbed6d3bcd71f24d72f11893663a3e92b47e09",
+        "type": "github"
+      },
+      "original": {
+        "owner": "swarm-game",
+        "repo": "swarm",
+        "type": "github"
       }
     },
     "syncorate-el": {
