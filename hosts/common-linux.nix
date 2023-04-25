@@ -1,5 +1,4 @@
-{ pkgs, ...}:
-{
+{ pkgs, ... }: {
   imports = [ ../programs/tmux/tmux.nix ];
   programs.home-manager.enable = true;
   services.dunst = {
@@ -16,7 +15,9 @@
         horizontal_padding = 8;
         frame_width = 3;
         line_height = 4;
-        format = "<b>%s</b>\n%b";
+        format = ''
+          <b>%s</b>
+          %b'';
         show_age_threshold = 60;
         separator_height = 2;
         separator_color = "frame";
@@ -48,12 +49,11 @@
     };
   };
   services.blueman-applet.enable = true;
-  programs.vscode.extensions = [
-    pkgs.vscode-extensions.ms-vsliveshare.vsliveshare
-  ];
-
+  programs.vscode.extensions =
+    [ pkgs.vscode-extensions.ms-vsliveshare.vsliveshare ];
 
   home.packages = with pkgs; [
+    _1password-gui
     comma
     feh
     git-mob
@@ -90,7 +90,8 @@
     ];
   };
 
-  home.file.".config/syncorate/config.yaml".source = ../programs/syncorate/config.linux.yaml;
+  home.file.".config/syncorate/config.yaml".source =
+    ../programs/syncorate/config.linux.yaml;
   home.file.".xmonad/xmonad.hs".source = ../programs/xmonad.hs;
   xdg.configFile."polybar/config".source = ../programs/polybar/config;
   xdg.configFile."polybar/launch.sh".source = ../programs/polybar/launch.sh;
