@@ -578,6 +578,9 @@
   :mode "\\.sw*$"
   :hook (swarm-mode . lsp-deferred))
 
+(use-package vterm
+  :bind (:map vterm-mode-map
+              ("C-q" . vterm-send-next-key)))
 (provide 'init)
 
 (custom-set-variables
