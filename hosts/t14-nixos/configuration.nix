@@ -55,6 +55,20 @@
     enableSSHSupport = true;
   };
 
+  hardware.pulseaudio = {
+    package = pkgs.pulseaudioFull;
+    extraConfig = ''
+    load-module module-udev-detect ignore_dB=1
+    load-module module-detect
+    load-module module-alsa-card device_id="sofhdadsp" tsched=0
+    load-module module-alsa-source device_id="sofhdadsp"
+    load-module module-alsa-sink device_id="sofhdadsp"
+    set-card-profile alsa_card.sofhdadsp output:analog-stereo+input:analog-stereo
+    set-default-sink alsa_output.sofhdadsp.analog-stereo
+    options snd_hda_intel power_save=0
+  '';
+  };
+
   hardware.bluetooth.enable = true;
   services.blueman.enable = true;
 
