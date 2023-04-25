@@ -55,7 +55,6 @@ let
       projectile
       python-black
       python-isort
-      python-mode
       rainbow-delimiters
       restclient
       ripgrep
@@ -65,7 +64,6 @@ let
       terraform-mode
       treesit-auto
       tree-sitter-langs
-      typescript-mode
       undo-tree
       use-package
       use-package-ensure-system-package

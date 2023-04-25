@@ -227,20 +227,24 @@
 (use-package lsp-haskell
   :custom (lsp-haskell-server-path "haskell-language-server-wrapper"))
 
-(use-package python-mode
-  :bind (:map python-mode-map ("C-c c" . run-python))
+(use-package python-ts-mode
+  :mode "\\.py*$"
+  :bind (:map python-ts-mode-map ("C-c c" . run-python))
   :custom
   (python-shell-interpreter "ipython")
   (python-shell-interpreter-args "-i --simple-prompt")
-  (dap-python-executable "python3")
-  :config
-  (require 'dap-python))
+  (dap-python-debugger 'debugpy)
+  (dap-python-executable "python3"))
+
+(use-package dap-mode)
+
+(use-package dap-python)
 
 (use-package python-black
-  :hook (python-mode . python-black-on-save-mode-enable-dwim))
+  :hook (python-ts-mode . python-black-on-save-mode-enable-dwim))
 
 (use-package python-isort
-  :hook (python-mode . python-isort-on-save-mode))
+  :hook (python-ts-mode . python-isort-on-save-mode))
 
 (use-package flycheck
   :config (setq-default flycheck-disabled-checkers '(python-pylint python-mypy))
@@ -322,13 +326,15 @@
   (css-mode . lsp)
   (scss-mode . lsp))
 
-(use-package typescript-mode
+(use-package typescript-ts-mode
   :mode "\\.ts[x]*$"
-  :hook (typescript-ts-mode . lsp-deferred)
+  :hook
+  (tsx-ts-mode . lsp-deferred)
+  (typescript-ts-mode . lsp-deferred)
   :custom (typescript-indent-level 2))
 
 (use-package prettier-js
-  :hook (typescript-mode . prettier-js-mode))
+  :hook (typescript-ts-base-mode . prettier-js-mode))
 
 (use-package lsp-pyright
   :hook (python-ts-mode . lsp-deferred))
@@ -347,7 +353,7 @@
             :around 'my-flycheck-local-checker-get)
 (add-hook 'lsp-managed-mode-hook
           (lambda ()
-            (when (derived-mode-p 'python-mode)
+            (when (derived-mode-p 'python-ts-mode)
               (setq my-flycheck-local-cache '((next-checkers . (python-flake8)))))))
 (add-hook 'lsp-managed-mode-hook
           (lambda ()
