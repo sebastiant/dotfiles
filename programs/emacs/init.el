@@ -574,7 +574,10 @@
                                        "?=" "?." "??" ";;" "/*" "/=" "/>" "//" "__" "~~" "(*" "*)"
                                        "\\\\" "://")))
 
-(use-package swarm-mode)
+(use-package swarm-mode
+  :mode "\\.sw*$"
+  :hook (swarm-mode . lsp-deferred))
+
 (provide 'init)
 
 (custom-set-variables
