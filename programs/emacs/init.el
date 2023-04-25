@@ -15,6 +15,7 @@
 (windmove-default-keybindings 'meta)
 
 (use-package emacs
+  :custom (ignore-window-parameters t)
   :init
   (electric-pair-mode 1)
   (advice-add 'pop-to-mark-command :after #'recenter))
