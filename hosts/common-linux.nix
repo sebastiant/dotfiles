@@ -82,12 +82,13 @@
         "media.navigator.mediadatadecoder_vpx_enabled" = true;
         "signon.rememberSignons" = false;
       };
+      extensions = with pkgs.nur.repos.rycee.firefox-addons; [
+        onepassword-password-manager
+        ublock-origin
+        vim-vixen
+      ];
     };
-    extensions = with pkgs.nur.repos.rycee.firefox-addons; [
-      onepassword-password-manager
-      ublock-origin
-      vim-vixen
-    ];
+
   };
 
   home.file.".config/syncorate/config.yaml".source =

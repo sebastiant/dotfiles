@@ -103,6 +103,7 @@
       export XDG_CURRENT_DESKTOP = "sway";
     '';
   };
+  programs.zsh.enable = true;
 
   boot.blacklistedKernelModules = [ "nouveau" "nvidia" ];
 
