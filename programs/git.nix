@@ -1,6 +1,7 @@
 { config, pkgs, ... }:
 {
   programs.git = {
+    lfs.enable = true;
     enable = true;
     userName = "Sebastian Tunstig";
     userEmail = "sebastian.tunstig@gmail.com";
@@ -26,6 +27,12 @@
       diff.colorMoved = "zebra";
       difftool.prompt = false;
       difftool.trustExitCode = true;
+      filter.lfs = {
+        clean = "git-lfs clean -- %f";
+        smudge = "git-lfs smudge -- %f";
+        process = "git-lfs filter-process";
+        required = true;
+      };
       merge.tool = "ediff";
       merge.keepBackup = false;
       merge.conflictStyle = "diff3";
