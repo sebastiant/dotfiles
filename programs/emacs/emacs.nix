@@ -9,7 +9,7 @@
     nodePackages.typescript
     nodePackages.typescript-language-server
     nodePackages.prettier
-    rnix-lsp
+    nil
     sqls
   ];
 }
