@@ -44,13 +44,16 @@
             (final: prev: {
               emacs29-pgtk = prev.emacsGit.overrideAttrs(old: {
                 name = "emacs-pgtk";
-                version = emacs-src.shortRev;
+
+                # Avoid infinte loop during tests. Thanks rossabaker! https://github.com/nix-community/emacs-overlay/issues/275#issuecomment-1376487302
+                version = "29.0-${emacs-src.shortRev}";
+
                 src = emacs-src;
                 withPgtk = true;
               });
               emacs29 = prev.emacsGit.overrideAttrs(old: {
                 name = "emacs";
-                version = emacs-src.shortRev;
+                version = "29.0-${emacs-src.shortRev}";
                 src = emacs-src;
               });
             })
