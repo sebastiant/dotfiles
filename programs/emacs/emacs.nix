@@ -5,6 +5,7 @@
 
   home.packages = with pkgs; [
     elixir_ls
+    jsonnet-language-server
     nodePackages.pyright
     nodePackages.typescript
     nodePackages.typescript-language-server

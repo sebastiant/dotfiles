@@ -581,6 +581,25 @@
 (use-package vterm
   :bind (:map vterm-mode-map
               ("C-q" . vterm-send-next-key)))
+
+(use-package jsonnet-mode
+  :after lsp-mode
+  :init
+  (defcustom lsp-jsonnet-executable "jsonnet-language-server"
+    "Command to start the Jsonnet language server."
+    :group 'lsp-jsonnet
+    :risky t
+    :type 'file)
+
+  (add-to-list 'lsp-language-id-configuration '(jsonnet-mode . "jsonnet"))
+
+  (lsp-register-client
+   (make-lsp-client
+    :new-connection (lsp-stdio-connection (lambda () lsp-jsonnet-executable))
+    :activation-fn (lsp-activate-on "jsonnet")
+    :server-id 'jsonnet))
+  :hook (jsonnet-mode . lsp-deferred))
+
 (provide 'init)
 
 (custom-set-variables
