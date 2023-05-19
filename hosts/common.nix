@@ -1,18 +1,16 @@
-{ config, pkgs, nixpkgs, lib, ... }:
-{
-  imports =
-    [
-      ../programs/zsh/zsh.nix
-      ../programs/neovim/neovim.nix
-      ../programs/git.nix
-      ../programs/emacs/emacs.nix
-      ../programs/vscode.nix
-    ];
+{ config, pkgs, nixpkgs, lib, ... }: {
+  imports = [
+    ../programs/zsh/zsh.nix
+    ../programs/neovim/neovim.nix
+    ../programs/git.nix
+    ../programs/emacs/emacs.nix
+    ../programs/vscode.nix
+  ];
 
   home = {
     stateVersion = "21.05";
     packages = with pkgs; [
-      ( python39.withPackages (ps: with ps; [ pip flake8 black ipython ]) )
+      (python39.withPackages (ps: with ps; [ pip flake8 black ipython ]))
       cabal-install
       caddy
       dig
@@ -51,9 +49,7 @@
 
   programs.direnv = {
     enable = true;
-    nix-direnv = {
-      enable = true;
-    };
+    nix-direnv = { enable = true; };
   };
   programs.emacs.enable = true;
   programs.fzf.enable = true;
@@ -73,7 +69,7 @@
   home.file.".ipython/profile_default/ipython_config.py".text = ''
     c.InteractiveShellApp.extensions = ["autoreload"]
     c.InteractiveShellApp.exec_lines = ["%autoreload 2"]
-    '';
+  '';
 
   home.file.".ghc/ghci.conf".text = ''
     :set prompt "\x03BB> "
@@ -83,5 +79,5 @@
 
     :def hoogle \x -> return $ ":!hoogle \"" ++ x ++ "\""
     :def doc \x -> return $ ":!hoogle --info \"" ++ x ++ "\""
-    '';
+  '';
 }
