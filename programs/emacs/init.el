@@ -1,5 +1,5 @@
-(setq user-full-name "Sebastian Tunstig")
-(setq user-mail-address "sebastian.tunstig@gmail.com")
+(setq user-full-name "Sebastian Tunberg")
+(setq user-mail-address "sebastian.tunberg@gmail.com")
 
 (require 'package)
 (setq package-enable-at-startup nil)

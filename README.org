@@ -1,5 +1,5 @@
 #+TITLE: Dotfiles
-#+AUTHOR: Sebastian Tunstig
+#+AUTHOR: Sebastian Tunberg
 #+LANGUAGE: en
 
 * Table of Contents                                            :noexport:TOC:

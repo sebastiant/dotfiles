@@ -3,8 +3,8 @@
   programs.git = {
     lfs.enable = true;
     enable = true;
-    userName = "Sebastian Tunstig";
-    userEmail = "sebastian.tunstig@gmail.com";
+    userName = "Sebastian Tunberg";
+    userEmail = "sebastian.tunberg@gmail.com";
     aliases = {
       lg = "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit";
       st = "status -s";
