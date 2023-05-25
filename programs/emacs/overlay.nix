@@ -63,7 +63,6 @@ let
       syncorate-el
       terraform-mode
       treesit-auto
-      tree-sitter-langs
       undo-tree
       use-package
       use-package-ensure-system-package
