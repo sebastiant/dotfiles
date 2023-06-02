@@ -1,7 +1,6 @@
 { config, pkgs, nixpkgs, lib, ... }: {
   imports = [
     ../programs/zsh/zsh.nix
-    ../programs/neovim/neovim.nix
     ../programs/git.nix
     ../programs/emacs/emacs.nix
     ../programs/vscode.nix
@@ -37,6 +36,7 @@
       sqlite
       tree
       unzip
+      vim
       watchexec
       whois
     ];

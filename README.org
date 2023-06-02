@@ -21,7 +21,6 @@ All hosts are configured from their respective [[/hosts][/hosts]] directory, [[h
 I am happy to answer any questions about the contents of this repository or get newcomers started in the world of nix! Send me a message on Discord: sebastiant#6342
 * My toolbox
 - [[https://www.gnu.org/software/emacs/][GNU Emacs]] with plugins such as projectile, magit, org-mode, lsp-mode and more
-- [[https://neovim.io/][neovim]] for basic text editing
 - [[https://swaywm.org][Sway]] as compositor
 - [[https://www.zsh.org/][Zsh]] with [[https://ohmyz.sh/][Oh My Zsh]] as shell
 - [[https://github.com/alacritty/alacritty][Alacritty]] as terminal emulator
