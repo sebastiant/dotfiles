@@ -10,14 +10,12 @@
   home = {
     stateVersion = "21.05";
     packages = with pkgs; [
-      (python39.withPackages (ps: with ps; [ pip flake8 black ipython ]))
       cabal-install
       caddy
       dig
       discord
       file
       gawk
-      haskellPackages.implicit-hie
       haskellPackages.swarm
       htop
       httpie
@@ -27,11 +25,9 @@
       kubectx
       lazydocker
       lorri
-      mypy
       ngrok
       nix-index
       nixfmt
-      nodePackages.uglify-js
       openssl
       p7zip
       pandoc
@@ -39,7 +35,6 @@
       pstree
       ripgrep
       sqlite
-      stack
       tree
       unzip
       watchexec
