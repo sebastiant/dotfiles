@@ -9,12 +9,14 @@
   home = {
     stateVersion = "21.05";
     packages = with pkgs; [
+      age
       cabal-install
       caddy
       dig
       discord
       file
       gawk
+      gnupg
       haskellPackages.swarm
       htop
       httpie
@@ -33,6 +35,7 @@
       patchelf
       pstree
       ripgrep
+      sops
       sqlite
       tree
       unzip
