@@ -15,7 +15,16 @@
 (windmove-default-keybindings 'meta)
 
 (use-package emacs
-  :custom (ignore-window-parameters t)
+  :custom
+  (backup-by-copying t)
+   (backup-directory-alist
+    '(("." . "~/.saves/")))
+   (delete-old-versions t)
+   (kept-new-versions 6)
+   (kept-old-versions 2)
+   (version-control t)
+  (ignore-window-parameters t)
+  (compilation-scroll-output t)
   :init
   (electric-pair-mode 1)
   (advice-add 'pop-to-mark-command :after #'recenter))
@@ -524,8 +533,6 @@
 (use-package devdocs
   :bind ("C-c z" . devdocs-lookup))
 
-(use-package emacs
-  :custom (compilation-scroll-output t))
 (use-package sql
   :hook (sql-mode . lsp-deferred)
   :bind (:map sql-mode-map
