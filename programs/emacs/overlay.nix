@@ -62,7 +62,6 @@ let
       swiper
       syncorate-el
       terraform-mode
-      treesit-auto
       undo-tree
       use-package
       use-package-ensure-system-package
