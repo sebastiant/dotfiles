@@ -26,6 +26,7 @@
   (ignore-window-parameters t)
   (compilation-scroll-output t)
   :init
+  (global-so-long-mode 1)
   (electric-pair-mode 1)
   (advice-add 'pop-to-mark-command :after #'recenter))
 
