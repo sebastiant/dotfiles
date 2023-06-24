@@ -205,6 +205,19 @@
 (use-package dart-mode
   :hook (dart-mode . lsp-deferred))
 
+(use-package treesit
+  :custom
+  (treesit-font-lock-level 4)
+  (major-mode-remap-alist
+   '((bash-mode . bash-ts-mode)
+     (css-mode . css-ts-mode)
+     (dockerfile-mode . dockerfile-ts-mode)
+     (json-mode . json-ts-mode)
+     (python-mode . python-ts-mode)
+     (tsx-mode . tsx-ts-mode)
+     (typescript-mode . typescript-ts-mode)
+     (yaml-mode . yaml-ts-mode))))
+
 (use-package elixir-mode
   :custom (lsp-elixir-server-command '("elixir-ls"))
   :hook
@@ -234,7 +247,6 @@
   :custom (lsp-haskell-server-path "haskell-language-server-wrapper"))
 
 (use-package python-ts-mode
-  :mode "\\.py*$"
   :bind (:map python-ts-mode-map ("C-c c" . run-python))
   :custom
   (python-shell-interpreter "ipython")
@@ -359,7 +371,7 @@
             :around 'my-flycheck-local-checker-get)
 (add-hook 'lsp-managed-mode-hook
           (lambda ()
-            (when (derived-mode-p 'python-ts-mode)
+            (when (derived-mode-p 'python-mode)
               (setq my-flycheck-local-cache '((next-checkers . (python-flake8)))))))
 (add-hook 'lsp-managed-mode-hook
           (lambda ()
