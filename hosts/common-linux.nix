@@ -53,6 +53,7 @@
     [ pkgs.vscode-extensions.ms-vsliveshare.vsliveshare ];
 
   home.packages = with pkgs; [
+    age
     _1password-gui
     comma
     feh

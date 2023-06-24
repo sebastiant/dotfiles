@@ -1,4 +1,4 @@
-{ config, pkgs, nixpkgs, lib, ... }: {
+{ pkgs, ... }: {
   imports = [
     ../programs/zsh/zsh.nix
     ../programs/git.nix
@@ -9,7 +9,6 @@
   home = {
     stateVersion = "21.05";
     packages = with pkgs; [
-      age
       cabal-install
       caddy
       dig
