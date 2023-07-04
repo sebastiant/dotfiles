@@ -28,6 +28,7 @@
   :init
   (global-so-long-mode 1)
   (electric-pair-mode 1)
+  (save-place-mode 1)
   (advice-add 'pop-to-mark-command :after #'recenter))
 
 (use-package no-littering
