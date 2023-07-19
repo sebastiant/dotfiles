@@ -17,7 +17,6 @@
       nodejs
       openssl
       reattach-to-user-namespace
-      ripgrep
       sqlite
       tig
       tree
