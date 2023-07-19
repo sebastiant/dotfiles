@@ -229,7 +229,9 @@
   :hook (elm-mode . lsp-deferred))
 
 (use-package haskell-mode
-  :bind (:map haskell-mode-map ("C-c c" . haskell-process-load-file))
+  :bind (:map haskell-mode-map
+              ("C-c c" . haskell-process-load-file)
+              ("C-c h" . haskell-hoogle-lookup-from-local))
   :hook
   (haskell-literate-mode . lsp-deferred)
   (haskell-mode . lsp-deferred)
