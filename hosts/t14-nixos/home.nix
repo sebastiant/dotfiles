@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ pkgs, ... }:
 {
   imports = [
     ../common.nix
@@ -10,7 +10,7 @@
 
   services.emacs = {
     enable = true;
-    package = pkgs.emacsPgtkSebastiant;
+    package = pkgs.emacsSebastiant;
   };
 
   home.packages = with pkgs; [
@@ -27,7 +27,6 @@
       ExtensionSettings = {};
     };
   };
-  programs.emacs.package = pkgs.emacsPgtkSebastiant;
 
   home.file.".xsessionrc".text = ''
     xset r rate 200 50

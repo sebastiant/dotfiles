@@ -1,7 +1,5 @@
 final: prev:
 let
-  emacs = prev.emacsPackagesFor prev.emacs29;
-  emacs-gtk = prev.emacsPackagesFor prev.emacs29-pgtk;
   packages = epkgs:
     (with epkgs; [
       ace-window
@@ -74,6 +72,5 @@ let
       yasnippet
     ]);
 in {
-  emacsSebastiant = emacs.emacsWithPackages packages;
-  emacsPgtkSebastiant = emacs-gtk.emacsWithPackages packages;
+  emacsSebastiant = (prev.emacsPackagesFor prev.emacs29).emacsWithPackages packages;
 }

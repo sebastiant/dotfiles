@@ -14,13 +14,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     syncorate-el.url = "github:sebastiant/syncorate.el";
-    emacs-overlay = {
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    emacs-src = {
-      url = "github:emacs-mirror/emacs/emacs-29";
-      flake = false;
-    };
     git-mob = {
       url = "github:frost/git-mob/main";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -31,7 +24,7 @@
     };
   };
 
-  outputs = { swarm, git-mob, emacs-src, emacs-overlay, syncorate-el, darwin, home-manager, nur, nixos-hardware, nixpkgs, ... }:
+  outputs = { swarm, git-mob, syncorate-el, darwin, home-manager, nur, nixos-hardware, nixpkgs, ... }:
     let
       sebastiant-emacs-overlay = import ./programs/emacs/overlay.nix;
       swarm-overlay = import ./programs/emacs/swarm.nix;
@@ -40,23 +33,6 @@
           nixpkgs.overlays = [
             nur.overlay
             syncorate-el.overlays.emacs
-            emacs-overlay.overlay
-            (final: prev: {
-              emacs29-pgtk = prev.emacsGit.overrideAttrs(old: {
-                name = "emacs-pgtk";
-
-                # Avoid infinte loop during tests. Thanks rossabaker! https://github.com/nix-community/emacs-overlay/issues/275#issuecomment-1376487302
-                version = "29.0-${emacs-src.shortRev}";
-
-                src = emacs-src;
-                withPgtk = true;
-              });
-              emacs29 = prev.emacsGit.overrideAttrs(old: {
-                name = "emacs";
-                version = "29.0-${emacs-src.shortRev}";
-                src = emacs-src;
-              });
-            })
             (swarm-overlay swarm)
             sebastiant-emacs-overlay
             git-mob.overlays.default
