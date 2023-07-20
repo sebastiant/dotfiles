@@ -348,10 +348,13 @@
   (scss-mode . lsp))
 
 (use-package typescript-ts-mode
-  :mode "\\.ts[x]*$"
-  :hook
-  (tsx-ts-mode . lsp-deferred)
-  (typescript-ts-mode . lsp-deferred)
+  :mode "\\.ts*$"
+  :hook (typescript-ts-mode . lsp-deferred)
+  :custom (typescript-indent-level 2))
+
+(use-package tsx-ts-mode
+  :mode "\\.tsx*$"
+  :hook (tsx-ts-mode . lsp-deferred)
   :custom (typescript-indent-level 2))
 
 (use-package prettier-js
