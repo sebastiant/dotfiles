@@ -622,6 +622,14 @@
     :server-id 'jsonnet))
   :hook (jsonnet-mode . lsp-deferred))
 
+(use-package combobulate
+  :custom (combobulate-key-prefix "C-c u")
+  :hook ((python-ts-mode . combobulate-mode)
+         (js-ts-mode . combobulate-mode)
+         (css-ts-mode . combobulate-mode)
+         (yaml-ts-mode . combobulate-mode)
+         (typescript-ts-mode . combobulate-mode)
+         (tsx-ts-mode . combobulate-mode)))
 (provide 'init)
 
 (custom-set-variables

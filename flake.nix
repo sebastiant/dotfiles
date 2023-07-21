@@ -22,18 +22,24 @@
       url = "github:swarm-game/swarm";
       flake = false;
     };
+    combobulate = {
+      url = "github:mickeynp/combobulate";
+      flake = false;
+    };
   };
 
-  outputs = { swarm, git-mob, syncorate-el, darwin, home-manager, nur, nixos-hardware, nixpkgs, ... }:
+  outputs = { combobulate, swarm, git-mob, syncorate-el, darwin, home-manager, nur, nixos-hardware, nixpkgs, ... }:
     let
       sebastiant-emacs-overlay = import ./programs/emacs/overlay.nix;
       swarm-overlay = import ./programs/emacs/swarm.nix;
+      combobulate-overlay = import ./programs/emacs/combobulate.nix;
       homeManagerConfFor = config:
         { ... }: {
           nixpkgs.overlays = [
             nur.overlay
             syncorate-el.overlays.emacs
             (swarm-overlay swarm)
+            (combobulate-overlay combobulate.outPath)
             sebastiant-emacs-overlay
             git-mob.overlays.default
           ];

@@ -5,6 +5,7 @@ let
       ace-window
       alchemist
       beacon
+      combobulate
       corfu
       dap-mode
       dart-mode

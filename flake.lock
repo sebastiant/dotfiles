@@ -1,5 +1,21 @@
 {
   "nodes": {
+    "combobulate": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1687195931,
+        "narHash": "sha256-VtQwSho7IkeLivukWVto+GqpF2JClCuAyYvUlqBs4KE=",
+        "owner": "mickeynp",
+        "repo": "combobulate",
+        "rev": "582f896c73bd35654dc179155cfb9c7719098847",
+        "type": "github"
+      },
+      "original": {
+        "owner": "mickeynp",
+        "repo": "combobulate",
+        "type": "github"
+      }
+    },
     "darwin": {
       "inputs": {
         "nixpkgs": [
@@ -159,6 +175,7 @@
     },
     "root": {
       "inputs": {
+        "combobulate": "combobulate",
         "darwin": "darwin",
         "git-mob": "git-mob",
         "home-manager": "home-manager",
