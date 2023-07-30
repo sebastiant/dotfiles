@@ -19,6 +19,7 @@
       haskellPackages.swarm
       htop
       httpie
+      inetutils
       jq
       jsonnet
       k9s
@@ -40,7 +41,6 @@
       unzip
       vim
       watchexec
-      whois
     ];
   };
 
