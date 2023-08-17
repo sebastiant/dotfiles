@@ -231,18 +231,18 @@
 (use-package haskell-mode
   :bind (:map haskell-mode-map
               ("C-c c" . haskell-process-load-file)
-              ("C-c h" . haskell-hoogle-lookup-from-local))
+              ("C-c h" . haskell-hoogle-lookup-from-website))
   :hook
   (haskell-literate-mode . lsp-deferred)
   (haskell-mode . lsp-deferred)
   (haskell-mode . haskell-indentation-mode)
-  :init
-  (setq
-   haskell-stylish-on-save t
+  :custom
+  (haskell-stylish-on-save t
    haskell-indentation-electric-flag t
    haskell-process-type 'cabal-repl
    haskell-interactive-popup-errors nil
-   haskell-process-log t)
+   haskell-process-log t
+   haskell-hoogle-url "http://localhost:8080/?hoogle=")
   :config
   (add-to-list 'auto-mode-alist '("\\.cabal?\\'" . haskell-cabal-mode)))
 
