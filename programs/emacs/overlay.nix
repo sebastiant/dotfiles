@@ -63,8 +63,6 @@ let
       terraform-mode
       treesit-grammars.with-all-grammars
       undo-tree
-      use-package
-      use-package-ensure-system-package
       vertico
       visual-fill-column
       vterm
