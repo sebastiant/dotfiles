@@ -103,6 +103,7 @@
       export XDG_CURRENT_DESKTOP = "sway";
     '';
   };
+  programs.waybar.enable = true;
   programs.zsh.enable = true;
 
   boot.blacklistedKernelModules = [ "nouveau" "nvidia" ];
@@ -206,7 +207,6 @@
       sway
       swayidle
       swaylock
-      waybar
       wayland
       wdisplays
       wl-clipboard

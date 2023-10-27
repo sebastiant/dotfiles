@@ -208,8 +208,6 @@ input type:keyboard {
     repeat_rate 70
 }
 
-exec waybar
-
 output eDP-1 pos 0 0 res 1920x1080
 output DP-3 pos 1920 0 res 2560x1440
 workspace 1 output DP-3
