@@ -62,7 +62,6 @@ let
       syncorate-el
       terraform-mode
       treesit-grammars.with-all-grammars
-      undo-tree
       vertico
       visual-fill-column
       vterm

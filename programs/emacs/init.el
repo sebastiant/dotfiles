@@ -47,10 +47,6 @@
 
 (global-set-key (kbd "<escape>") 'keyboard-escape-quit)
 
-(use-package undo-tree
-  :init (global-undo-tree-mode t))
-
-
 (use-package dired
   :custom (dired-kill-when-opening-new-dired-buffer t)
   :commands (dired dired-jump)
