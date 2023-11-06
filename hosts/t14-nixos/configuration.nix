@@ -171,7 +171,7 @@
 
   };
 
-  fonts.fonts = with pkgs; [ font-awesome iosevka aileron ];
+  fonts.packages = with pkgs; [ font-awesome iosevka aileron ];
 
   environment.systemPackages = with pkgs;
     [

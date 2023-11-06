@@ -16,7 +16,6 @@
       file
       gawk
       gnupg
-      haskellPackages.swarm
       htop
       httpie
       inetutils

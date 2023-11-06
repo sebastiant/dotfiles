@@ -1,6 +1,6 @@
 swarm: final: prev:
 let
-  swarm-mode = final.emacsPackages.trivialBuild rec {
+  swarm-mode = final.emacsPackages.trivialBuild {
     pname = "swarm-mode";
     version = "0.3.0.1";
 
@@ -8,7 +8,7 @@ let
 
     buildInputs = [ final.emacsPackages.lsp-mode ];
 
-    meta = with final.lib; {
+    meta = {
       homepage = "https://github.com/swarm-game/swarm";
       description = "Resource gathering + programming game";
       inherit (final.emacs.meta) platforms;
