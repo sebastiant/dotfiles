@@ -536,7 +536,7 @@
              "^\\*Python\\*$" inferior-python-mode
              "\\*Async Shell Command\\*"
              "^\\*eshell.*\\*$" eshell-mode
-             "^\\*vterm.*\\*$"  vterm-mode
+             "^\\*eat.*\\*$"  eat-mode
              haskell-interactive-mode
              help-mode
              compilation-mode))
@@ -545,7 +545,8 @@
 
 (use-package devdocs
   :bind ("C-c z" . devdocs-lookup))
-
+(use-package eat
+  :bind ("C-c e" . eat))
 (use-package sql
   :hook (sql-mode . lsp-deferred)
   :bind (:map sql-mode-map
@@ -571,9 +572,7 @@
   :custom (syncorate-executable "~/.local/bin/syncorate"))
 
 (use-package puni
-  :init
-  (puni-global-mode)
-  (add-hook 'vterm-mode-hook #'puni-disable-puni-mode))
+  :init (puni-global-mode))
 
 (use-package ligature
   :hook (prog-mode . ligature-mode)
@@ -595,10 +594,6 @@
 (use-package swarm-mode
   :mode "\\.sw*$"
   :hook (swarm-mode . lsp-deferred))
-
-(use-package vterm
-  :bind (:map vterm-mode-map
-              ("C-q" . vterm-send-next-key)))
 
 (use-package jsonnet-mode
   :after lsp-mode

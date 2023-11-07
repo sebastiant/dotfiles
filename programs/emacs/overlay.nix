@@ -12,6 +12,7 @@ let
       devdocs
       dired-single
       dockerfile-mode
+      eat
       editorconfig
       elixir-mode
       elm-mode
@@ -64,7 +65,6 @@ let
       treesit-grammars.with-all-grammars
       vertico
       visual-fill-column
-      vterm
       web-mode
       which-key
       yaml-mode
