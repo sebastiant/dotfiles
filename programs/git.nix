@@ -204,7 +204,7 @@
       "elm-stuff"
       "repl-temp-*"
       "result"
-      "*.gcow2"
+      "*.qcow2"
     ];
   };
 }
