@@ -537,6 +537,7 @@
              "\\*Async Shell Command\\*"
              "^\\*eshell.*\\*$" eshell-mode
              "^\\*eat.*\\*$"  eat-mode
+             flycheck-error-list-mode
              haskell-interactive-mode
              help-mode
              compilation-mode))
