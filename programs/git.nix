@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ ... }:
 {
   programs.git = {
     lfs.enable = true;
@@ -22,6 +22,9 @@
       alias = "!git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\\t => \\2/' | sort";
     };
     extraConfig = {
+      gpg.format = "ssh";
+      user.signingkey = "~/.ssh/id_ed25519.pub";
+      commit.gpgsign = true;
       init.defaultBranch = "main";
       diff.tool = "vimdiff";
       diff.colorMoved = "zebra";
