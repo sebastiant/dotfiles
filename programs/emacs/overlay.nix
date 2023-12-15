@@ -64,6 +64,7 @@ let
       terraform-mode
       treesit-grammars.with-all-grammars
       vertico
+      vertico-posframe
       visual-fill-column
       web-mode
       which-key
