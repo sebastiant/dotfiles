@@ -69,9 +69,6 @@
   '';
 
   home.file.".ghc/ghci.conf".text = ''
-    :set prompt "\x03BB> "
-    :set prompt-cont " > "
-
     :set +t
 
     :def hoogle \x -> return $ ":!hoogle \"" ++ x ++ "\""
