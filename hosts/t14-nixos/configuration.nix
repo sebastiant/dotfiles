@@ -130,6 +130,8 @@
     };
   };
 
+  services.tailscale.enable = true;
+
   boot.initrd.kernelModules = [ "i915" ];
 
   hardware.opengl = {
