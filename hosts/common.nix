@@ -55,7 +55,7 @@
     config.theme = "ansi";
   };
 
-  xdg.configFile."alacritty/alacritty.yml".source = ../programs/alacritty.yml;
+  xdg.configFile."alacritty/alacritty.toml".source = ../programs/alacritty.toml;
   xdg.configFile."oh-my-zsh/plugins/nix-shell".source = pkgs.fetchFromGitHub {
     owner = "chisui";
     repo = "zsh-nix-shell";
