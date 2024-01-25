@@ -246,8 +246,7 @@
   :config
   (add-to-list 'auto-mode-alist '("\\.cabal?\\'" . haskell-cabal-mode)))
 
-(use-package lsp-haskell
-  :custom (lsp-haskell-server-path "haskell-language-server-wrapper"))
+(use-package lsp-haskell)
 
 (use-package python-ts-mode
   :bind (:map python-ts-mode-map ("C-c c" . run-python))
