@@ -91,8 +91,8 @@
   (when (file-directory-p "~/dev")
     (setq projectile-project-search-path '("~/dev"))))
 
-(use-package swiper
-  :bind ("C-c w" . swiper-isearch))
+(use-package consult
+  :bind ("C-c w" . consult-line))
 
 (use-package vertico
   :init (vertico-mode))

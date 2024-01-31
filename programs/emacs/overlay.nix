@@ -60,7 +60,6 @@ let
       restclient
       ripgrep
       swarm-mode
-      swiper
       syncorate-el
       terraform-mode
       treesit-grammars.with-all-grammars
