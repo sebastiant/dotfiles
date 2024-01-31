@@ -6,6 +6,7 @@ let
       alchemist
       beacon
       combobulate
+      consult
       corfu
       dap-mode
       dart-mode
