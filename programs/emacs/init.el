@@ -92,7 +92,16 @@
     (setq projectile-project-search-path '("~/dev"))))
 
 (use-package consult
-  :bind ("C-c w" . consult-line))
+  :bind (("C-c w"   . consult-line)
+         ("C-c W"   . consult-focus-lines)
+         ("C-x b"   . consult-buffer)
+         ("C-x r b" . consult-bookmark)
+         ("C-x p b" . consult-project-buffer)
+         ("M-#"     . consult-register-load)
+         ("M-'"     . consult-register-store)
+         ("C-M-#"   . consult-register)
+         ("M-s d"   . consult-find)
+         ("M-s r"   . consult-ripgrep)))
 
 (use-package vertico
   :init (vertico-mode))
