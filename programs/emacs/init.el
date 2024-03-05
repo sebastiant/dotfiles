@@ -81,16 +81,6 @@
 (winner-mode)
 (add-hook 'ediff-after-quit-hook-internal 'winner-undo)
 
-(use-package projectile
-  :config (projectile-mode)
-  :bind-keymap ("C-c p" . projectile-command-map)
-  :custom
-  (projectile-per-project-compilation-buffer t)
-  (projectile-switch-project-action #'projectile-dired)
-  :init
-  (when (file-directory-p "~/dev")
-    (setq projectile-project-search-path '("~/dev"))))
-
 (use-package consult
   :bind (("C-c w"   . consult-line)
          ("C-c W"   . consult-focus-lines)
@@ -636,6 +626,4 @@
          (tsx-ts-mode . combobulate-mode)))
 (provide 'init)
 
-(custom-set-variables
- '(safe-local-variable-values '((projectile-project-run-cmd . "make all"))))
 ;;; init.el ends here

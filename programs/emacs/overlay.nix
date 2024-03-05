@@ -53,7 +53,6 @@ let
       puni
       prettier-js
       prodigy
-      projectile
       python-black
       python-isort
       rainbow-delimiters
