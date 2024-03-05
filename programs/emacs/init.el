@@ -503,13 +503,6 @@
   (org-tree-slide-breadcrumbs " > ")
   (org-image-actual-width nil))
 
-(use-package perspective
-  :bind (("C-c v" . persp-switch-to-buffer*)
-         ("C-c V" . persp-switch)
-         ("C-c s" . projectile-persp-switch-project))
-  :custom (persp-mode-prefix-key (kbd "C-c C-v"))
-  :init (persp-mode))
-
 (use-package nix-mode
   :hook (nix-mode . lsp-deferred)
   :mode "\\.nix\\'")
