@@ -206,9 +206,8 @@
   :hook (dart-mode . lsp-deferred))
 
 (use-package treesit
-  :custom
-  (treesit-font-lock-level 4)
-  (treesit-language-source-alist
+  :init
+  (setq treesit-language-source-alist
    '((bash "https://github.com/tree-sitter/tree-sitter-bash")
      (cmake "https://github.com/uyha/tree-sitter-cmake")
      (css "https://github.com/tree-sitter/tree-sitter-css")
@@ -224,6 +223,8 @@
      (tsx "https://github.com/tree-sitter/tree-sitter-typescript" "master" "tsx/src")
      (typescript "https://github.com/tree-sitter/tree-sitter-typescript" "master" "typescript/src")
      (yaml "https://github.com/ikatyang/tree-sitter-yaml")))
+  :custom
+  (treesit-font-lock-level 4)
   (major-mode-remap-alist
    '((bash-mode . bash-ts-mode)
      (css-mode . css-ts-mode)
