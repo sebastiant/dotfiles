@@ -315,7 +315,7 @@
   :commands (lsp lsp-deferred)
   :bind (:map lsp-mode-map
               ("C-c l a" . lsp-execute-code-action)
-              ("C-c l d" . lsp-ui-peek-find-definitions)
+              ("C-c l d" . lsp-find-definitions)
               ("C-c l r" . lsp-ui-peek-find-references))
   :init
   (defun st/lsp-mode-setup-completion ()
