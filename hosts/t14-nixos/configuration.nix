@@ -73,6 +73,12 @@
   services.blueman.enable = true;
 
   i18n.defaultLocale = "en_US.UTF-8";
+  services.printing.enable = true;
+  services.avahi = {
+    enable = true;
+    nssmdns = true;
+    openFirewall = true;
+  };
 
   services.dbus.enable = true;
   services.dbus.packages =  [ pkgs.pass-secret-service ];
