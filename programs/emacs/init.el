@@ -109,7 +109,7 @@
 (use-package embark
   :bind
   (("C-." . embark-act)
-   ("M-." . embark-dwim)
+   ("C-;" . embark-dwim)
    ("C-h B" . embark-bindings))
   :init
   (setq prefix-help-command #'embark-prefix-help-command)
@@ -315,7 +315,7 @@
   :commands (lsp lsp-deferred)
   :bind (:map lsp-mode-map
               ("C-c l a" . lsp-execute-code-action)
-              ("C-c l d" . lsp-find-definitions)
+              ("M-." . lsp-find-definition)
               ("C-c l r" . lsp-ui-peek-find-references))
   :init
   (defun st/lsp-mode-setup-completion ()
