@@ -33,16 +33,16 @@
       sebastiant-emacs-overlay = import ./programs/emacs/overlay.nix;
       swarm-overlay = import ./programs/emacs/swarm.nix;
       combobulate-overlay = import ./programs/emacs/combobulate.nix;
+      overlays = [ nur.overlay
+                   syncorate-el.overlays.emacs
+                   (swarm-overlay swarm)
+                   (combobulate-overlay combobulate.outPath)
+                   sebastiant-emacs-overlay
+                   git-mob.overlays.default
+                 ];
       homeManagerConfFor = config:
         { ... }: {
-          nixpkgs.overlays = [
-            nur.overlay
-            syncorate-el.overlays.emacs
-            (swarm-overlay swarm)
-            (combobulate-overlay combobulate.outPath)
-            sebastiant-emacs-overlay
-            git-mob.overlays.default
-          ];
+          nixpkgs.overlays = overlays;
           imports = [ config ];
         };
       darwinSystem = darwin.lib.darwinSystem {
@@ -58,11 +58,20 @@
         specialArgs = { inherit nixpkgs; };
       };
       debianSystem = home-manager.lib.homeManagerConfiguration {
-        configuration = homeManagerConfFor ./hosts/t14-debian/home.nix;
-        system = "x86_64-linux";
-        homeDirectory = "/home/sebastian";
-        username = "sebastian";
-        stateVersion = "21.05";
+        pkgs = import nixpkgs {
+          system = "x86_64-linux";
+          inherit overlays;
+        };
+        modules = [
+          ./hosts/t14-debian/home.nix
+          {
+            home = {
+              username = "sebastian";
+              homeDirectory = "/home/sebastian";
+              stateVersion = "21.05";
+            };
+          }
+        ];
       };
     in {
       nixosConfigurations.t14 = nixpkgs.lib.nixosSystem {
