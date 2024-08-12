@@ -313,6 +313,12 @@
   :custom
   (lsp-completion-provider :none)
   :commands (lsp lsp-deferred)
+  :config
+    (lsp-register-client
+    (make-lsp-client :new-connection (lsp-stdio-connection "nixd")
+                     :major-modes '(nix-mode)
+                     :priority 0
+                     :server-id 'nixd))
   :bind (:map lsp-mode-map
               ("C-c l a" . lsp-execute-code-action)
               ("M-." . lsp-find-definition)
@@ -339,6 +345,7 @@
   :custom
   (lsp-ui-doc-position 'bottom)
   (lsp-ui-sideline-show-code-actions nil))
+
 (use-package lsp-treemacs
   :after lsp
   :commands lsp-treemacs-errors-list)

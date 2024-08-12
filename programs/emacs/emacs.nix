@@ -10,7 +10,7 @@
     nodePackages.typescript
     nodePackages.typescript-language-server
     nodePackages.prettier
-    nil
+    nixd
     sqls
   ];
 }

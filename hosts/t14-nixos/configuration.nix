@@ -1,4 +1,4 @@
-{ config, lib, nixpkgs, pkgs, ... }: {
+{ lib, nixpkgs, pkgs, ... }: {
   imports = [ ./hardware-configuration.nix ../../programs/non-free.nix ];
   nixpkgs.overlays = [ (import ../../programs/wayland-overlay.nix) ];
 
