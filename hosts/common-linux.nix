@@ -44,7 +44,7 @@
       };
     };
     iconTheme = {
-      package = pkgs.gnome.adwaita-icon-theme;
+      package = pkgs.adwaita-icon-theme;
       name = "Adwaita";
     };
   };
@@ -60,7 +60,6 @@
     git-mob
     haskellPackages.yeganesh
     networkmanager
-    nyxt
     polybar
     powertop
     volctl

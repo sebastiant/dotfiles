@@ -17,5 +17,5 @@ let
   overrides = efinal: eprev: { inherit swarm-mode; };
 in {
   emacsPackagesFor = emacs:
-    (prev.emacsPackagesFor emacs).overrideScope' overrides;
+    (prev.emacsPackagesFor emacs).overrideScope overrides;
 }

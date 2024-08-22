@@ -76,7 +76,7 @@
   services.printing.enable = true;
   services.avahi = {
     enable = true;
-    nssmdns = true;
+    nssmdns4 = true;
     openFirewall = true;
   };
 
@@ -123,7 +123,7 @@
     '';
   };
 
-  services.xserver.layout = "us";
+  services.xserver.xkb.layout = "us";
 
   services.picom = {
     enable = true;
@@ -140,7 +140,7 @@
 
   boot.initrd.kernelModules = [ "i915" ];
 
-  hardware.opengl = {
+  hardware.graphics = {
     enable = true;
     extraPackages = with pkgs; [ intel-media-driver vaapiVdpau libvdpau-va-gl ];
   };
@@ -166,7 +166,7 @@
     '';
     nixPath = [ "nixpkgs=${nixpkgs}" ];
     registry.nixpkgs.flake = nixpkgs;
-    package = pkgs.nixUnstable;
+    package = pkgs.nixVersions.latest;
     settings = {
       substituters = [
         "https://nix-community.cachix.org/"

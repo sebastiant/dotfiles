@@ -14,5 +14,5 @@ let
   overrides = efinal: eprev: { inherit combobulate; };
 in {
   emacsPackagesFor = emacs:
-    (prev.emacsPackagesFor emacs).overrideScope' overrides;
+    (prev.emacsPackagesFor emacs).overrideScope overrides;
 }

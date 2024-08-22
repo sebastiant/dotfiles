@@ -27,7 +27,7 @@
       lorri
       ngrok
       nix-index
-      nixfmt
+      nixfmt-rfc-style
       openssl
       p7zip
       pandoc
