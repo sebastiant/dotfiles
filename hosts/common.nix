@@ -74,4 +74,8 @@
     :def hoogle \x -> return $ ":!hoogle \"" ++ x ++ "\""
     :def doc \x -> return $ ":!hoogle --info \"" ++ x ++ "\""
   '';
+
+  home.file.".psqlrc".text = ''
+    \pset pager off
+  '';
 }
