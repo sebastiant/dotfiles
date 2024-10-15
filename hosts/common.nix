@@ -34,6 +34,7 @@
       patchelf
       pstree
       ripgrep
+      rlwrap
       sops
       sqlite
       tree
