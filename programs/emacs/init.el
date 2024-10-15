@@ -17,14 +17,15 @@
 (use-package emacs
   :custom
   (backup-by-copying t)
-   (backup-directory-alist
-    '(("." . "~/.saves/")))
-   (delete-old-versions t)
-   (kept-new-versions 6)
-   (kept-old-versions 2)
-   (version-control t)
+  (backup-directory-alist
+   '(("." . "~/.saves/")))
+  (delete-old-versions t)
+  (kept-new-versions 6)
+  (kept-old-versions 2)
+  (version-control t)
   (ignore-window-parameters t)
   (compilation-scroll-output t)
+  (visible-bell t)
   :init
   (global-so-long-mode 1)
   (electric-pair-mode 1)
