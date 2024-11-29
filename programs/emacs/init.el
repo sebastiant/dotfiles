@@ -242,14 +242,14 @@
 (use-package elm-mode
   :hook (elm-mode . lsp-deferred))
 
-(use-package haskell-mode
-  :bind (:map haskell-mode-map
+(use-package haskell-ts-mode
+  :bind (:map haskell-ts-mode-map
               ("C-c c" . haskell-process-load-file)
               ("C-c h" . haskell-hoogle-lookup-from-website))
   :hook
-  (haskell-literate-mode . lsp-deferred)
-  (haskell-mode . lsp-deferred)
-  (haskell-mode . haskell-indentation-mode)
+  (haskell-ts-literate-mode . lsp-deferred)
+  (haskell-ts-mode . lsp-deferred)
+  (haskell-ts-mode . haskell-indentation-mode)
   :custom
   (haskell-stylish-on-save t
    haskell-indentation-electric-flag t

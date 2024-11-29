@@ -22,7 +22,7 @@ let
       flycheck
       forge
       git-gutter
-      haskell-mode
+      haskell-ts-mode
       helpful
       hide-mode-line
       jsonnet-mode
