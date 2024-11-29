@@ -61,9 +61,6 @@
         (setq dired-listing-switches "-aBhl")
         (setq dired-listing-switches "-agho --group-directories-first")))
 
-(use-package dired-single
-  :commands (dired dired-jump))
-
 (use-package magit
   :custom
   (magit-blame-echo-style 'margin)

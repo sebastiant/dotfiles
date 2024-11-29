@@ -11,7 +11,6 @@ let
       dap-mode
       dart-mode
       devdocs
-      dired-single
       dockerfile-mode
       eat
       editorconfig
