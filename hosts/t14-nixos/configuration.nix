@@ -82,6 +82,7 @@
 
   services.dbus.enable = true;
   services.dbus.packages =  [ pkgs.pass-secret-service ];
+  services.passSecretService.enable = true;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
