@@ -243,6 +243,7 @@
   :hook (elm-mode . lsp-deferred))
 
 (use-package haskell-ts-mode
+  :mode "\\.hs$"
   :bind (:map haskell-ts-mode-map
               ("C-c c" . haskell-process-load-file)
               ("C-c h" . haskell-hoogle-lookup-from-website))
