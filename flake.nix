@@ -28,12 +28,13 @@
     };
   };
 
+
   outputs = { combobulate, swarm, git-mob, syncorate-el, darwin, home-manager, nur, nixos-hardware, nixpkgs, ... }:
     let
       sebastiant-emacs-overlay = import ./programs/emacs/overlay.nix;
       swarm-overlay = import ./programs/emacs/swarm.nix;
       combobulate-overlay = import ./programs/emacs/combobulate.nix;
-      overlays = [ nur.overlay
+      overlays = [ nur.overlays.default
                    syncorate-el.overlays.emacs
                    (swarm-overlay swarm)
                    (combobulate-overlay combobulate.outPath)

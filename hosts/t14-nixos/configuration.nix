@@ -55,7 +55,7 @@
     enableSSHSupport = true;
   };
 
-  hardware.pulseaudio = {
+  services.pulseaudio = {
     package = pkgs.pulseaudioFull;
     extraConfig = ''
     load-module module-udev-detect ignore_dB=1
