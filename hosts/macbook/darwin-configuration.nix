@@ -25,8 +25,7 @@
     ];
 
   fonts = {
-    fontDir.enable = true;
-    fonts = with pkgs; [
+    packages = with pkgs; [
       fira-code
       iosevka
       aileron
