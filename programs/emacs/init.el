@@ -323,6 +323,7 @@
               ("M-." . lsp-find-definition)
               ("C-c l r" . lsp-ui-peek-find-references))
   :init
+  (setq lsp-inline-completion-enable 't)
   (defun st/lsp-mode-setup-completion ()
     (setf (alist-get 'styles (alist-get 'lsp-capf completion-category-defaults))
           '(flex)))
