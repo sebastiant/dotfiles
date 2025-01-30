@@ -147,6 +147,7 @@
   };
 
   environment.variables = {
+    SYSTEMD_SLEEP_FREEZE_USER_SESSIONS = "false"; # fixes issue with systemd hibernate and qemu VMs https://github.com/systemd/systemd/issues/33083
     VDPAU_DRIVER = "va_gl";
     LIBVA_DRIVER_NAME = "iHD";
     MOZ_DISABLE_RDD_SANDBOX = "1";
