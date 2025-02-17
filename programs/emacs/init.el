@@ -248,6 +248,7 @@
               ("C-c c" . haskell-process-load-file)
               ("C-c h" . haskell-hoogle-lookup-from-website))
   :hook
+  (before-save . haskell-mode-stylish-buffer)
   (haskell-ts-literate-mode . lsp-deferred)
   (haskell-ts-mode . lsp-deferred)
   (haskell-ts-mode . haskell-indentation-mode)
