@@ -1,6 +1,6 @@
 src: final: prev:
 let
-  trivialBuild = (prev.emacsPackagesFor prev.emacs29).trivialBuild;
+  trivialBuild = (prev.emacsPackagesFor prev.emacs30).trivialBuild;
   combobulate = trivialBuild {
     pname = "combobulate";
     version = "0.1.0.0";

@@ -17,6 +17,7 @@ let
       elixir-mode
       elm-mode
       embark
+      embark-consult
       envrc
       flutter
       flycheck
@@ -68,5 +69,5 @@ let
       yasnippet
     ]);
 in {
-  emacsSebastiant = (prev.emacsPackagesFor prev.emacs29).emacsWithPackages packages;
+  emacsSebastiant = (prev.emacsPackagesFor prev.emacs30).emacsWithPackages packages;
 }
