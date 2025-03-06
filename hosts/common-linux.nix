@@ -49,7 +49,7 @@
     };
   };
   services.blueman-applet.enable = true;
-  programs.vscode.extensions =
+  programs.vscode.profiles.default.extensions =
     [ pkgs.vscode-extensions.ms-vsliveshare.vsliveshare ];
 
   home.packages = with pkgs; [
@@ -82,7 +82,7 @@
         "media.navigator.mediadatadecoder_vpx_enabled" = true;
         "signon.rememberSignons" = false;
       };
-      extensions = with pkgs.nur.repos.rycee.firefox-addons; [
+      extensions.packages = with pkgs.nur.repos.rycee.firefox-addons; [
         onepassword-password-manager
         ublock-origin
         vim-vixen
