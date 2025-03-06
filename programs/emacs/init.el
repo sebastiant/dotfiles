@@ -211,6 +211,7 @@
      (css "https://github.com/tree-sitter/tree-sitter-css")
      (elisp "https://github.com/Wilfred/tree-sitter-elisp")
      (go "https://github.com/tree-sitter/tree-sitter-go")
+     (haskell "https://github.com/tree-sitter/tree-sitter-haskell")
      (html "https://github.com/tree-sitter/tree-sitter-html")
      (javascript "https://github.com/tree-sitter/tree-sitter-javascript" "master" "src")
      (json "https://github.com/tree-sitter/tree-sitter-json")
@@ -243,27 +244,22 @@
   :hook (elm-mode . lsp-deferred))
 
 (use-package haskell-ts-mode
-  :mode "\\.hs$"
-  :bind (:map haskell-ts-mode-map
-              ("C-c c" . haskell-process-load-file)
-              ("C-c h" . haskell-hoogle-lookup-from-website))
-  :hook
-  (before-save . haskell-mode-stylish-buffer)
-  (haskell-ts-literate-mode . lsp-deferred)
-  (haskell-ts-mode . lsp-deferred)
-  (haskell-ts-mode . haskell-indentation-mode)
-  :custom
-  (haskell-stylish-on-save t
-   haskell-indentation-electric-flag t
-   haskell-process-type 'cabal-repl
-   haskell-interactive-popup-errors nil
-   haskell-process-log t
-   haskell-hoogle-url "http://localhost:8080/?hoogle=")
-  :config
-  (add-to-list 'auto-mode-alist '("\\.cabal?\\'" . haskell-cabal-mode)))
+  :config (setq haskell-ts-use-indent nil)
+  :hook ((haskell-ts-mode . ormolu-format-on-save-mode)
+          (haskell-ts-mode . eglot-ensure))
+  :mode "\\.hs$")
 
-(use-package lsp-haskell
-  :custom (lsp-haskell-server-path "haskell-language-server"))
+(use-package eglot
+  :bind (:map eglot-mode-map
+              ("C-c l a" . eglot-code-actions)
+              ("M-." . eglot-find-typeDefinition))
+  :hook ((envrc-after-update-hook . eglot-reconnect)
+         (envrc-after-update-hook . my/start-eglot-after-envrc))
+  :config
+  (add-to-list 'eglot-server-programs '(haskell-ts-mode . ("haskell-language-server" "--lsp")))
+  :custom
+  (eglot-autoshutdown t)
+  (eglot-confirm-server-initiated-edits nil))
 
 (use-package python-ts-mode
   :bind (:map python-ts-mode-map ("C-c c" . run-python))
@@ -592,9 +588,6 @@
 
 (use-package syncorate
   :custom (syncorate-executable "~/.local/bin/syncorate"))
-
-(use-package puni
-  :init (puni-global-mode))
 
 (use-package ligature
   :hook (prog-mode . ligature-mode)

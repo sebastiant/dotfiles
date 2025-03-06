@@ -29,7 +29,6 @@ let
       jsonnet-mode
       ligature
       lsp-dart
-      lsp-haskell
       lsp-mode
       lsp-pyright
       lsp-treemacs
@@ -45,10 +44,10 @@ let
       org-roam
       org-superstar
       org-tree-slide
+      ormolu
       pdf-tools
       po-mode
       popper
-      puni
       prettier-js
       prodigy
       python-black
