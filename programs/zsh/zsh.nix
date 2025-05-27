@@ -9,7 +9,6 @@
       theme = "af-no-magic";
       plugins = [
         "git"
-        "tmuxinator"
         "nix-shell"
         "direnv"
       ];

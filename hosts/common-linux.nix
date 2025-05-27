@@ -1,5 +1,4 @@
 { pkgs, ... }: {
-  imports = [ ../programs/tmux/tmux.nix ];
   programs.home-manager.enable = true;
   services.dunst = {
     enable = true;
