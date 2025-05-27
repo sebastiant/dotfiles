@@ -199,7 +199,6 @@
       killall
       libva-utils
       spotify
-      skypeforlinux
       zoom-us
       slack
       docker-compose

@@ -8,7 +8,6 @@
     "dropbox"
     "ngrok"
     "onepassword-password-manager"
-    "skypeforlinux"
     "slack"
     "spotify"
     "spotify-unwrapped"
