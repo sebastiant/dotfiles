@@ -11,7 +11,6 @@
       docker
       ffmpeg
       fswatch
-      fzf
       gnupg
       home-manager
       nodejs

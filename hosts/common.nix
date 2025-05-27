@@ -50,7 +50,6 @@
   };
   programs.emacs.enable = true;
   programs.emacs.package = pkgs.emacsSebastiant;
-  programs.fzf.enable = true;
   programs.bat = {
     enable = true;
     config.theme = "ansi";

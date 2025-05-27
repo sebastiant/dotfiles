@@ -14,7 +14,6 @@
       ];
     };
   };
-  programs.fzf.enableZshIntegration = true;
 
   home.file.".config/oh-my-zsh/themes/af-no-magic.zsh-theme".source = ./af-no-magic.zsh-theme;
 }
