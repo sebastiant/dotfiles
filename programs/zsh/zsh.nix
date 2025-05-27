@@ -1,9 +1,9 @@
-{ config, lib, pkgs, ... }:
+{ lib, ... }:
 {
   programs.zsh = {
     enable = true;
     enableCompletion = false;
-    initExtraBeforeCompInit = builtins.readFile ./zshrc;
+    initContent = lib.mkOrder 550 (builtins.readFile ./zshrc);
     oh-my-zsh = {
       enable = true;
       theme = "af-no-magic";

@@ -192,26 +192,26 @@
       autorandr
       binutils
       brightnessctl
-      feh
-      wget
-      pciutils
-      intel-gpu-tools
-      killall
-      libva-utils
-      spotify
-      zoom-us
-      slack
-      docker-compose
-      direnv
-      pavucontrol
-      polybar
-      pulseaudio
-      dunst
       cmake
+      direnv
+      docker-compose
+      dunst
+      feh
       gcc
       gnumake
+      intel-gpu-tools
+      killall
       libtool
+      libva-utils
+      pavucontrol
+      pciutils
+      polybar
+      pulseaudio
+      slack
+      spotify
       vdpauinfo
+      wget
+      zoom-us
     ] ++ [
       glib
       grim
