@@ -6,6 +6,8 @@
     "1password-gui"
     "discord"
     "dropbox"
+    "firefox-bin"
+    "firefox-bin-unwrapped"
     "ngrok"
     "onepassword-password-manager"
     "slack"
