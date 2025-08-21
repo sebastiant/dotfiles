@@ -17,6 +17,7 @@ I use [[https://nixos.org/][nix]] as package manager for all hosts.
 I use [[https://github.com/nix-community/home-manager][Home Manager]] to declare nix packages and configuration to use.
 For the macbook I additionally use [[https://github.com/LnL7/nix-darwin][nix-darwin]] to set up system packages and fonts.
 All hosts are configured from their respective [[/hosts][/hosts]] directory, [[hosts/common.nix][hosts/common.nix]] contain shared configuration and program-specific configuration live under [[/programs/][/programs/]]
+Packages and services are set up both system-wide as well as via home-manager in a maybe not very clear way. The background is that I use these systems mainly via a single user.
 * Questions or assistance
 I am happy to answer any questions about the contents of this repository or get newcomers started in the world of nix! Send me a message on Discord: sebastiant#6342
 * My toolbox
@@ -41,14 +42,14 @@ I am happy to answer any questions about the contents of this repository or get 
 - Create the first generation
   - NixOS
     #+begin_src shell
-      $ nixos-rebuild switch --upgrade --flake '.#t14' --use-remote-sudo
+      $ nixos-rebuild switch --upgrade --flake '.#t14' --upgrade --sudo
     #+end_src
     Or if system hostname is set to nixosConfigurations.<hostname> in flake.nix outputs:
     #+begin_src shell
-      $ nixos-rebuild switch --upgrade --flake '.#' --use-remote-sudo
+      $ nixos-rebuild switch --upgrade --flake --upgrade --sudo
     #+end_src
   - Linux
-    I don't use this any longer and it is only kept for reference.
+    I don't use this any longer and it is only kept for reference
     #+begin_src shell
     $ nix build && ./result/activate
     #+end_src
