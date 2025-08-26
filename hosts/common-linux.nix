@@ -61,6 +61,7 @@
     networkmanager
     polybar
     powertop
+    unixtools.net-tools
     volctl
   ];
   programs.firefox = {
