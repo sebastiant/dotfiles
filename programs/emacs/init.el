@@ -294,7 +294,7 @@
   (corfu-auto-prefix 2)
   (corfu-auto-delay 0.0)
   (corfu-quit-at-boundary 'separator)
-  (corfu-echo-documentation 0.25)
+  (corfu-popupinfo-delay 0.25)
   (corfu-preview-current 'insert)
   (corfu-preselect-first t)
   :bind (:map corfu-map
@@ -303,7 +303,8 @@
               ("RET" . corfu-insert))
   :init
   (global-corfu-mode)
-  (corfu-history-mode))
+  (corfu-history-mode)
+  (corfu-popupinfo-mode))
 
 (use-package lsp-mode
   :custom
