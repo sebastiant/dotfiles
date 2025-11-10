@@ -80,6 +80,8 @@
 (add-hook 'ediff-after-quit-hook-internal 'winner-undo)
 
 (use-package consult
+  :custom ((xref-show-xrefs-function #'consult-xref)
+           (xref-show-definition #'consulr-xref))
   :bind (("C-c w"   . consult-line)
          ("C-c W"   . consult-focus-lines)
          ("C-x b"   . consult-buffer)
@@ -251,8 +253,7 @@
 
 (use-package eglot
   :bind (:map eglot-mode-map
-              ("C-c l a" . eglot-code-actions)
-              ("M-." . eglot-find-typeDefinition))
+              ("C-c l a" . eglot-code-actions))
   :hook ((envrc-after-update-hook . eglot-reconnect)
          (envrc-after-update-hook . my/start-eglot-after-envrc))
   :config
