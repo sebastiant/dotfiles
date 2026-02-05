@@ -251,6 +251,9 @@
           (haskell-ts-mode . eglot-ensure))
   :mode "\\.hs$")
 
+(use-package ormolu
+  :custom (ormolu-process-path "ormolu"))
+
 (use-package eglot
   :bind (:map eglot-mode-map
               ("C-c l a" . eglot-code-actions))
