@@ -208,6 +208,7 @@
       "repl-temp-*"
       "result"
       "*.qcow2"
+      "/.pre-commit-config.yaml"
     ];
   };
 }
