@@ -648,6 +648,16 @@
          (yaml-ts-mode . combobulate-mode)
          (typescript-ts-mode . combobulate-mode)
          (tsx-ts-mode . combobulate-mode)))
+
+(use-package diff-hl
+  :init (global-diff-hl-mode))
+
+(use-package breadcrumb
+  :init (breadcrumb-mode))
+
+(use-package idle-highlight-mode
+  :init (idle-highlight-global-mode))
+
 (provide 'init)
 
 ;;; init.el ends here

@@ -5,12 +5,14 @@ let
       ace-window
       alchemist
       beacon
+      breadcrumb
       combobulate
       consult
       corfu
       dap-mode
       dart-mode
       devdocs
+      diff-hl
       dockerfile-mode
       eat
       editorconfig
@@ -22,11 +24,12 @@ let
       flutter
       flycheck
       forge
-      git-gutter
       haskell-ts-mode
       helpful
       hide-mode-line
+      idle-highlight-mode
       jsonnet-mode
+      just-mode
       ligature
       lsp-dart
       lsp-mode
