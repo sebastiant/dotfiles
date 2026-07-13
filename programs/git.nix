@@ -3,25 +3,28 @@
   programs.git = {
     lfs.enable = true;
     enable = true;
-    userName = "Sebastian Tunberg";
-    userEmail = "sebastian.tunberg@gmail.com";
-    aliases = {
-      lg = "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit";
-      st = "status -s";
-      s = "status";
-      a = "!git add . && git status";
-      ci = "commit";
-      co = "checkout";
-      d = "difftool";
-      dp = "!git --no-pager diff";
-      ds = "diff --staged";
-      dsp = "!git --no-pager diff --staged";
-      main = "checkout main";
-      master = "checkout master";
-      no-remotes = "!git branch --format '%(refname:short) %(upstream:short)' | awk '{if (!$2) print $1;}'";
-      alias = "!git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\\t => \\2/' | sort";
-    };
-    extraConfig = {
+
+    settings = {
+      user = {
+        name = "Sebastian Tunberg";
+        email = "sebastian.tunberg@gmail.com";
+      };
+      alias = {
+        lg = "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit";
+        st = "status -s";
+        s = "status";
+        a = "!git add . && git status";
+        ci = "commit";
+        co = "checkout";
+        d = "difftool";
+        dp = "!git --no-pager diff";
+        ds = "diff --staged";
+        dsp = "!git --no-pager diff --staged";
+        main = "checkout main";
+        master = "checkout master";
+        no-remotes = "!git branch --format '%(refname:short) %(upstream:short)' | awk '{if (!$2) print $1;}'";
+        alias = "!git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\\t => \\2/' | sort";
+      };
       gpg.format = "ssh";
       user.signingkey = "~/.ssh/id_ed25519.pub";
       commit.gpgsign = true;
@@ -30,12 +33,6 @@
       diff.colorMoved = "zebra";
       difftool.prompt = false;
       difftool.trustExitCode = true;
-      filter.lfs = {
-        clean = "git-lfs clean -- %f";
-        smudge = "git-lfs smudge -- %f";
-        process = "git-lfs filter-process";
-        required = true;
-      };
       merge.tool = "ediff";
       merge.keepBackup = false;
       merge.conflictStyle = "diff3";

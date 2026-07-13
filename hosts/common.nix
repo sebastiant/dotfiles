@@ -7,7 +7,7 @@
   ];
 
   home = {
-    stateVersion = "21.05";
+    stateVersion = "26.05";
     packages = with pkgs; [
       cabal-install
       caddy
@@ -27,7 +27,7 @@
       lorri
       ngrok
       nix-index
-      nixfmt-rfc-style
+      nixfmt
       openssl
       p7zip
       pandoc

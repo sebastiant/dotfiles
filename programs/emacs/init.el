@@ -1,6 +1,11 @@
 (setq user-full-name "Sebastian Tunberg")
 (setq user-mail-address "sebastian.tunberg@gmail.com")
 
+(defvar compilation-scroll-output)
+(setq compilation-scroll-output t)
+(defvar compilation-auto-jump-to-first-error)
+(setq compilation-auto-jump-to-first-error t)
+
 (require 'package)
 (setq package-enable-at-startup nil)
 (package-initialize)
@@ -16,6 +21,7 @@
 
 (use-package emacs
   :custom
+  (custom-file "~/.emacs.d/custom.el")
   (backup-by-copying t)
   (backup-directory-alist
    '(("." . "~/.saves/")))
@@ -71,8 +77,6 @@
 
 (use-package forge
   :after magit)
-(use-package git-gutter
-  :init (global-git-gutter-mode))
 
 (setq ediff-window-setup-function 'ediff-setup-windows-plain)
 (setq ediff-split-window-function 'split-window-horizontally)

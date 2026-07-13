@@ -118,7 +118,6 @@
   services.autorandr = { enable = true; };
 
   services.udev = {
-    packages = [ pkgs.android-udev-rules ];
     extraRules = ''
       ATTRS{idVendor}=="27b8", ATTRS{idProduct}=="01ed", MODE:="666", GROUP="plugdev"
     '';
@@ -143,7 +142,7 @@
 
   hardware.graphics = {
     enable = true;
-    extraPackages = with pkgs; [ intel-media-driver vaapiVdpau libvdpau-va-gl ];
+    extraPackages = with pkgs; [ intel-media-driver libva-vdpau-driver libvdpau-va-gl ];
   };
 
   environment.variables = {
@@ -257,5 +256,5 @@
     };
   };
 
-  system.stateVersion = "22.05";
+  system.stateVersion = "26.05";
 }
