@@ -22,7 +22,6 @@ let
       embark-consult
       envrc
       flutter
-      flycheck
       forge
       haskell-ts-mode
       helpful
